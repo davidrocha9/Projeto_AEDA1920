@@ -49,9 +49,10 @@ Fornecedores::Fornecedores() {
     reputacao = 0;
 }
 
-Fornecedores::Fornecedores(string n, double r, vector<Equipamentos> eq) {
+Fornecedores::Fornecedores(string n, double r, unsigned int re, vector<Equipamentos> eq) {
     nome = n;
     reputacao = r;
+    reviews = re;
     equipamentos = eq;
 }
 
@@ -61,6 +62,10 @@ string Fornecedores::getNome() const {
 
 double Fornecedores::getReputacao() const {
     return reputacao;
+}
+
+unsigned int Fornecedores::getReviews() const{
+    return reviews;
 }
 
 vector<Equipamentos> Fornecedores::getEquipamentos() const {
@@ -73,6 +78,10 @@ void Fornecedores::setNome(string n) {
 
 void Fornecedores::setReputacao(double r) {
     reputacao = r;
+}
+
+void Fornecedores::setReviews(unsigned int r){
+    reviews = r;
 }
 
 void Fornecedores::setEquipamentos(vector<Equipamentos> eq) {
@@ -98,6 +107,8 @@ priority_queue<Fornecedores> Fornecedores::ReadFornecedores() {
             std::getline(fornecedoresfile, line);
             reputacao = stod(line);
             std::getline(fornecedoresfile, line);
+            reviews = stoi(line);
+            std::getline(fornecedoresfile, line);
             temp = divideStrings(line);
             std::getline(fornecedoresfile, line);
             temp1 = divideStrings(line);
@@ -107,7 +118,7 @@ priority_queue<Fornecedores> Fornecedores::ReadFornecedores() {
                 e.setPreco(stod(temp1.at(x)));
                 eq.push_back(e);
             }
-            Fornecedores f1(nome, reputacao, eq);
+            Fornecedores f1(nome, reputacao, reviews, eq);
             f.push(f1);
             std::getline(fornecedoresfile, line);
         }
@@ -148,11 +159,11 @@ void Fornecedores::InfoFornecedores(priority_queue<Fornecedores> fornecedores) {
     }
 }
 
-void Fornecedores::VenderEquipamentos(priority_queue<Fornecedores> fornecedores) {
+void Fornecedores::VenderEquipamentos(priority_queue<Fornecedores> &fornecedores) {
     priority_queue<Fornecedores> aux = fornecedores;
     cout << " Que tipo de equipamento pretende adquirir?" << endl << endl;
     vector<string> equipamentospossiveis = {"Camisolas", "Calcoes", "Meias", "Chuteiras", "Caneleiras", "Camisolas Termicas", "Fato de treino", "Sapatilhas"};
-    std::cout << " Lista de jogadores disponiveis:" << endl << endl;
+    std::cout << " Lista de equipamentos disponiveis:" << endl << endl;
     int y = 0;
     std::cout << " ";
     for (size_t x = 0; x < equipamentospossiveis.size(); x++) {
@@ -177,6 +188,89 @@ void Fornecedores::VenderEquipamentos(priority_queue<Fornecedores> fornecedores)
             cout << " Input invalido! Introduza um numero entre 1 e " << equipamentospossiveis.size();
         }
     } while (opt < 1 || opt > equipamentospossiveis.size());
+    string pedido = equipamentospossiveis.at(opt-1);
+
+    Fornecedores f;
+    bool found;
+    while(!aux.empty()){
+        found = false;
+        vector<Equipamentos> temp = aux.top().getEquipamentos();
+        for (auto x: temp){
+            if (x.getTipo() == pedido){
+                f = aux.top();
+                found = true;
+                break;
+            }
+        }
+        if (found)
+            break;
+        aux.pop();
+    }
+    std::system("cls"); logo();
+    if(found){
+        cout << " Fornecedor encontrado!" << endl << endl;
+        cout << f;
+        cout << endl << " Pretende realizar a compra? (S/N)" << endl;
+        string n;
+        do {
+            std::cout << " Introduza uma opcao: ";
+            cin.clear();
+            cin >> n;
+            if (n != "S" && n != "s" && n != "N" && n != "n" || cin.fail()){
+                cin.clear();
+                cin.ignore();
+                std::cout << " Opcao invalida! Tente Novamente." << endl;
+            }
+        } while (n != "S" && n != "s" && n != "N" && n != "n");
+        if (n == "n" || n == "N")
+            return;
+        else{
+            std::system("cls"); logo();
+            cout << " Compra realizada!" << endl << endl << " Pretende emitir uma opiniao sobre a transacao efetuada?" << endl;
+            do {
+                std::cout << " Introduza uma opcao (S/N): ";
+                cin.clear();
+                cin >> n;
+                if (n != "S" && n != "s" && n != "N" && n != "n" || cin.fail()){
+                    cin.clear();
+                    cin.ignore();
+                    std::cout << " Opcao invalida! Tente Novamente." << endl;
+                }
+            } while (n != "S" && n != "s" && n != "N" && n != "n");
+            if (n == "n" || n == "N")
+                return;
+            else{
+                std::system("cls"); logo();
+                cout << " Como classificaria esta compra de 0 a 5 estrelas?" << endl;
+                double rating;
+                do {
+                    cout << endl << " Introduza uma opcao: ";
+                    cin.clear();
+                    std::cin >> rating;
+                    if (rating < 0.0 || rating > 5.0) {
+                        cin.clear();
+                        cin.ignore();
+                        cout << " Input invalido! Introduza um numero entre 0.0 e 5.0";
+                    }
+                } while (rating < 0.0 || rating> 5.0);
+                double newr = f.getReputacao()*f.getReviews() + rating;
+                unsigned int newre = f.getReviews() + 1;
+                newr = newr/newre;
+                vector<Fornecedores> temp;
+                while(!fornecedores.empty()){
+                    temp.push_back(fornecedores.top());
+                    fornecedores.pop();
+                }
+                for (auto x: temp){
+                    if (x == f){
+                        x.setReputacao(newr);
+                        x.setReviews(newre);
+                    }
+                    fornecedores.push(x);
+                }
+            }
+        }
+    }
 }
 
 
@@ -188,6 +282,7 @@ bool Fornecedores::operator<(const Fornecedores &f) const {
 ostream &operator<<(ostream &out, const Fornecedores &f) {
     out << " Nome: " << f.getNome() << endl;
     out << " Reputacao: " << f.getReputacao() << "/5 estrelas" << endl;
+    out << " Numero de reviews: " << f.getReviews() << endl;
     out << " Artigos Disponiveis: ";
     int y = 0;
     for (auto x : f.getEquipamentos()){
@@ -202,4 +297,8 @@ ostream &operator<<(ostream &out, const Fornecedores &f) {
         }
     }
     return out;
+}
+
+bool Fornecedores::operator== (const Fornecedores& f) const{
+    return nome == f.nome;
 }

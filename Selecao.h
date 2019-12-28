@@ -45,7 +45,7 @@ public:
    * @param jogos vector da classe Jogo com os jogos
    */
   void JogostoFile(vector<Jogo> jogos);
-
+  void FornecedorestoFile(priority_queue<Fornecedores> fornecedores);
   // methods GET
   /**
    * @brief retorna um vector da classe Futebolista com os futebolistas

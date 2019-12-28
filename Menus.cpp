@@ -321,6 +321,7 @@ void mainMenu(Selecao& selecao) {
                     case 2:
                         system("cls"); logo();
                         for1.VenderEquipamentos(fornecedores);
+                        selecao.FornecedorestoFile(fornecedores);
                         break;
                 }
                 break;

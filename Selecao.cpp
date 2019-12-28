@@ -335,3 +335,34 @@ void Selecao::JogostoFile(vector<Jogo> jogos){
 	}
 	jogofile.close();
 }
+
+void Selecao::FornecedorestoFile(priority_queue<Fornecedores> fornecedores){
+    ofstream fornecedoresfile;
+    fornecedoresfile.open("../fornecedores.txt");
+
+    if (fornecedoresfile.fail())
+        cerr << "Error Opening File" << endl;
+    int x = 0;
+    priority_queue<Fornecedores> aux = fornecedores;
+    while(!aux.empty()){
+        Fornecedores f = aux.top();
+        fornecedoresfile << f.getNome() << endl << f.getReputacao() << endl << f.getReviews() << endl;
+        vector<Equipamentos> eq = f.getEquipamentos();
+        for (size_t x = 0; x < eq.size(); x++){
+            fornecedoresfile << eq.at(x).getTipo();
+            if (x != eq.size() - 1)
+                fornecedoresfile << " | ";
+        }
+        fornecedoresfile << endl;
+        for (size_t x = 0; x < eq.size(); x++){
+            fornecedoresfile << eq.at(x).getPreco();
+            if (x != eq.size() - 1)
+                fornecedoresfile << " | ";
+        }
+        x++;
+        if (x != fornecedores.size())
+            fornecedoresfile << endl << "::::::::::" << endl;
+        aux.pop();
+    }
+    fornecedoresfile.close();
+}
