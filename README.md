@@ -1,2 +1,4 @@
 # Projeto_AEDA1920
-Selecao Nacional de Futebol
+1ºAno - 2º Semestre
+
+Tema: Seleção Nacional de Futebol
