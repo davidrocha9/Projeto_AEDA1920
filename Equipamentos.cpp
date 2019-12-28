@@ -166,6 +166,17 @@ void Fornecedores::VenderEquipamentos(priority_queue<Fornecedores> fornecedores)
     }
 
     cout << endl << endl << " Que tipo equipamento pretende comprar?" << endl;
+    unsigned int opt;
+    do {
+        cout << endl << " Introduza uma opcao: ";
+        cin.clear();
+        std::cin >> opt;
+        if (opt < 1 || opt > equipamentospossiveis.size()) {
+            cin.clear();
+            cin.ignore();
+            cout << " Input invalido! Introduza um numero entre 1 e " << equipamentospossiveis.size();
+        }
+    } while (opt < 1 || opt > equipamentospossiveis.size());
 }
 
 
