@@ -726,7 +726,6 @@ void EquipaTecnica::EditarTecnico(vector<EquipaTecnica>& equipatecnica) const{
     }
 }
 
-
 //Ostreams
 ostream& operator<<(ostream& out, const Futebolista& f){
     out << " Nome completo: " << f.getNome() << endl;
@@ -752,3 +751,83 @@ ostream& operator<<(ostream& out, const EquipaTecnica& et) {
     out << " Salario: " << et.getSalario() << " euros";
     return out;
 }
+
+////////////////////////
+//// Selecionadores ////
+////////////////////////
+
+Selecionadores::Selecionadores() {
+}
+
+Selecionadores::Selecionadores(string n, unsigned int tg, vector<unsigned int> sel){
+    nome = n;
+    titulosganhos = tg;
+    selecoes = sel;
+}
+
+unsigned int Selecionadores::getTitulosGanhos() const{
+    return titulosganhos;
+}
+
+vector<unsigned int> Selecionadores::getSelecoes() const {
+    return selecoes;
+}
+
+void Selecionadores::setTitulosGanhos(unsigned int t) {
+    titulosganhos = t;
+}
+
+void Selecionadores::setSelecoes(vector<unsigned int> sel) {
+    selecoes = sel;
+}
+
+bool Selecionadores::operator<(const Selecionadores &s) const {
+    if(titulosganhos == s.titulosganhos)
+        return nome < s.nome;
+    return titulosganhos > s.titulosganhos;
+}
+
+BST<Selecionadores> Selecionadores::ReadSelecionadores(BST<Selecionadores> &selecionadores) {
+    BST<Selecionadores> sel(Selecionadores("",0));
+    selecionadores = sel;
+    ifstream selfile;
+    selfile.open("../selecionadores.txt");
+
+    if (selfile.fail()) {									// checking if nothing went wrong
+        cout << "Error Opening File. Try again!" << endl;		// while opening the file
+    }
+    else {
+        string line;
+        vector<string> info;
+        while (!selfile.eof()) {		// going through the file
+            std::getline(selfile, line);
+            info = divideStrings(line);
+            for (size_t x = 0; x < info.size(); x++) {
+                switch (x) {
+                    case 0:
+                        nome = info.at(x);
+                        break;
+                    case 1:
+                        titulosganhos = stoi(info.at(x));
+                        break;
+                    default:
+                        break;
+                }
+            }
+            std::getline(selfile, line);
+            info = divideStrings(line);
+            selecoes.clear();
+            for (auto x: info)
+                selecoes.push_back(stoi(x));
+            Selecionadores s(nome, titulosganhos, selecoes);
+            selecionadores.insert(s);
+        }
+    }
+    selfile.close();
+    return selecionadores;
+}
+
+Selecionadores::Selecionadores(string n, unsigned int tg) {
+    nome = n;
+    titulosganhos = tg;
+};

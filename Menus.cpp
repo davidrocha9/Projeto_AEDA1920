@@ -33,6 +33,7 @@ void mainMenu(Selecao& selecao) {
     bool return_menu = true;
     Futebolista f1;
     EquipaTecnica et1;
+    Selecionadores s1;
     Convocatoria c1;
     Jogo j1, j;
     Fornecedores for1;
@@ -41,7 +42,9 @@ void mainMenu(Selecao& selecao) {
     vector<Convocatoria> convocatorias = selecao.getConvocatorias();
     vector<Jogo> jogos = selecao.getJogos();
     priority_queue<Fornecedores> fornecedores = selecao.getFornecedores();
-
+    BST<Selecionadores> selecionadores = selecao.getSelecionadores();
+    BSTItrIn<Selecionadores> it(selecionadores);
+    Convocatoria c;
     do {
         logo();
         cout << " 1 - Gerir Jogadores" << endl;
@@ -184,11 +187,12 @@ void mainMenu(Selecao& selecao) {
                     case(2):
                         system("cls"); logo();
                         try {
-                            c1.AdicionarConvocatoria(convocatorias, jogadores, equipatecnica, jogos);
+                            c = c1.AdicionarConvocatoria(convocatorias, jogadores, equipatecnica, jogos);
                         }
                         catch (ConvocatoriaJaExistente c) {
                             cout << "Ja existe uma convocatoria com este ID!";
                         }
+                        selecao.updateSelecionadores(selecionadores, c);
                         selecao.ConvocatoriatoFile(convocatorias);
                         break;
                     case(3):
@@ -320,7 +324,12 @@ void mainMenu(Selecao& selecao) {
                         break;
                     case 2:
                         system("cls"); logo();
-                        for1.VenderEquipamentos(fornecedores);
+                        try {
+                            for1.VenderEquipamentos(fornecedores);
+                        }
+                        catch (SemFornecedor p) {
+                            cout << endl << "Nao existe fornecedor para este tipo de equipamento!";
+                        }
                         selecao.FornecedorestoFile(fornecedores);
                         break;
                 }

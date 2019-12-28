@@ -10,6 +10,7 @@
 #include "Jogadores.h"
 #include "Convocatoria.h"
 #include "Equipamentos.h"
+#include "bst.h"
 
 using namespace std;
 /**
@@ -22,6 +23,7 @@ private:
   vector<Convocatoria> convocatorias; //vetor com as convocatorias
   vector<Jogo> jogos; //vetor com os jogos
   priority_queue<Fornecedores> fornecedores; // fila de prioridade com os fornecedores
+  BST<Selecionadores> selecionadores; //arvore binaria com os selecionadores
 public:
   Selecao();
   ~Selecao();
@@ -46,6 +48,7 @@ public:
    */
   void JogostoFile(vector<Jogo> jogos);
   void FornecedorestoFile(priority_queue<Fornecedores> fornecedores);
+  void SelecionadorestoFile(BST<Selecionadores> selecionadores);
   // methods GET
   /**
    * @brief retorna um vector da classe Futebolista com os futebolistas
@@ -68,4 +71,6 @@ public:
    */
   vector<Convocatoria> getConvocatorias() const;
   priority_queue<Fornecedores> getFornecedores() const;
+  BST<Selecionadores> getSelecionadores() const;
+  void updateSelecionadores(BST<Selecionadores> &selecionadores, Convocatoria c);
 };

@@ -1,0 +1,16 @@
+Cristiano Ronaldo dos Santos Aveiro | 05/02/1985 | Ponta de Lanca | Juventus | 85 | 187 | 100000000
+Bernardo Mota Veiga de Carvalho e Silva | 15/10/2000 | Medio Ofensivo | Man City | 72 | 175 | 70000000
+Bruno Miguel Borges Fernandes | 08/09/1994 | Medio Ofensivo | Spording CP | 76 | 179 | 60000000
+Rui Pedro dos Santos Patricio | 15/02/1988 | Guarda Redes | Wolverhampton Wanderers | 84 | 190 | 20000000
+Kepler Laveran de Lima Ferreira | 26/02/1983 | Defesa Central | FC Porto | 85 | 1 | 5000000
+Luis Carlos Pereira Carneiro | 05/02/1985 | Ponta de Lanca | Belenenses SAD | 85 | 187 | 100000000
+Ruben Diogo da Silva Neves | 15/10/2000 | Medio Ofensivo | Man City | 72 | 175 | 70000000
+Luis Miguel Afonso Fernandes | 08/09/1994 | Medio Ofensivo | Spording CP | 76 | 179 | 60000000
+Jose Pedro Malheiro de Sa | 15/02/1988 | Guarda Redes | Wolverhampton Wanderers | 84 | 190 | 20000000
+Ruben Santos Gato Alves Dias | 26/02/1983 | Defesa Central | FC Porto | 85 | 1 | 5000000
+Joao Felix Sequeira | 05/02/1985 | Ponta de Lanca | Juventus | 85 | 187 | 100000000
+Danilo Luis Helio Pereira | 15/10/2000 | Medio Ofensivo | Futebol Clube do Porto | 72 | 175 | 70000000
+Andre Filipe Tavares Gomes | 08/09/1994 | Medio Ofensivo | Spording CP | 76 | 179 | 60000000
+Antonio Alberto Bastos Pimparel | 15/02/1988 | Guarda Redes | Wolverhampton Wanderers | 84 | 190 | 20000000
+Nelson Cabral Semedo | 26/02/1983 | Defesa Lateral | FC Porto | 85 | 1 | 5000000
+David Rocha | 09/05/2000 | Medio | porto | 60 | 177 | 10000

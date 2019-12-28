@@ -271,6 +271,9 @@ void Fornecedores::VenderEquipamentos(priority_queue<Fornecedores> &fornecedores
             }
         }
     }
+    else{
+        throw SemFornecedor(pedido);
+    }
 }
 
 

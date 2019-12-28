@@ -41,3 +41,11 @@ public:
     bool operator== (const Fornecedores& f) const;
     friend ostream& operator<<(ostream& out, const Fornecedores& f);
 };
+
+class SemFornecedor {
+public:
+    string tipo;
+    SemFornecedor(string t) {
+        tipo = t;
+    }
+};

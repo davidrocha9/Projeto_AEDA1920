@@ -1,0 +1,11 @@
+Adidas
+4.83333
+21
+bola | Calcoes
+10 | 10
+::::::::::
+Nike
+3.7
+100
+Calcoes
+15

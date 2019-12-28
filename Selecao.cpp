@@ -1,4 +1,4 @@
-    #include "Selecao.h"
+#include "Selecao.h"
 #include "Jogadores.h"
 #include "Convocatoria.h"
 
@@ -12,17 +12,19 @@ using namespace std;
 
 
 //Construtores e Destrutores
-Selecao::Selecao() {
+Selecao::Selecao() : selecionadores(Selecionadores("",0)){
 	Futebolista f;
 	EquipaTecnica et;
 	Convocatoria c;
 	Jogo j;
 	Fornecedores f1;
+	Selecionadores s;
 	jogadores = f.ReadJogadores();
 	equipatecnica = et.ReadEquipaTecnica();
 	jogos = j.ReadJogo();
 	convocatorias = c.ReadConvocatoria(jogos);
 	fornecedores = f1.ReadFornecedores();
+	s.ReadSelecionadores(selecionadores);
 }
 
 Selecao::~Selecao(){}
@@ -154,12 +156,14 @@ void Selecao::ConvocatoriatoFile(vector<Convocatoria> conv) {
 		}
 		convfile << endl;
 		auxcnt = 0;
+        convfile << x.getSelecionador() << " | ";
 		for (size_t z = 0; z < x.getEquipaTecnica().size(); z++) {
 			convfile << x.getEquipaTecnica().at(z).getNome();
 			if (z != x.getEquipaTecnica().size() - 1)
 				convfile << " | ";
 		}
 		convfile << endl;
+        convfile << x.getDataNascimentoSelecionador() << " | ";
 		for (size_t z = 0; z < x.getEquipaTecnica().size(); z++) {
 			convfile << x.getEquipaTecnica().at(z).getDataNascimento();
 			if (z != x.getEquipaTecnica().size() - 1)
@@ -365,4 +369,53 @@ void Selecao::FornecedorestoFile(priority_queue<Fornecedores> fornecedores){
         aux.pop();
     }
     fornecedoresfile.close();
+}
+
+void Selecao::SelecionadorestoFile(BST<Selecionadores> selecionadores){
+    ofstream selecionadoresfile;
+    selecionadoresfile.open("../selecionadores.txt");
+    int size;
+    BSTItrIn<Selecionadores> it(selecionadores);
+    while(!it.isAtEnd()){
+        size++;
+        it.advance();
+    }
+    if (selecionadoresfile.fail())
+        cerr << "Error Opening File" << endl;
+    int x = 0;
+    BSTItrIn<Selecionadores> it2(selecionadores);
+    while(!it2.isAtEnd()){
+        selecionadoresfile << it.retrieve().getNome() << " | " << it.retrieve().getTitulosGanhos();
+        vector<unsigned int> v1 = it.retrieve().getSelecoes();
+        for (size_t y = 0; y < v1.size(); y++){
+            selecionadoresfile << v1.at(y);
+            if (y < v1.size()-1)
+                selecionadoresfile << " | ";
+        }
+        selecionadoresfile << endl;
+        if (x < size)
+            selecionadoresfile << "::::::::::";
+        x++;
+        it2.advance();
+    }
+    selecionadoresfile.close();
+}
+
+BST<Selecionadores> Selecao::getSelecionadores() const {
+    return selecionadores;
+}
+
+void Selecao::updateSelecionadores(BST<Selecionadores> &selecionadores, Convocatoria c) {
+    BSTItrIn<Selecionadores> it(selecionadores);
+    vector<Selecionadores> v;
+    bool pass = false;
+    while(!it.isAtEnd()){
+        if(it.retrieve().getNome() == c.getSelecionador()){
+            pass = true;
+            vector<unsigned int> v1 = it.retrieve().getSelecoes();
+            v1.push_back(c.getId());
+            it.retrieve().setSelecoes(v1);
+        }
+        it.advance();
+    }
 }

@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "Date.h"
+#include "bst.h"
 
 using namespace std;
 /**
@@ -189,7 +190,6 @@ public:
 class EquipaTecnica : public MembroSelecao {
 	string funcao;
 	unsigned int salario;
-	//vector<int> jogos;
 public:
 	/**
 	 * @brief construtor vazio da classe EquipaTecnica
@@ -265,6 +265,23 @@ public:
 /**
  * @brief class exception para futebolistas ja existentes
  */
+
+class Selecionadores : public EquipaTecnica{
+    unsigned int titulosganhos;
+    vector<unsigned int> selecoes;
+public:
+    Selecionadores();
+    Selecionadores(string n, unsigned int tg, vector<unsigned int> sel);
+    Selecionadores(string n, unsigned int tg);
+    unsigned int getTitulosGanhos() const;
+    vector<unsigned int> getSelecoes() const;
+    void setTitulosGanhos(unsigned int t);
+    void setSelecoes(vector<unsigned int> sel);
+    BST<Selecionadores> ReadSelecionadores(BST<Selecionadores> &selecionadores);
+    bool operator < (const Selecionadores &s) const;
+};
+
+
 class JogadorJaExistente {
 public:
     string nome, datanascimento;

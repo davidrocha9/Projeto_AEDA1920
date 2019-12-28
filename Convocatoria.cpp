@@ -13,7 +13,7 @@
 using namespace std;
 
 //Construtores
-Convocatoria::Convocatoria(unsigned int id, unsigned int nrjogos, unsigned int custo, string datai, string dataf, string competicao, vector<Jogo> jogos, vector<Futebolista> jogadoresnaconvocatoria, vector<EquipaTecnica> equipatnaconvocatoria, multimap<Futebolista, bool> condicaofisica, multimap<Futebolista, Date> dataschegada, multimap<Futebolista, Date> dataspartida): id(id), nrjogos(nrjogos), custodiario(custo), datainicial(Date(datai)), datafinal(Date(dataf)), competicao(competicao), jogos(jogos), jogadoresnaconvocatoria(jogadoresnaconvocatoria), equipatnaconvocatoria(equipatnaconvocatoria), condicaofisica(condicaofisica), dataschegada(dataschegada), dataspartida(dataspartida){}
+Convocatoria::Convocatoria(unsigned int id, unsigned int nrjogos, unsigned int custo, string datai, string dataf, string competicao, vector<Jogo> jogos, vector<Futebolista> jogadoresnaconvocatoria, vector<EquipaTecnica> equipatnaconvocatoria, multimap<Futebolista, bool> condicaofisica, multimap<Futebolista, Date> dataschegada, multimap<Futebolista, Date> dataspartida, string selecionador, Date dnselecionador): id(id), nrjogos(nrjogos), custodiario(custo), datainicial(Date(datai)), datafinal(Date(dataf)), competicao(competicao), jogos(jogos), jogadoresnaconvocatoria(jogadoresnaconvocatoria), equipatnaconvocatoria(equipatnaconvocatoria), condicaofisica(condicaofisica), dataschegada(dataschegada), dataspartida(dataspartida), selecionador(selecionador), dnselecionador(dnselecionador){}
 
 //Metodos GET
 unsigned int Convocatoria::getId() const{
@@ -213,9 +213,10 @@ vector<Convocatoria> Convocatoria::ReadConvocatoria(vector<Jogo> jogo){
 				v1 = divideStrings(line);
 				break;
 			case 9:
+			    selecionador = v1.at(0);
 				v2.clear();
 				v2 = divideStrings(line);
-				for (size_t i = 0; i < v1.size(); i++) {
+				for (size_t i = 1; i < v1.size(); i++) {
 					for (EquipaTecnica x : et1.ReadEquipaTecnica()) {
 						if (v1.at(i) == x.getNome() && Date(v2.at(i)) == x.getDataNascimento())
 							etnaconv.push_back(x);
@@ -225,7 +226,7 @@ vector<Convocatoria> Convocatoria::ReadConvocatoria(vector<Jogo> jogo){
 			}
 			index++;
 			if (index == 10) {
-			    Convocatoria c(id, nrjogos, custodiario, datai, dataf, competicao, jogos, jognaconv, etnaconv, condfis, datascheg, dataspart);
+			    Convocatoria c(id, nrjogos, custodiario, datai, dataf, competicao, jogos, jognaconv, etnaconv, condfis, datascheg, dataspart, selecionador, dnselecionador);
 				convocatoria.push_back(c);
 				index = 0;
 				jognaconv.clear(); etnaconv.clear(); condfis.clear(); datascheg.clear(); dataspart.clear();
@@ -262,7 +263,7 @@ void Convocatoria::InformacoesConvocatoria(vector<Convocatoria>& convocatoria) c
     cout << convocatoria.at(opt - 1);
 }
 
-void Convocatoria::AdicionarConvocatoria(vector<Convocatoria>& convocatoria, vector<Futebolista> jogadores, vector<EquipaTecnica> equipatecnica, vector<Jogo> jogo) const{
+Convocatoria Convocatoria::AdicionarConvocatoria(vector<Convocatoria>& convocatoria, vector<Futebolista> jogadores, vector<EquipaTecnica> equipatecnica, vector<Jogo> jogo) const{
     unsigned int id, nrjogos, custo, nrjogadores, aux = 0, nret, opt;
     bool pass;
     string datai, dataf, nome, dn, datac, datap, input, comp;
@@ -324,11 +325,16 @@ void Convocatoria::AdicionarConvocatoria(vector<Convocatoria>& convocatoria, vec
         }
     } while (nrjogadores > jogadores.size());
     do {
-        std::cout << " Numero de membro tecnicos: "; std::cin >> nret;
+        std::cout << " Numero de membro tecnicos (para além do Selecionador): "; std::cin >> nret;
         if (nret > equipatecnica.size()) {
             cout << " Apenas existe(m) " << equipatecnica.size() << " membro(s) na base de dados! Tente novamente." << endl;
         }
     } while (nret > equipatecnica.size());
+    string selecionador;
+    std::cout << " Selecionador: "; std::getline(cin, selecionador);
+    system("cls"); logo();
+    string dnsel;
+    std::cout << " Data de nascimento do selecionador: "; std::getline(cin, dnsel);
 
 
     system("cls"); logo();
@@ -451,8 +457,9 @@ void Convocatoria::AdicionarConvocatoria(vector<Convocatoria>& convocatoria, vec
             cin.ignore(1000, '\n');
         }
     } while (nret != 0 || cin.fail());
-
-    convocatoria.push_back(Convocatoria(id, nrjogos, custo, datai, dataf, comp, jogos, jog, et, condicaof, datasch, dataspa));
+    Convocatoria c = Convocatoria(id, nrjogos, custo, datai, dataf, comp, jogos, jog, et, condicaof, datasch, dataspa, selecionador, dnselecionador);
+    convocatoria.push_back(c);
+    return c;
 }
 
 void Convocatoria::RemoverConvocatoria(vector<Convocatoria>& convocatoria) const {
@@ -645,4 +652,12 @@ ostream& operator<<(ostream& out, Convocatoria& c) {
 	}
 	out << endl;
 	return out;
+}
+
+string Convocatoria::getSelecionador() const {
+    return selecionador;
+}
+
+Date Convocatoria::getDataNascimentoSelecionador() const{
+    return dnselecionador;
 }

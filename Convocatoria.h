@@ -16,8 +16,8 @@ using namespace std;
 class Convocatoria {
 private:
 	unsigned int id, nrjogos, custodiario;
-	string competicao;
-	Date datainicial, datafinal;
+	string competicao, selecionador;
+	Date datainicial, datafinal, dnselecionador;
 	static const unsigned int alojamentoealimentacao = 150;
 	vector<Jogo> jogos;
 	vector<Futebolista> jogadoresnaconvocatoria;
@@ -45,7 +45,7 @@ public:
 	 * @param dataschegada multimap que associa os futebolistas com as respetivas datas de chegada
 	 * @param dataspartida multimap que associa os futebolistas com as respetivas datas de partida
 	 */
-	Convocatoria(unsigned int id, unsigned int nrjogos, unsigned int custo, string datai, string dataf, string competicao, vector<Jogo> jogos, vector<Futebolista> jogadoresnaconvocatoria, vector<EquipaTecnica> equipatnaconvocatoria, multimap<Futebolista, bool> condicaofisica, multimap<Futebolista, Date> dataschegada, multimap<Futebolista, Date> dataspartida);
+	Convocatoria(unsigned int id, unsigned int nrjogos, unsigned int custo, string datai, string dataf, string competicao, vector<Jogo> jogos, vector<Futebolista> jogadoresnaconvocatoria, vector<EquipaTecnica> equipatnaconvocatoria, multimap<Futebolista, bool> condicaofisica, multimap<Futebolista, Date> dataschegada, multimap<Futebolista, Date> dataspartida, string selecionador, Date dnselecionador);
 	/**
 	 * @brief destrutor da classe Convocatoria
 	 */
@@ -103,6 +103,8 @@ public:
 	 * @brief retorna um vector da classe EquipaTecnica com os membros tecnicos da convocatoria
 	 * @return vector da classe EquipaTecnica com os membros tecnicos da convocatoria
 	 */
+	string getSelecionador() const;
+	Date getDataNascimentoSelecionador() const;
 	vector<EquipaTecnica> getEquipaTecnica();
 	/**
 	 * @brief retorna um multimap que associa um futebolista à sua condicao fisica (lesionado ou nao)
@@ -191,7 +193,7 @@ public:
 	 * @param equipatecnica vector da classe EquipaTecnica com todos os membros tecnicos existentes
 	 * @param jogo vector da classe Jogo com todos os jogos existentes
 	 */
-	void AdicionarConvocatoria(vector<Convocatoria>& convocatoria, vector<Futebolista> jogadores, vector<EquipaTecnica> equipatecnica, vector<Jogo> jogo) const;
+	Convocatoria AdicionarConvocatoria(vector<Convocatoria>& convocatoria, vector<Futebolista> jogadores, vector<EquipaTecnica> equipatecnica, vector<Jogo> jogo) const;
 	/**
 	 * @brief remove uma convocatoria do vector das convocatorias
 	 * @param convocatoria vector da classe Convocatoria com todas as convocatorias existentes
