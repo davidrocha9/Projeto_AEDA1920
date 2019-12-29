@@ -186,6 +186,10 @@ void mainMenu(Selecao& selecao) {
                         break;
                     case(2):
                         system("cls"); logo();
+                        c.setSelecionador("Fernando Santos");
+                        c.setId(5);
+                        selecao.updateSelecionadores(selecionadores, c);
+                        selecao.SelecionadorestoFile(selecionadores);
                         try {
                             c = c1.AdicionarConvocatoria(convocatorias, jogadores, equipatecnica, jogos);
                         }
@@ -193,6 +197,7 @@ void mainMenu(Selecao& selecao) {
                             cout << "Ja existe uma convocatoria com este ID!";
                         }
                         selecao.updateSelecionadores(selecionadores, c);
+                        selecao.SelecionadorestoFile(selecionadores);
                         selecao.ConvocatoriatoFile(convocatorias);
                         break;
                     case(3):

@@ -374,7 +374,7 @@ void Selecao::FornecedorestoFile(priority_queue<Fornecedores> fornecedores){
 void Selecao::SelecionadorestoFile(BST<Selecionadores> selecionadores){
     ofstream selecionadoresfile;
     selecionadoresfile.open("../selecionadores.txt");
-    int size;
+    int size = 0;
     BSTItrIn<Selecionadores> it(selecionadores);
     while(!it.isAtEnd()){
         size++;
@@ -382,19 +382,20 @@ void Selecao::SelecionadorestoFile(BST<Selecionadores> selecionadores){
     }
     if (selecionadoresfile.fail())
         cerr << "Error Opening File" << endl;
-    int x = 0;
+    int x = 1;
+    cout << size << endl;
     BSTItrIn<Selecionadores> it2(selecionadores);
     while(!it2.isAtEnd()){
-        selecionadoresfile << it.retrieve().getNome() << " | " << it.retrieve().getTitulosGanhos();
-        vector<unsigned int> v1 = it.retrieve().getSelecoes();
+        selecionadoresfile << it2.retrieve().getNome() << " | " << it2.retrieve().getTitulosGanhos() << endl;
+        vector<unsigned int> v1 = it2.retrieve().getSelecoes();
         for (size_t y = 0; y < v1.size(); y++){
             selecionadoresfile << v1.at(y);
             if (y < v1.size()-1)
                 selecionadoresfile << " | ";
         }
-        selecionadoresfile << endl;
+        cout << x << endl;
         if (x < size)
-            selecionadoresfile << "::::::::::";
+            selecionadoresfile << endl;
         x++;
         it2.advance();
     }

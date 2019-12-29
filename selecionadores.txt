@@ -1,8 +1,8 @@
-Fernando Santos | 10
-1 | 2
-Paulo Bento | 13
-1
 David Rocha | 17
 1
 Tomas Mendes | 17
 1
+Paulo Bento | 13
+1
+Fernando Santos | 10
+1 | 2

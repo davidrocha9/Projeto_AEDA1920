@@ -89,6 +89,7 @@ public:
 	 * @return string com a competicao da convocatoria
 	 */
 	string getCompeticao() const;
+	string getSelecionador() const;
 	/**
 	 * @brief retorna um vector da classe Jogo com os jogos da convocatoria
 	 * @return vector da classe Jogo com os jogos da convocatoria
@@ -103,7 +104,6 @@ public:
 	 * @brief retorna um vector da classe EquipaTecnica com os membros tecnicos da convocatoria
 	 * @return vector da classe EquipaTecnica com os membros tecnicos da convocatoria
 	 */
-	string getSelecionador() const;
 	Date getDataNascimentoSelecionador() const;
 	vector<EquipaTecnica> getEquipaTecnica();
 	/**
@@ -153,6 +153,7 @@ public:
 	 * @param comp string como o nome da competicao da convocatoria
 	 */
 	void setCompeticao(string comp);
+	void setSelecionador(string s);
 	/**
 	 * @brief altera os jogos da convocatoria
 	 * @param jogos vector da classe Jogo com os jogos da convocatoria

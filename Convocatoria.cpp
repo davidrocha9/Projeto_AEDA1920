@@ -661,3 +661,7 @@ string Convocatoria::getSelecionador() const {
 Date Convocatoria::getDataNascimentoSelecionador() const{
     return dnselecionador;
 }
+
+void Convocatoria::setSelecionador(string s) {
+    selecionador = s;
+}
