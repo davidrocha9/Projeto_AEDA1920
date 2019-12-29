@@ -216,6 +216,7 @@ vector<Convocatoria> Convocatoria::ReadConvocatoria(vector<Jogo> jogo){
 			    selecionador = v1.at(0);
 				v2.clear();
 				v2 = divideStrings(line);
+				dnselecionador = v2.at(0);
 				for (size_t i = 1; i < v1.size(); i++) {
 					for (EquipaTecnica x : et1.ReadEquipaTecnica()) {
 						if (v1.at(i) == x.getNome() && Date(v2.at(i)) == x.getDataNascimento())
@@ -263,7 +264,7 @@ void Convocatoria::InformacoesConvocatoria(vector<Convocatoria>& convocatoria) c
     cout << convocatoria.at(opt - 1);
 }
 
-Convocatoria Convocatoria::AdicionarConvocatoria(vector<Convocatoria>& convocatoria, vector<Futebolista> jogadores, vector<EquipaTecnica> equipatecnica, vector<Jogo> jogo) const{
+Convocatoria Convocatoria::AdicionarConvocatoria(vector<Convocatoria>& convocatoria, vector<Futebolista> jogadores, vector<EquipaTecnica> equipatecnica, vector<Jogo> jogo) const   {
     unsigned int id, nrjogos, custo, nrjogadores, aux = 0, nret, opt;
     bool pass;
     string datai, dataf, nome, dn, datac, datap, input, comp;
@@ -325,18 +326,23 @@ Convocatoria Convocatoria::AdicionarConvocatoria(vector<Convocatoria>& convocato
         }
     } while (nrjogadores > jogadores.size());
     do {
-        std::cout << " Numero de membro tecnicos (para além do Selecionador): "; std::cin >> nret;
+        cin.clear();
+        cin.ignore(1000, '\n');
+        std::cout << " Numero de membro tecnicos (para alem do Selecionador): "; std::cin >> nret;
         if (nret > equipatecnica.size()) {
             cout << " Apenas existe(m) " << equipatecnica.size() << " membro(s) na base de dados! Tente novamente." << endl;
         }
     } while (nret > equipatecnica.size());
+    cin.clear();
+    cin.ignore(1000, '\n');
     string selecionador;
     std::cout << " Selecionador: "; std::getline(cin, selecionador);
     system("cls"); logo();
+    cin.clear();
     string dnsel;
     std::cout << " Data de nascimento do selecionador: "; std::getline(cin, dnsel);
 
-
+    cin.clear();
     system("cls"); logo();
     std::cout  << " Lista de jogos disponiveis: " << endl << endl;
     aux = 0;
@@ -457,7 +463,7 @@ Convocatoria Convocatoria::AdicionarConvocatoria(vector<Convocatoria>& convocato
             cin.ignore(1000, '\n');
         }
     } while (nret != 0 || cin.fail());
-    Convocatoria c = Convocatoria(id, nrjogos, custo, datai, dataf, comp, jogos, jog, et, condicaof, datasch, dataspa, selecionador, dnselecionador);
+    Convocatoria c = Convocatoria(id, nrjogos, custo, datai, dataf, comp, jogos, jog, et, condicaof, datasch, dataspa, selecionador, dnsel);
     convocatoria.push_back(c);
     return c;
 }

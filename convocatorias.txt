@@ -8,9 +8,9 @@ Nelson Cabral Semedo | Cristiano Ronaldo dos Santos Aveiro | Bruno Miguel Borges
 10/11/2019 | 02/11/2019 | 04/11/2019 | 02/11/2019
 Fernando Santos | Ilidio Vale | Joao Vieira Pinto | Emilio Peixe
 10/10/1954 | 13/12/1957 | 19/08/1971 | 16/01/1973
-2 | 9 | 400 | 26/11/2019 | 05/12/2019 | qualificacao2
-Inglaterra | Franca | Inglaterra | Franca | Inglaterra | Franca | Inglaterra | Franca | Espanha
-28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 23/11/2019
+2 | 15 | 400 | 26/11/2019 | 05/12/2019 | qualificacao2
+Inglaterra | Franca | Inglaterra | Franca | Inglaterra | Franca | Inglaterra | Franca | Inglaterra | Franca | Inglaterra | Franca | Inglaterra | Franca | Espanha
+28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 23/11/2019
 Cristiano Ronaldo dos Santos Aveiro | Bruno Miguel Borges Fernandes | Bernardo Mota Veiga de Carvalho e Silva
 05/02/1985 | 08/09/1994 | 15/10/2000
 1 | 0 | 0
@@ -18,3 +18,23 @@ Cristiano Ronaldo dos Santos Aveiro | Bruno Miguel Borges Fernandes | Bernardo M
 28/11/2019 | 28/11/2019 | 28/11/2019
 Joao Vieira Pinto | Emilio Peixe | Fernanda Meireles | Bernardo Moreira
 19/08/1971 | 16/01/1973 | 06/07/1990 | 09/05/1967
+6 | 16 | 100 | 10/10/2010 | 10/10/2020 | qatar
+Inglaterra | Franca | Inglaterra | Franca | Inglaterra | Franca | Inglaterra | Franca | Inglaterra | Franca | Inglaterra | Franca | Inglaterra | Franca | Espanha | Inglaterra
+28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 28/11/2019 | 25/11/2019 | 23/11/2019 | 28/11/2019
+Cristiano Ronaldo dos Santos Aveiro
+05/02/1985
+0
+10/11/2010
+10/11/2010
+Fernando Santos | Ilidio Vale
+10/10/1954 | 13/12/1957
+10 | 1 | 100 | 10/10/2010 | 11/11/2011 | mundial qatar
+Inglaterra
+28/11/2019
+Cristiano Ronaldo dos Santos Aveiro
+05/02/1985
+0
+10/11/2010
+10/11/2010
+Fernando Santos | Ilidio Vale
+00/00/0000 | 13/12/1957

@@ -45,6 +45,8 @@ void mainMenu(Selecao& selecao) {
     BST<Selecionadores> selecionadores = selecao.getSelecionadores();
     BSTItrIn<Selecionadores> it(selecionadores);
     Convocatoria c;
+    string nometemp;
+    BSTItrIn<Selecionadores> it2(selecionadores);
     do {
         logo();
         cout << " 1 - Gerir Jogadores" << endl;
@@ -134,7 +136,14 @@ void mainMenu(Selecao& selecao) {
                 switch (opt) {
                     case(1):
                         system("cls"); logo();
-                        et1.InformacoesTecnico(equipatecnica);
+                        nometemp = et1.InformacoesTecnico(equipatecnica);
+                        while(!it2.isAtEnd()){
+                            if(it2.retrieve().getNome() == nometemp){
+                                cout << endl << " Numero de titulos ganhos: " << it2.retrieve().getTitulosGanhos();
+                                break;
+                            }
+                            it2.advance();
+                        }
                         break;
                     case(2):
                         system("cls"); logo();
@@ -186,10 +195,6 @@ void mainMenu(Selecao& selecao) {
                         break;
                     case(2):
                         system("cls"); logo();
-                        c.setSelecionador("Fernando Santos");
-                        c.setId(5);
-                        selecao.updateSelecionadores(selecionadores, c);
-                        selecao.SelecionadorestoFile(selecionadores);
                         try {
                             c = c1.AdicionarConvocatoria(convocatorias, jogadores, equipatecnica, jogos);
                         }

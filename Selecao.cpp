@@ -383,7 +383,6 @@ void Selecao::SelecionadorestoFile(BST<Selecionadores> selecionadores){
     if (selecionadoresfile.fail())
         cerr << "Error Opening File" << endl;
     int x = 1;
-    cout << size << endl;
     BSTItrIn<Selecionadores> it2(selecionadores);
     while(!it2.isAtEnd()){
         selecionadoresfile << it2.retrieve().getNome() << " | " << it2.retrieve().getTitulosGanhos() << endl;
@@ -393,7 +392,6 @@ void Selecao::SelecionadorestoFile(BST<Selecionadores> selecionadores){
             if (y < v1.size()-1)
                 selecionadoresfile << " | ";
         }
-        cout << x << endl;
         if (x < size)
             selecionadoresfile << endl;
         x++;

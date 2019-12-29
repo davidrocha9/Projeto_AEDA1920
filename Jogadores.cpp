@@ -576,7 +576,7 @@ void EquipaTecnica::RemoverTecnico(vector<EquipaTecnica>& equipatecnica) const{
     std::cout << endl << "Membro tecnico removido com sucesso!" << endl << endl;
 }
 
-void EquipaTecnica::InformacoesTecnico(vector<EquipaTecnica>& equipatecnica) const {
+string EquipaTecnica::InformacoesTecnico(vector<EquipaTecnica>& equipatecnica) const {
     string line;
     unsigned int opt;
     int i = 1;
@@ -604,7 +604,8 @@ void EquipaTecnica::InformacoesTecnico(vector<EquipaTecnica>& equipatecnica) con
         }
     } while (opt < 1 || opt > equipatecnica.size());
     system("cls"); logo();
-    cout << equipatecnica.at(opt - 1) << endl;
+    cout << equipatecnica.at(opt-1);
+    return equipatecnica.at(opt-1).getNome();
 }
 
 void EquipaTecnica::EditarTecnico(vector<EquipaTecnica>& equipatecnica) const{

@@ -255,7 +255,7 @@ public:
 	 * @brief mostra as informacoes de um membro tecnico do vector da classe EquipaTecnica
 	 * @param equipatecnica vector da classe EquipaTecnica com todos os membros tecnicos que ja estiveram presentes na selecao
 	 */
-	void InformacoesTecnico(vector<EquipaTecnica>& equipatecnica) const;
+	string InformacoesTecnico(vector<EquipaTecnica>& equipatecnica) const;
 	/**
 	 * @brief editar as informacoes de um membro tecnico do vector da classe EquipaTecnica
 	 * @param equipatecnica vector da classe EquipaTecnica com todos os membros tecnicos que ja estiveram presentes na selecao

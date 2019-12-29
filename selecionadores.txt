@@ -5,4 +5,4 @@ Tomas Mendes | 17
 Paulo Bento | 13
 1
 Fernando Santos | 10
-1 | 2
+1 | 2 | 5 | 6 | 10
