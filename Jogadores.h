@@ -53,7 +53,7 @@ public:
 	  * @brief altera o valor da data de nascimento de um membro da selecao
 	  * @param dn data de nascimento de um membro da selecao
 	  */
-	 void setDataNascimento(string dn);
+	 void setDataNascimento(Date dn);
 
 	 //Outros metodos
 	 /**
@@ -245,7 +245,7 @@ public:
 	 * @brief adiciona um membro tecnico ao vector da classe EquipaTecnica
 	 * @param equipatecnica vector da classe EquipaTecnica com todos os membros tecnicos que ja estiveram presentes na selecao
 	 */
-	void AdicionarTecnico(vector<EquipaTecnica>& equipatecnica) const;
+	EquipaTecnica AdicionarTecnico(vector<EquipaTecnica>& equipatecnica) const;
 	/**
 	 * @brief remove um membro tecnico do vector da classe EquipaTecnica
 	 * @param equipatecnica vector da classe EquipaTecnica com todos os membros tecnicos que ja estiveram presentes na selecao

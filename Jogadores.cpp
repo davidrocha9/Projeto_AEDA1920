@@ -34,7 +34,7 @@ void MembroSelecao::setNome(string n){
 	nome = n;
 }
 
-void MembroSelecao::setDataNascimento(string dn){
+void MembroSelecao::setDataNascimento(Date dn){
 	datanascimento = dn;
 }
 
@@ -154,7 +154,8 @@ vector<Futebolista> Futebolista::ReadJogadores() {
 				index++;
 			}
 			Futebolista f(nome, dn, posicao, clube, peso, altura, valorpasse);
-			fv.push_back(f);
+			if (info.size() == 7)
+			    fv.push_back(f);
 		}
 	}
 	jogadoresfile.close();
@@ -450,14 +451,15 @@ vector<EquipaTecnica> EquipaTecnica::ReadEquipaTecnica(){
 				}
 			}
 			EquipaTecnica et1(nome, dn, funcao, salario);
-			et.push_back(et1);
+			if (info.size() == 4)
+			    et.push_back(et1);
 		}
 	}
 	etfile.close();
 	return et;
 }
 
-void EquipaTecnica::AdicionarTecnico(vector<EquipaTecnica>& equipatecnica) const{
+EquipaTecnica EquipaTecnica::AdicionarTecnico(vector<EquipaTecnica>& equipatecnica) const{
     string n, nome1, nome2, dn, input, f;
     unsigned int s, opt;
     std::cin.ignore();
@@ -544,6 +546,7 @@ void EquipaTecnica::AdicionarTecnico(vector<EquipaTecnica>& equipatecnica) const
     std::cout << endl;
     EquipaTecnica newet(n, dn, f, s);
     equipatecnica.push_back(newet);
+    return newet;
 }
 
 void EquipaTecnica::RemoverTecnico(vector<EquipaTecnica>& equipatecnica) const{
@@ -584,12 +587,12 @@ string EquipaTecnica::InformacoesTecnico(vector<EquipaTecnica>& equipatecnica) c
     std::cin.clear();
     cout << " Lista de membros tecnicos disponiveis: " << endl << endl;
     int aux = 0;
-
+    cout << " ";
     for (size_t x = 0; x < equipatecnica.size(); x++) {
         cout << "[" << x + 1 << "]" << setfill(' ') << setw(18) << equipatecnica.at(x).getNome() << "   ";
         if (aux == 2) {
             aux = -1;
-            cout << endl;
+            cout << endl << " ";
         }
         aux++;
     }

@@ -4,3 +4,4 @@ Joao Vieira Pinto | 19/08/1971 | Diretor | 2000
 Emilio Peixe | 16/01/1973 | Treinador Adjunto | 1000
 Fernanda Meireles | 06/07/1990 | Departamento Medico | 500
 Bernardo Moreira | 09/05/1967 | Medico Principal | 1500
+Scolari | 01/01/1961 | Selecionador Nacional | 15000

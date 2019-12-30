@@ -5,6 +5,7 @@
 #include "Utils.h"
 #include "Estatistica.h"
 #include "Equipamentos.h"
+#include <iomanip>
 #include <queue>
 
 using namespace std;
@@ -32,20 +33,25 @@ bool changeReturn(bool& return_menu) {
 void mainMenu(Selecao& selecao) {
     bool return_menu = true;
     Futebolista f1;
-    EquipaTecnica et1;
-    Selecionadores s1;
+    EquipaTecnica et1, ettemp;
+    Selecionadores s1, stemp;
     Convocatoria c1;
     Jogo j1, j;
     Fornecedores for1;
+    vector<MembroSelecao> membros;
     vector<Futebolista> jogadores = selecao.getJogadores();
     vector<EquipaTecnica> equipatecnica = selecao.getEquipaTecnica();
     vector<Convocatoria> convocatorias = selecao.getConvocatorias();
+    for (auto x: jogadores)
+        membros.push_back(x);
+    for (auto x: equipatecnica)
+        membros.push_back(x);
     vector<Jogo> jogos = selecao.getJogos();
     priority_queue<Fornecedores> fornecedores = selecao.getFornecedores();
     BST<Selecionadores> selecionadores = selecao.getSelecionadores();
     BSTItrIn<Selecionadores> it(selecionadores);
     Convocatoria c;
-    string nometemp;
+    string nometemp = "";
     BSTItrIn<Selecionadores> it2(selecionadores);
     do {
         logo();
@@ -54,7 +60,7 @@ void mainMenu(Selecao& selecao) {
         cout << " 3 - Gerir Convocatorias" << endl;
         cout << " 4 - Gerir Jogos" << endl;
         cout << " 5 - Estatisicas da Selecao" << endl;
-        cout << " 6 - Venda de Equipamentos" << endl;
+        cout << " 6 - Venda de Equipamentos" << setfill(' ') << setw(40) << "Numero de membros atualmente: " << membros.size() << endl;
         unsigned int opt = 0;
         cout << endl;
         do {
@@ -148,10 +154,19 @@ void mainMenu(Selecao& selecao) {
                     case(2):
                         system("cls"); logo();
                         try {
-                            et1.AdicionarTecnico(equipatecnica);
+                            ettemp = et1.AdicionarTecnico(equipatecnica);
                         }
                         catch (MembroTecnicoJaExistente mt) {
                             cout << endl << "Ja existe um membro tecnico com este nome e data de nascimento!";
+                        }
+                        if (ettemp.getFuncao() == "Selecionador Nacional"){
+                            stemp.setNome(ettemp.getNome());
+                            stemp.setDataNascimento((ettemp.getDataNascimento()));
+                            stemp.setFuncao(ettemp.getFuncao());
+                            stemp.setSalario(ettemp.getSalario());
+                            stemp.setTitulosGanhos(0);
+                            selecionadores.insert(stemp);
+                            selecao.SelecionadorestoFile(selecionadores);
                         }
                         selecao.EquipaTecnicatoFile(equipatecnica);
                         break;

@@ -387,6 +387,8 @@ void Selecao::SelecionadorestoFile(BST<Selecionadores> selecionadores){
     while(!it2.isAtEnd()){
         selecionadoresfile << it2.retrieve().getNome() << " | " << it2.retrieve().getTitulosGanhos() << endl;
         vector<unsigned int> v1 = it2.retrieve().getSelecoes();
+        if (v1.empty())
+            selecionadoresfile << "0";
         for (size_t y = 0; y < v1.size(); y++){
             selecionadoresfile << v1.at(y);
             if (y < v1.size()-1)
