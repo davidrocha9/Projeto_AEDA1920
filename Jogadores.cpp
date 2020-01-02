@@ -38,7 +38,14 @@ void MembroSelecao::setDataNascimento(Date dn){
 	datanascimento = dn;
 }
 
-void MembroSelecao::Info() const{
+void MembroSelecao::Info(MembroSelecao *m) const{
+    Futebolista *f = dynamic_cast<Futebolista*>(m);
+    EquipaTecnica *et = dynamic_cast<EquipaTecnica*>(m);
+    if (f != nullptr)
+        cout << *f;
+    else if (et != nullptr) {
+        cout << *et;
+    }
 }
 
 
@@ -46,7 +53,6 @@ void MembroSelecao::Info() const{
 ////////////////////
 /// Futebolista ////
 ////////////////////
-
 Futebolista::Futebolista(){
 	altura = 0;
 	peso = 0;
@@ -291,7 +297,7 @@ void Futebolista::InformacoesJogador(vector<Futebolista> &jogadores) const{
         }
     } while (opt < 1 || opt > jogadores.size());
     std::system("cls"); logo();
-    cout << jogadores.at(opt - 1);
+    Info(&jogadores.at(opt - 1));
 }
 
 void Futebolista::EditarJogador(vector<Futebolista>& jogadores) const {
@@ -607,7 +613,7 @@ string EquipaTecnica::InformacoesTecnico(vector<EquipaTecnica>& equipatecnica) c
         }
     } while (opt < 1 || opt > equipatecnica.size());
     system("cls"); logo();
-    cout << equipatecnica.at(opt-1);
+    Info(&equipatecnica.at(opt-1));
     return equipatecnica.at(opt-1).getNome();
 }
 
@@ -841,11 +847,11 @@ Selecionadores::Selecionadores(string n, unsigned int tg) {
     titulosganhos = tg;
 }
 
-ostream &operator<<(ostream &out, const Selecionadores &s) {
+ostream &operator<<(ostream &out, const Selecionadores& s) {
     out << " Nome: " << s.getNome() << endl;
     out << " Data de Nascimento: " << s.getDataNascimento() << endl;
     out << " Salario:" << s.getSalario() << endl;
     out << " Titulos Ganhos: " << s.getTitulosGanhos() << endl;
     out << " Numero de Convocatorias: " << s.getSelecoes().size();
     return out;
-};
+}

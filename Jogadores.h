@@ -59,7 +59,7 @@ public:
 	 /**
 	  * @brief mostra a informacao de um membro da selecao
 	  */
-	 virtual void Info() const;
+	 virtual void Info(MembroSelecao *m) const;
 };
 /**
  * @brief classe relativa aos futebolistas
