@@ -53,6 +53,12 @@ void mainMenu(Selecao& selecao) {
     Convocatoria c;
     string nometemp = "";
     BSTItrIn<Selecionadores> it2(selecionadores);
+
+    BSTItrLevel<Selecionadores> itnivel(selecionadores);
+    BSTItrPre<Selecionadores> itpre(selecionadores);
+    BSTItrPost<Selecionadores> itpost(selecionadores);
+
+    int size = 0, index = 0;
     do {
         logo();
         cout << " 1 - Gerir Jogadores" << endl;
@@ -60,17 +66,18 @@ void mainMenu(Selecao& selecao) {
         cout << " 3 - Gerir Convocatorias" << endl;
         cout << " 4 - Gerir Jogos" << endl;
         cout << " 5 - Estatisicas da Selecao" << endl;
-        cout << " 6 - Venda de Equipamentos" << setfill(' ') << setw(40) << "Numero de membros atualmente: " << membros.size() << endl;
+        cout << " 6 - Venda de Equipamentos" << endl;
+        cout << " 7 - Pesquisa de Selecionadores" << setfill(' ') << setw(40) << "Numero de membros atualmente: " << membros.size() << endl;
         unsigned int opt = 0;
         cout << endl;
         do {
             cout << "Introduza uma opcao: "; cin >> opt;
-            if (opt < 1 || opt > 6 || cin.fail()) {
+            if (opt < 1 || opt > 7 || cin.fail()) {
                 cin.clear();
-                cout << "Opcao invalida! Introduza um numero entre 1 e 6." << endl;
+                cout << "Opcao invalida! Introduza um numero entre 1 e 7." << endl;
                 cin.ignore(1000, '\n');
             }
-        } while (opt < 1 || opt > 6 || cin.fail());
+        } while (opt < 1 || opt > 7 || cin.fail());
         cin.ignore(1000, '\n');
 
         switch (opt) {
@@ -291,15 +298,16 @@ void mainMenu(Selecao& selecao) {
                 cout << " 1 - Estatisticas Individuais" << endl;
                 cout << " 2 - Estatisiticas Coletivas" << endl;
                 cout << " 3 - Custo Individual" << endl;
-                cout << " 4 - Custo Coletivo" << endl;
-                cout << " 5 - Voltar ao Menu Principal" << endl;
+                cout << " 4 - Custo Coletivo da Equipa" << endl;
+                cout << " 5 - Custo Coletivo da Selecao" << endl;
+                cout << " 6 - Voltar ao Menu Principal" << endl;
                 cout << endl;
                 opt = 0;
                 do {
                     cout << "Introduza uma opcao: "; cin >> opt;
-                    if (opt < 1 || opt > 5 || cin.fail()) {
+                    if (opt < 1 || opt > 6 || cin.fail()) {
                         cin.clear();
-                        cout << "Opcao invalida! Introduza um numero entre 1 e 5." << endl;
+                        cout << "Opcao invalida! Introduza um numero entre 1 e 6." << endl;
                         cin.ignore(1000, '\n');
                     }
                 } while (opt < 1 || opt > 5 || cin.fail());
@@ -324,6 +332,10 @@ void mainMenu(Selecao& selecao) {
                     case 5:
                         system("cls"); logo();
                         CustoGeralMesTudo(jogadores, jogos, convocatorias, equipatecnica);
+                        break;
+                    case 6:
+                        system("cls");
+                        mainMenu(selecao);
                         break;
                 }
                 break;
@@ -356,6 +368,82 @@ void mainMenu(Selecao& selecao) {
                             cout << endl << "Nao existe fornecedor para este tipo de equipamento!";
                         }
                         selecao.FornecedorestoFile(fornecedores);
+                        break;
+                }
+                break;
+            case 7:
+                system("cls"); logo();
+                cout << " 1 - Mostrar Selecionadores em Ordem" << endl;
+                cout << " 2 - Mostrar Selecionadorees em Nivel" << endl;
+                cout << " 3 - Mostrar Selecionadorees em Pre-Ordem" << endl;
+                cout << " 4 - Mostrar Selecionadorees em Pos-Ordem" << endl;
+                cout << endl;
+                opt = 0;
+                do {
+                    cout << "Introduza uma opcao: "; cin >> opt;
+                    if (opt < 1 || opt > 4 || cin.fail()) {
+                        cin.clear();
+                        cout << "Opcao invalida! Introduza um numero entre 1 e 4." << endl;
+                        cin.ignore(1000, '\n');
+                    }
+                } while (opt < 1 || opt > 4 || cin.fail());
+                system("cls"); logo();
+                switch (opt) {
+                    case 1:
+                        system("cls"); logo();
+                        while(!it2.isAtEnd()){
+                            size++;
+                            it2.advance();
+                        }
+                        while(!it.isAtEnd()){
+                            cout << it.retrieve();
+                            index++;
+                            if (index < size)
+                                cout << endl << endl << " -----------------------" << endl << endl;
+                            it.advance();
+                        }
+                        break;
+                    case 2:
+                        system("cls"); logo();
+                        while(!it2.isAtEnd()){
+                            size++;
+                            it2.advance();
+                        }
+                        while(!itnivel.isAtEnd()){
+                            cout << itnivel.retrieve();
+                            index++;
+                            if (index < size)
+                                cout << endl << endl << " -----------------------" << endl << endl;
+                            itnivel.advance();
+                        }
+                        break;
+                    case 3:
+                        system("cls"); logo();
+                        while(!it2.isAtEnd()){
+                            size++;
+                            it2.advance();
+                        }
+                        while(!itpre.isAtEnd()){
+                            cout << itpre.retrieve();
+                            index++;
+                            if (index < size)
+                                cout << endl << endl << " -----------------------" << endl << endl;
+                            itpre.advance();
+                        }
+                        break;
+                    case 4:
+                        system("cls"); logo();
+                        while(!it2.isAtEnd()){
+                            size++;
+                            it2.advance();
+                        }
+                        while(!itpre.isAtEnd()){
+                            cout << itpre.retrieve();
+                            index++;
+                            if (index < size)
+                                cout << endl << endl << " -----------------------" << endl << endl;
+                            itpre.advance();
+                        }
                         break;
                 }
                 break;

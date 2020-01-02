@@ -1,10 +1,6 @@
-David Rocha | 17
+David Rocha | 09/05/2000 | 1000 | 17
 1
-Tomas Mendes | 17
-1
-Paulo Bento | 13
-1
-Fernando Santos | 10
-1 | 2 | 5 | 6 | 10
-Scolari | 0
-0
+Tomas mendes | 09/05/2000 | 1000 | 17
+1 | 2
+Ronaldo | 09/05/2000 | 1000 | 17
+1 | 2

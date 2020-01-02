@@ -188,6 +188,7 @@ public:
  * @brief class relativa a Equipa Tecnica
  */
 class EquipaTecnica : public MembroSelecao {
+protected:
 	string funcao;
 	unsigned int salario;
 public:
@@ -271,7 +272,7 @@ class Selecionadores : public EquipaTecnica{
     vector<unsigned int> selecoes;
 public:
     Selecionadores();
-    Selecionadores(string n, unsigned int tg, vector<unsigned int> sel);
+    Selecionadores(string n, string dn, string f, unsigned int s, unsigned int tg, vector<unsigned int> sel);
     Selecionadores(string n, unsigned int tg);
     unsigned int getTitulosGanhos() const;
     vector<unsigned int> getSelecoes() const;
@@ -279,6 +280,7 @@ public:
     void setSelecoes(vector<unsigned int> sel);
     BST<Selecionadores> ReadSelecionadores(BST<Selecionadores> &selecionadores);
     bool operator < (const Selecionadores &s) const;
+    friend ostream& operator<<(ostream& out, const Selecionadores& s);
 };
 
 

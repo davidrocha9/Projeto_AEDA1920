@@ -763,8 +763,7 @@ ostream& operator<<(ostream& out, const EquipaTecnica& et) {
 Selecionadores::Selecionadores() {
 }
 
-Selecionadores::Selecionadores(string n, unsigned int tg, vector<unsigned int> sel){
-    nome = n;
+Selecionadores::Selecionadores(string n, string dn, string f, unsigned int s, unsigned int tg, vector<unsigned int> sel): EquipaTecnica(n, dn, f, s){
     titulosganhos = tg;
     selecoes = sel;
 }
@@ -801,7 +800,7 @@ BST<Selecionadores> Selecionadores::ReadSelecionadores(BST<Selecionadores> &sele
         cout << "Error Opening File. Try again!" << endl;		// while opening the file
     }
     else {
-        string line;
+        string line, dn;
         vector<string> info;
         while (!selfile.eof()) {		// going through the file
             std::getline(selfile, line);
@@ -812,6 +811,11 @@ BST<Selecionadores> Selecionadores::ReadSelecionadores(BST<Selecionadores> &sele
                         nome = info.at(x);
                         break;
                     case 1:
+                        dn = info.at(x);
+                        break;
+                    case 2:
+                        salario = stoi(info.at(x));
+                    case 3:
                         titulosganhos = stoi(info.at(x));
                         break;
                     default:
@@ -823,7 +827,8 @@ BST<Selecionadores> Selecionadores::ReadSelecionadores(BST<Selecionadores> &sele
             selecoes.clear();
             for (auto x: info)
                 selecoes.push_back(stoi(x));
-            Selecionadores s(nome, titulosganhos, selecoes);
+            funcao = "Selecionador Nacional";
+            Selecionadores s(nome, dn, funcao, salario, titulosganhos, selecoes);
             selecionadores.insert(s);
         }
     }
@@ -834,4 +839,13 @@ BST<Selecionadores> Selecionadores::ReadSelecionadores(BST<Selecionadores> &sele
 Selecionadores::Selecionadores(string n, unsigned int tg) {
     nome = n;
     titulosganhos = tg;
+}
+
+ostream &operator<<(ostream &out, const Selecionadores &s) {
+    out << " Nome: " << s.getNome() << endl;
+    out << " Data de Nascimento: " << s.getDataNascimento() << endl;
+    out << " Salario:" << s.getSalario() << endl;
+    out << " Titulos Ganhos: " << s.getTitulosGanhos() << endl;
+    out << " Numero de Convocatorias: " << s.getSelecoes().size();
+    return out;
 };
