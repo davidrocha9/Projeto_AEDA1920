@@ -13,8 +13,6 @@
 
 using namespace std;
 
-
-
 void EstatisticaJogador(vector<Futebolista>& jogadores, vector<Jogo>& jogos, vector<Convocatoria>& convocatoria) {
     string line;
     Futebolista nome;

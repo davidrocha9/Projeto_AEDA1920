@@ -787,6 +787,10 @@ bool EquipaTecnica::operator==(const EquipaTecnica &et) const {
     return (nome == et.getNome() && datanascimento == et.getDataNascimento());
 }
 
+bool EquipaTecnica::operator < (const EquipaTecnica &et) const{
+    return (nome < et.getNome());
+}
+
 ////////////////////////
 //// Selecionadores ////
 ////////////////////////

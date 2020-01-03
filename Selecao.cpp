@@ -11,6 +11,17 @@ using namespace std;
 // Membro Selecao //
 ////////////////////
 
+int BinarySearch(const vector<EquipaTecnica> &v, EquipaTecnica x) {
+    int left = 0;
+    int right = v.size() - 1;
+    while (left <= right) {
+        int mid = (left + right) / 2;
+        if (v.at(mid) < x) left = mid + 1;
+        else if (x < v.at(mid)) right = mid - 1;
+        else return mid;
+    }
+    return -1;
+}
 
 //Construtores e Destrutores
 Selecao::Selecao() : selecionadores(Selecionadores("",0)){
@@ -170,8 +181,9 @@ void Selecao::ConvocatoriatoFile(vector<Convocatoria> conv) {
 			if (z != x.getEquipaTecnica().size() - 1)
 				convfile << " | ";
 		}
-		if (auxconvocatoria != conv.size() - 1)
-			convfile << endl;
+		if (auxconvocatoria != conv.size() - 1) {
+            convfile << endl << "::::::::::" << endl;
+        }
 		auxconvocatoria++;
 	}
 	convfile.close();
@@ -517,7 +529,7 @@ void Selecao::ContratarFuncionario(vector<Convocatoria> &c, HTFuncionariosRecord
     cout << " Lista de Funcionarios disponiveis para esta funcao: " << endl << endl;
     cout << " ";
     for (auto x: ht) {
-        if (x.getFuncao() == f && find(equipatecnica.begin(), equipatecnica.end(), x) == equipatecnica.end()) {
+        if (x.getFuncao() == f && BinarySearch(equipatecnica, x) != -1) {
             cout << "[" << index + 1 << "]" << setfill(' ') << setw(18) << x.getNome() << "   ";
             funcionariosacontratar.push_back(x);
             index++;

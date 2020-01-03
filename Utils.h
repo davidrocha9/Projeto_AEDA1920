@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 using namespace std;
+
 /**
  * @brief separa os nomes de um membro da selecao e armazena-os num vector da classe string
  * @param str string com o nome de um membro da selecao

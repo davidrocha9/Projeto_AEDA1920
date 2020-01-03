@@ -10,6 +10,13 @@
 #include <set>
 #include <unordered_set>
 
+struct JogadorFama{
+    string nome;
+    unsigned int golos;
+    unsigned int assists;
+    unsigned int jogos;
+};
+
 using namespace std;
 
 bool changeReturn(bool& return_menu) {
@@ -30,6 +37,18 @@ bool changeReturn(bool& return_menu) {
     if (n == "N" || n == "n")
         return_menu = false;
     return return_menu;
+}
+
+bool maisgolos(JogadorFama f1, JogadorFama f2){
+    return f1.golos > f2.golos;
+}
+
+bool maisassists(JogadorFama f1, JogadorFama f2){
+    return f1.assists > f2.assists;
+}
+
+bool maisjogos(JogadorFama f1, JogadorFama f2){
+    return f1.jogos > f2.jogos;
 }
 
 void mainMenu(Selecao& selecao) {
@@ -71,22 +90,24 @@ void mainMenu(Selecao& selecao) {
         cout << " 5 - Estatisicas da Selecao" << endl;
         cout << " 6 - Venda de Equipamentos" << endl;
         cout << " 7 - Pesquisa de Selecionadores" << endl;
-        cout << " 8 - Contratar Funcionarios" << setfill(' ') << setw(40) << "Numero de membros atualmente: " << membros.size() << endl;
+        cout << " 8 - Contratar Funcionarios" << endl;
+        cout << " 9 - Corredor da Fama" << setfill(' ') << setw(40) << "Numero de membros atualmente: " << membros.size() << endl;
         unsigned int opt = 0;
         cout << endl;
         do {
             cout << "Introduza uma opcao: "; cin >> opt;
-            if (opt < 1 || opt > 8 || cin.fail()) {
+            if (opt < 1 || opt > 9 || cin.fail()) {
                 cin.clear();
-                cout << "Opcao invalida! Introduza um numero entre 1 e 8." << endl;
+                cout << "Opcao invalida! Introduza um numero entre 1 e 9." << endl;
                 cin.ignore(1000, '\n');
             }
-        } while (opt < 1 || opt > 8 || cin.fail());
+        } while (opt < 1 || opt > 9 || cin.fail());
         cin.ignore(1000, '\n');
 
         switch (opt) {
             case 1:
-                system("cls"); logo();
+                system("cls");
+                logo();
                 cout << " 1 - Informacoes sobre os jogadores" << endl;
                 cout << " 2 - Adicionar um jogador " << endl;
                 cout << " 3 - Remover um jogador" << endl;
@@ -95,7 +116,8 @@ void mainMenu(Selecao& selecao) {
                 cout << endl;
                 opt = 0;
                 do {
-                    cout << "Introduza uma opcao: "; cin >> opt;
+                    cout << "Introduza uma opcao: ";
+                    cin >> opt;
                     if (opt < 1 || opt > 5 || cin.fail()) {
                         cin.clear();
                         cout << "Opcao invalida! Introduza um numero entre 1 e 5." << endl;
@@ -103,12 +125,14 @@ void mainMenu(Selecao& selecao) {
                     }
                 } while (opt < 1 || opt > 5 || cin.fail());
                 switch (opt) {
-                    case(1):
-                        system("cls"); logo();
+                    case (1):
+                        system("cls");
+                        logo();
                         f1.InformacoesJogador(jogadores);
                         break;
-                    case(2):
-                        system("cls"); logo();
+                    case (2):
+                        system("cls");
+                        logo();
                         try {
                             f1.AdicionarJogador(jogadores);
                         }
@@ -117,24 +141,27 @@ void mainMenu(Selecao& selecao) {
                         }
                         selecao.JogadoresToFile(jogadores);
                         break;
-                    case(3):
-                        system("cls"); logo();
+                    case (3):
+                        system("cls");
+                        logo();
                         f1.RemoverJogador(jogadores);
                         selecao.JogadoresToFile(jogadores);
                         break;
-                    case(4):
-                        system("cls"); logo();
+                    case (4):
+                        system("cls");
+                        logo();
                         f1.EditarJogador(jogadores);
                         selecao.JogadoresToFile(jogadores);
                         break;
-                    case(5):
+                    case (5):
                         system("cls");
                         mainMenu(selecao);
                         break;
                 }
                 break;
             case 2:
-                system("cls"); logo();
+                system("cls");
+                logo();
                 cout << " 1 - Informacoes sobre os Membros Tecnicos" << endl;
                 cout << " 2 - Adicionar um Membro Tecnico " << endl;
                 cout << " 3 - Remover um Membro Tecnico" << endl;
@@ -143,7 +170,8 @@ void mainMenu(Selecao& selecao) {
                 cout << endl;
                 opt = 0;
                 do {
-                    cout << "Introduza uma opcao: "; cin >> opt;
+                    cout << "Introduza uma opcao: ";
+                    cin >> opt;
                     if (opt < 1 || opt > 5 || cin.fail()) {
                         cin.clear();
                         cout << "Opcao invalida! Introduza um numero entre 1 e 5." << endl;
@@ -151,26 +179,28 @@ void mainMenu(Selecao& selecao) {
                     }
                 } while (opt < 1 || opt > 5 || cin.fail());
                 switch (opt) {
-                    case(1):
-                        system("cls"); logo();
+                    case (1):
+                        system("cls");
+                        logo();
                         nometemp = et1.InformacoesTecnico(equipatecnica);
-                        while(!it2.isAtEnd()){
-                            if(it2.retrieve().getNome() == nometemp){
+                        while (!it2.isAtEnd()) {
+                            if (it2.retrieve().getNome() == nometemp) {
                                 cout << endl << " Numero de titulos ganhos: " << it2.retrieve().getTitulosGanhos();
                                 break;
                             }
                             it2.advance();
                         }
                         break;
-                    case(2):
-                        system("cls"); logo();
+                    case (2):
+                        system("cls");
+                        logo();
                         try {
                             ettemp = et1.AdicionarTecnico(equipatecnica);
                         }
                         catch (MembroTecnicoJaExistente mt) {
                             cout << endl << "Ja existe um membro tecnico com este nome e data de nascimento!";
                         }
-                        if (ettemp.getFuncao() == "Selecionador Nacional"){
+                        if (ettemp.getFuncao() == "Selecionador Nacional") {
                             stemp.setNome(ettemp.getNome());
                             stemp.setDataNascimento((ettemp.getDataNascimento()));
                             stemp.setFuncao(ettemp.getFuncao());
@@ -181,24 +211,27 @@ void mainMenu(Selecao& selecao) {
                         }
                         selecao.EquipaTecnicatoFile(equipatecnica);
                         break;
-                    case(3):
-                        system("cls"); logo();
+                    case (3):
+                        system("cls");
+                        logo();
                         et1.RemoverTecnico(equipatecnica);
                         selecao.EquipaTecnicatoFile(equipatecnica);
                         break;
-                    case(4):
-                        system("cls"); logo();
+                    case (4):
+                        system("cls");
+                        logo();
                         et1.EditarTecnico(equipatecnica);
                         selecao.EquipaTecnicatoFile(equipatecnica);
                         break;
-                    case(5):
+                    case (5):
                         system("cls");
                         mainMenu(selecao);
                         break;
                 }
                 break;
             case 3:
-                system("cls"); logo();
+                system("cls");
+                logo();
                 cout << " 1 - Informacoes sobre as Convocatorias" << endl;
                 cout << " 2 - Adicionar uma Convocatoria " << endl;
                 cout << " 3 - Remover uma Convocatoria" << endl;
@@ -207,7 +240,8 @@ void mainMenu(Selecao& selecao) {
                 cout << endl;
                 opt = 0;
                 do {
-                    cout << "Introduza uma opcao: "; cin >> opt;
+                    cout << "Introduza uma opcao: ";
+                    cin >> opt;
                     if (opt < 1 || opt > 5 || cin.fail()) {
                         cin.clear();
                         cout << "Opcao invalida! Introduza um numero entre 1 e 5." << endl;
@@ -215,12 +249,14 @@ void mainMenu(Selecao& selecao) {
                     }
                 } while (opt < 1 || opt > 5 || cin.fail());
                 switch (opt) {
-                    case(1):
-                        system("cls"); logo();
+                    case (1):
+                        system("cls");
+                        logo();
                         c1.InformacoesConvocatoria(convocatorias);
                         break;
-                    case(2):
-                        system("cls"); logo();
+                    case (2):
+                        system("cls");
+                        logo();
                         try {
                             c = c1.AdicionarConvocatoria(convocatorias, jogadores, equipatecnica, jogos);
                         }
@@ -231,24 +267,27 @@ void mainMenu(Selecao& selecao) {
                         selecao.SelecionadorestoFile(selecionadores);
                         selecao.ConvocatoriatoFile(convocatorias);
                         break;
-                    case(3):
-                        system("cls"); logo();
+                    case (3):
+                        system("cls");
+                        logo();
                         c1.RemoverConvocatoria(convocatorias);
                         selecao.ConvocatoriatoFile(convocatorias);
                         break;
-                    case(4):
-                        system("cls"); logo();
+                    case (4):
+                        system("cls");
+                        logo();
                         c1.EditarConvocatoria(convocatorias, jogos);
                         selecao.ConvocatoriatoFile(convocatorias);
                         break;
-                    case(5):
+                    case (5):
                         system("cls");
                         mainMenu(selecao);
                         break;
                 }
                 break;
             case 4:
-                system("cls"); logo();
+                system("cls");
+                logo();
                 cout << " 1 - Informacoes sobre os Jogos" << endl;
                 cout << " 2 - Adicionar um Jogo " << endl;
                 cout << " 3 - Remover um Jogo" << endl;
@@ -257,7 +296,8 @@ void mainMenu(Selecao& selecao) {
                 cout << endl;
                 opt = 0;
                 do {
-                    cout << "Introduza uma opcao: "; cin >> opt;
+                    cout << "Introduza uma opcao: ";
+                    cin >> opt;
                     if (opt < 1 || opt > 5 || cin.fail()) {
                         cin.clear();
                         cout << "Opcao invalida! Introduza um numero entre 1 e 5." << endl;
@@ -265,40 +305,44 @@ void mainMenu(Selecao& selecao) {
                     }
                 } while (opt < 1 || opt > 5 || cin.fail());
                 switch (opt) {
-                    case(1):
-                        system("cls"); logo();
+                    case (1):
+                        system("cls");
+                        logo();
                         j1.infoJogo(jogos);
                         break;
-                    case(2):
-                        system("cls"); logo();
+                    case (2):
+                        system("cls");
+                        logo();
                         try {
                             j1.addJogo(jogos, jogadores);
                         }
-                        catch (JogoJaExistente j){
+                        catch (JogoJaExistente j) {
                             cout << "Ja existe um jogo com esta data!";
                         }
                         selecao.JogostoFile(jogos);
                         break;
-                    case(3):
+                    case (3):
                         system("cls");
                         j = j1.removeJogo(jogos);
                         c1.updateJogos(convocatorias, j);
                         selecao.JogostoFile(jogos);
                         selecao.ConvocatoriatoFile(convocatorias);
                         break;
-                    case(4):
-                        system("cls"); logo();
+                    case (4):
+                        system("cls");
+                        logo();
                         j1.editJogo(jogos, jogadores);
                         selecao.JogostoFile(jogos);
                         break;
-                    case(5):
+                    case (5):
                         system("cls");
                         mainMenu(selecao);
                         break;
                 }
                 break;
             case 5:
-                system("cls"); logo();
+                system("cls");
+                logo();
                 cout << " 1 - Estatisticas Individuais" << endl;
                 cout << " 2 - Estatisiticas Coletivas" << endl;
                 cout << " 3 - Custo Individual" << endl;
@@ -308,33 +352,40 @@ void mainMenu(Selecao& selecao) {
                 cout << endl;
                 opt = 0;
                 do {
-                    cout << "Introduza uma opcao: "; cin >> opt;
+                    cout << "Introduza uma opcao: ";
+                    cin >> opt;
                     if (opt < 1 || opt > 6 || cin.fail()) {
                         cin.clear();
                         cout << "Opcao invalida! Introduza um numero entre 1 e 6." << endl;
                         cin.ignore(1000, '\n');
                     }
                 } while (opt < 1 || opt > 5 || cin.fail());
-                system("cls"); logo();
+                system("cls");
+                logo();
                 switch (opt) {
                     case 1:
-                        system("cls"); logo();
+                        system("cls");
+                        logo();
                         EstatisticaJogador(jogadores, jogos, convocatorias);
                         break;
                     case 2:
-                        system("cls"); logo();
+                        system("cls");
+                        logo();
                         EstatisticaSelecao(jogadores, jogos, convocatorias);
                         break;
                     case 3:
-                        system("cls"); logo();
+                        system("cls");
+                        logo();
                         CustoIndvMes(jogadores, jogos, convocatorias);
                         break;
                     case 4:
-                        system("cls"); logo();
+                        system("cls");
+                        logo();
                         CustoGeralMesEquip(jogadores, jogos, convocatorias, equipatecnica);
                         break;
                     case 5:
-                        system("cls"); logo();
+                        system("cls");
+                        logo();
                         CustoGeralMesTudo(jogadores, jogos, convocatorias, equipatecnica);
                         break;
                     case 6:
@@ -344,27 +395,32 @@ void mainMenu(Selecao& selecao) {
                 }
                 break;
             case 6:
-                system("cls"); logo();
+                system("cls");
+                logo();
                 cout << " 1 - Informacoes sobre Fornecedores" << endl;
                 cout << " 2 - Compra de Equipamentos" << endl;
                 cout << endl;
                 opt = 0;
                 do {
-                    cout << "Introduza uma opcao: "; cin >> opt;
+                    cout << "Introduza uma opcao: ";
+                    cin >> opt;
                     if (opt < 1 || opt > 2 || cin.fail()) {
                         cin.clear();
                         cout << "Opcao invalida! Introduza um numero entre 1 e 2." << endl;
                         cin.ignore(1000, '\n');
                     }
                 } while (opt < 1 || opt > 2 || cin.fail());
-                system("cls"); logo();
+                system("cls");
+                logo();
                 switch (opt) {
                     case 1:
-                        system("cls"); logo();
+                        system("cls");
+                        logo();
                         for1.InfoFornecedores(fornecedores);
                         break;
                     case 2:
-                        system("cls"); logo();
+                        system("cls");
+                        logo();
                         try {
                             for1.VenderEquipamentos(fornecedores);
                         }
@@ -376,7 +432,8 @@ void mainMenu(Selecao& selecao) {
                 }
                 break;
             case 7:
-                system("cls"); logo();
+                system("cls");
+                logo();
                 cout << " 1 - Mostrar Selecionadores em Ordem" << endl;
                 cout << " 2 - Mostrar Selecionadores em Nivel" << endl;
                 cout << " 3 - Mostrar Selecionadores em Pre-Ordem" << endl;
@@ -384,22 +441,25 @@ void mainMenu(Selecao& selecao) {
                 cout << endl;
                 opt = 0;
                 do {
-                    cout << "Introduza uma opcao: "; cin >> opt;
+                    cout << "Introduza uma opcao: ";
+                    cin >> opt;
                     if (opt < 1 || opt > 4 || cin.fail()) {
                         cin.clear();
                         cout << "Opcao invalida! Introduza um numero entre 1 e 4." << endl;
                         cin.ignore(1000, '\n');
                     }
                 } while (opt < 1 || opt > 4 || cin.fail());
-                system("cls"); logo();
+                system("cls");
+                logo();
                 switch (opt) {
                     case 1:
-                        system("cls"); logo();
-                        while(!it2.isAtEnd()){
+                        system("cls");
+                        logo();
+                        while (!it2.isAtEnd()) {
                             size++;
                             it2.advance();
                         }
-                        while(!it.isAtEnd()){
+                        while (!it.isAtEnd()) {
                             cout << it.retrieve();
                             index++;
                             if (index < size)
@@ -408,12 +468,13 @@ void mainMenu(Selecao& selecao) {
                         }
                         break;
                     case 2:
-                        system("cls"); logo();
-                        while(!it2.isAtEnd()){
+                        system("cls");
+                        logo();
+                        while (!it2.isAtEnd()) {
                             size++;
                             it2.advance();
                         }
-                        while(!itnivel.isAtEnd()){
+                        while (!itnivel.isAtEnd()) {
                             cout << itnivel.retrieve();
                             index++;
                             if (index < size)
@@ -422,12 +483,13 @@ void mainMenu(Selecao& selecao) {
                         }
                         break;
                     case 3:
-                        system("cls"); logo();
-                        while(!it2.isAtEnd()){
+                        system("cls");
+                        logo();
+                        while (!it2.isAtEnd()) {
                             size++;
                             it2.advance();
                         }
-                        while(!itpre.isAtEnd()){
+                        while (!itpre.isAtEnd()) {
                             cout << itpre.retrieve();
                             index++;
                             if (index < size)
@@ -436,12 +498,13 @@ void mainMenu(Selecao& selecao) {
                         }
                         break;
                     case 4:
-                        system("cls"); logo();
-                        while(!it2.isAtEnd()){
+                        system("cls");
+                        logo();
+                        while (!it2.isAtEnd()) {
                             size++;
                             it2.advance();
                         }
-                        while(!itpre.isAtEnd()){
+                        while (!itpre.isAtEnd()) {
                             cout << itpre.retrieve();
                             index++;
                             if (index < size)
@@ -452,7 +515,8 @@ void mainMenu(Selecao& selecao) {
                 }
                 break;
             case 8:
-                system("cls"); logo();
+                system("cls");
+                logo();
                 cout << " 1 - Informacoes dos Funcionarios da Convocatoria Atual" << endl;
                 cout << " 2 - Informacoes de todos os Funcionarios conhecidos" << endl;
                 cout << " 3 - Contratar um Funcionario para a Convocatoria Atual" << endl;
@@ -460,36 +524,80 @@ void mainMenu(Selecao& selecao) {
                 cout << endl;
                 opt = 0;
                 do {
-                    cout << "Introduza uma opcao: "; cin >> opt;
+                    cout << "Introduza uma opcao: ";
+                    cin >> opt;
                     if (opt < 1 || opt > 4 || cin.fail()) {
                         cin.clear();
                         cout << "Opcao invalida! Introduza um numero entre 1 e 4." << endl;
                         cin.ignore(1000, '\n');
                     }
                 } while (opt < 1 || opt > 4 || cin.fail());
-                system("cls"); logo();
+                system("cls");
+                logo();
                 switch (opt) {
                     case 1:
-                        system("cls"); logo();
+                        system("cls");
+                        logo();
                         selecao.InformacoesFuncionariosConvocatoria(convocatorias, funcRec);
                         break;
                     case 2:
-                        system("cls"); logo();
+                        system("cls");
+                        logo();
                         selecao.InformacoesFuncionariosConhecidos(funcRec);
                         break;
                     case 3:
-                        system("cls"); logo();
+                        system("cls");
+                        logo();
                         try {
                             selecao.ContratarFuncionario(convocatorias, funcRec, equipatecnica);
                         }
                         catch (FuncionarioNaoExistente s) {
-                            cout << endl << " Nao existe nenhum funcionario que desempenhe esta funcao disponivel para ser contratado!";
+                            cout << endl
+                                 << " Nao existe nenhum funcionario que desempenhe esta funcao disponivel para ser contratado!";
                         }
                         selecao.ConvocatoriatoFile(convocatorias);
                         selecao.EquipaTecnicatoFile(equipatecnica);
                         break;
                 }
-
+            case 9:
+                system("cls");
+                logo();
+                vector<JogadorFama> v1;
+                JogadorFama j;
+                for (auto x: jogadores){
+                    j.nome = x.getNome();
+                    j.golos = 0;
+                    j.assists = 0;
+                    j.jogos = 0;
+                    for (auto y: jogos){
+                        for (auto z: y.getGolos()){
+                            if (x == z.first) {
+                                j.golos += z.second;
+                                j.jogos += 1;
+                            }
+                        }
+                        for (auto z: y.getAssists()){
+                            if (x == z.first)
+                                j.assists += z.second;
+                        }
+                    }
+                    v1.push_back(j);
+                }
+                if (v1.empty())
+                    cout << " Ainda nao existem jogadores para existir Corredor da Fama!" << endl;
+                else {
+                    sort(v1.begin(), v1.end(), maisgolos);
+                    cout << " CORREDOR DA FAMA" << endl << endl;
+                    cout << " Melhor Marcador de Sempre: " << v1.front().nome << " (" << v1.front().golos << " golos)"
+                         << endl;
+                    sort(v1.begin(), v1.end(), maisassists);
+                    cout << " Jogador com mais Assistencias de Sempre: " << v1.front().nome << " ("
+                         << v1.front().assists << " assistencias)" << endl;
+                    sort(v1.begin(), v1.end(), maisjogos);
+                    cout << " Mais Internacional de Sempre: " << v1.front().nome << " (" << v1.front().jogos
+                         << " internacionalizacoes)" << endl;
+                    cout << endl;
+                }
         }
         changeReturn(return_menu);
         if (return_menu == true)

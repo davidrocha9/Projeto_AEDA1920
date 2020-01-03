@@ -283,6 +283,7 @@ public:
      */
     friend class FuncionariosRecord;
     bool operator == (const EquipaTecnica& et) const;
+    bool operator < (const EquipaTecnica &et) const;
 };
 /**
  * @brief class exception para futebolistas ja existentes
