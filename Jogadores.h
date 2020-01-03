@@ -13,7 +13,13 @@ using namespace std;
  */
 class MembroSelecao{
 protected:
+    /**
+     * @brief nome de um membro da selecao
+     */
 	string nome;
+	/**
+	 * @brief data de nascimento de um membro da selecao
+	 */
 	Date datanascimento;
 public:
     /**
@@ -189,7 +195,13 @@ public:
  */
 class EquipaTecnica : public MembroSelecao {
 protected:
+    /**
+     * @brief funcao de um membro da equipa tecnica
+     */
 	string funcao;
+	/**
+	 * @brief salario de um membro da equipa tecnica
+	 */
 	unsigned int salario;
 public:
 	/**
@@ -271,15 +283,64 @@ class Selecionadores : public EquipaTecnica{
     unsigned int titulosganhos;
     vector<unsigned int> selecoes;
 public:
+    /**
+     * @brief construtor vazio da classe selecionadores
+     */
     Selecionadores();
+    /**
+     * @brief construto da classe selecionadores
+     * @param n nome
+     * @param dn data de nascimento
+     * @param f função
+     * @param s salário
+     * @param tg titulos ganhos
+     * @param sel vetor com ids das convocatorias em que o selecionador está presente
+     */
     Selecionadores(string n, string dn, string f, unsigned int s, unsigned int tg, vector<unsigned int> sel);
+    /**
+     * @brief construtor da classe selecionadores
+     * @param n nome
+     * @param tg titulos ganhos
+     */
     Selecionadores(string n, unsigned int tg);
+    /**
+     * @brief funcao get para retornar o numero de titulos ganhos
+     * @return numero de titulos ganhos
+     */
     unsigned int getTitulosGanhos() const;
+    /**
+     * @brief funcao get para retornar o vetor das convocatorias
+     * @return vetor com as convocatorias em que o selecionador esteve presente
+     */
     vector<unsigned int> getSelecoes() const;
+    /**
+     * @brief funcao set para mudar o numero de titulos ganhos
+     * @param t numero de titulos ganhos
+     */
     void setTitulosGanhos(unsigned int t);
+    /**
+     * @brief funcao set para mudar o vetor das convocatorias
+     * @param sel convocatorias em que o selecionador esteve presente
+     */
     void setSelecoes(vector<unsigned int> sel);
+    /**
+     * @brief funcao para ler o ficheiro dos selecionadores
+     * @param selecionadores arvore binaria com os selecionadores
+     * @return arvore binaria com os selecionadores
+     */
     BST<Selecionadores> ReadSelecionadores(BST<Selecionadores> &selecionadores);
+    /**
+     * @brief operador < para a classe Selecionadores
+     * @param s objeto da classe Selecionadores
+     * @return true caso seja menor, senão false
+     */
     bool operator < (const Selecionadores &s) const;
+    /**
+     * @brief ostream para mostrar a informação de um selecionador
+     * @param out ostream
+     * @param s objeto da classe Selecionador
+     * @return ostream com a informação de um selecionador
+     */
     friend ostream& operator<<(ostream& out, const Selecionadores& s);
 };
 

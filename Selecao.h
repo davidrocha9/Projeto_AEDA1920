@@ -47,7 +47,15 @@ public:
    * @param jogos vector da classe Jogo com os jogos
    */
   void JogostoFile(vector<Jogo> jogos);
+  /**
+   * @brief da update ao ficheiro fornecedores.txt, que contem os fornecedores
+   * @param fornecedores vetor da classe Fornecedores com os fornecedores
+   */
   void FornecedorestoFile(priority_queue<Fornecedores> fornecedores);
+  /**
+   * @brief da update ao ficheiro selecionadores.txt, que contem os selecionadores
+   * @param selecionadores vetor da classe Selecionadores com os selecionadores
+   */
   void SelecionadorestoFile(BST<Selecionadores> selecionadores);
   // methods GET
   /**
