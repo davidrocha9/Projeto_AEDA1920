@@ -402,7 +402,7 @@ void Futebolista::EditarJogador(vector<Futebolista>& jogadores) const {
 ////////////////////////
 
 //Construtores
-EquipaTecnica::EquipaTecnica(string n, string dn, string f, unsigned int s): MembroSelecao(n, dn), funcao(f), salario(s) {}
+EquipaTecnica::EquipaTecnica(string n, string dn, string f, unsigned int s, bool c): MembroSelecao(n, dn), funcao(f), salario(s), conhecido(c) {}
 
 //Metodos Get
 string EquipaTecnica::getFuncao() const {
@@ -411,6 +411,10 @@ string EquipaTecnica::getFuncao() const {
 
 unsigned int EquipaTecnica::getSalario() const {
 	return salario;
+}
+
+bool EquipaTecnica::getConhecido() const{
+    return conhecido;
 }
 
 //Metodos Set
@@ -422,9 +426,13 @@ void EquipaTecnica::setSalario(unsigned int s) {
 	salario = s;
 }
 
+void EquipaTecnica::setConhecido(bool c){
+    conhecido = c;
+}
+
 //Outros metodos
 vector<EquipaTecnica> EquipaTecnica::ReadEquipaTecnica(){
-	vector<EquipaTecnica> et;
+ 	vector<EquipaTecnica> et;
 	ifstream etfile;
 	etfile.open("../equipatecnica.txt");
 
@@ -452,12 +460,23 @@ vector<EquipaTecnica> EquipaTecnica::ReadEquipaTecnica(){
 				case 3:
 					salario = stoi(info.at(x));
 					break;
+                case 4:
+                    switch(stoi(info.at(x))){
+                        case 0:
+                            conhecido = false;
+                            break;
+                        case 1:
+                            conhecido = true;
+                            break;
+                        default:
+                            break;
+                    }
 				default:
 					break;
 				}
 			}
-			EquipaTecnica et1(nome, dn, funcao, salario);
-			if (info.size() == 4)
+			EquipaTecnica et1(nome, dn, funcao, salario, conhecido);
+			if (info.size() == 5)
 			    et.push_back(et1);
 		}
 	}
@@ -550,7 +569,7 @@ EquipaTecnica EquipaTecnica::AdicionarTecnico(vector<EquipaTecnica>& equipatecni
     }
     std::cout << "Salario: "; cin >> s;
     std::cout << endl;
-    EquipaTecnica newet(n, dn, f, s);
+    EquipaTecnica newet(n, dn, f, s, false);
     equipatecnica.push_back(newet);
     return newet;
 }
@@ -759,7 +778,13 @@ ostream& operator<<(ostream& out, const EquipaTecnica& et) {
     out << " Data de Nascimento: " << et.getDataNascimento() << endl;
     out << " Funcao: " << et.getFuncao() << endl;
     out << " Salario: " << et.getSalario() << " euros";
+    if(et.getConhecido())
+        out << endl << " Funcionario ja conhecido!";
     return out;
+}
+
+bool EquipaTecnica::operator==(const EquipaTecnica &et) const {
+    return (nome == et.getNome() && datanascimento == et.getDataNascimento());
 }
 
 ////////////////////////
@@ -769,7 +794,7 @@ ostream& operator<<(ostream& out, const EquipaTecnica& et) {
 Selecionadores::Selecionadores() {
 }
 
-Selecionadores::Selecionadores(string n, string dn, string f, unsigned int s, unsigned int tg, vector<unsigned int> sel): EquipaTecnica(n, dn, f, s){
+Selecionadores::Selecionadores(string n, string dn, string f, unsigned int s, bool con, unsigned int tg, vector<unsigned int> sel): EquipaTecnica(n, dn, f, s, con){
     titulosganhos = tg;
     selecoes = sel;
 }
@@ -834,7 +859,7 @@ BST<Selecionadores> Selecionadores::ReadSelecionadores(BST<Selecionadores> &sele
             for (auto x: info)
                 selecoes.push_back(stoi(x));
             funcao = "Selecionador Nacional";
-            Selecionadores s(nome, dn, funcao, salario, titulosganhos, selecoes);
+            Selecionadores s(nome, dn, funcao, salario, true, titulosganhos, selecoes);
             selecionadores.insert(s);
         }
     }
@@ -855,3 +880,24 @@ ostream &operator<<(ostream &out, const Selecionadores& s) {
     out << " Numero de Convocatorias: " << s.getSelecoes().size();
     return out;
 }
+
+FuncionariosRecord::FuncionariosRecord(EquipaTecnica* func){
+    this->funcionario = func;
+}
+
+string FuncionariosRecord::getNome() const {
+    return this->funcionario->getNome();
+}
+
+Date FuncionariosRecord::getDataNascimento() const {
+    return this->funcionario->getDataNascimento();
+}
+
+void FuncionariosRecord::setNome(string nome) {
+    this->funcionario->getNome() = nome;
+}
+
+void FuncionariosRecord::setDataNascimento(Date datanascimento) {
+    this->funcionario->getDataNascimento() = datanascimento;
+}
+

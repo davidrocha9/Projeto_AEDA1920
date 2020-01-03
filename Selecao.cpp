@@ -1,6 +1,7 @@
 #include "Selecao.h"
 #include "Jogadores.h"
 #include "Convocatoria.h"
+#include "Utils.h"
 
 #include <fstream>
 
@@ -77,7 +78,9 @@ void Selecao::EquipaTecnicatoFile(vector<EquipaTecnica> et){
 		cerr << "Error Opening File" << endl;
 	for (size_t x = 0; x < et.size(); x++)
 	{
-		etfile << et.at(x).getNome() << " | " << et.at(x).getDataNascimento() << " | " << et.at(x).getFuncao() << " | " << et.at(x).getSalario();
+		etfile << et.at(x).getNome() << " | " << et.at(x).getDataNascimento() << " | " << et.at(x).getFuncao() << " | " << et.at(x).getSalario() << " | ";
+		if (et.at(x).getConhecido()) etfile << "1";
+		else etfile << "0";
 		if (x != et.size() - 1)
 			etfile << endl;
 		else
@@ -156,14 +159,12 @@ void Selecao::ConvocatoriatoFile(vector<Convocatoria> conv) {
 		}
 		convfile << endl;
 		auxcnt = 0;
-        convfile << x.getSelecionador() << " | ";
 		for (size_t z = 0; z < x.getEquipaTecnica().size(); z++) {
 			convfile << x.getEquipaTecnica().at(z).getNome();
 			if (z != x.getEquipaTecnica().size() - 1)
 				convfile << " | ";
 		}
 		convfile << endl;
-        convfile << x.getDataNascimentoSelecionador() << " | ";
 		for (size_t z = 0; z < x.getEquipaTecnica().size(); z++) {
 			convfile << x.getEquipaTecnica().at(z).getDataNascimento();
 			if (z != x.getEquipaTecnica().size() - 1)
@@ -418,5 +419,179 @@ void Selecao::updateSelecionadores(BST<Selecionadores> &selecionadores, Convocat
             it.retrieve().setSelecoes(v1);
         }
         it.advance();
+    }
+}
+
+HTFuncionariosRecord Selecao::getFuncionariosRecord() {
+    return funcRec;
+}
+
+void Selecao::setFuncionariosRecord(HTFuncionariosRecord h) {
+    funcRec = h;
+}
+
+HTFuncionariosRecord Selecao::generateRecords(vector<EquipaTecnica> et) {
+    for (auto x: et){
+        if (x.getConhecido())
+            funcRec.insert(x);
+    }
+    return funcRec;
+}
+
+void Selecao::InformacoesFuncionariosConvocatoria(vector<Convocatoria> c, HTFuncionariosRecord ht){
+    Convocatoria conv = c.back();
+    for (size_t x = 0; x < conv.getEquipaTecnica().size(); x++){
+        cout << conv.getEquipaTecnica().at(x);
+        if (x < conv.getEquipaTecnica().size() - 1)
+            cout << endl << endl << "----------------------" << endl << endl;
+    }
+}
+
+void Selecao::InformacoesFuncionariosConhecidos(HTFuncionariosRecord ht) {
+    int x = 0, size = ht.size();
+    for (auto it = ht.begin(); it != ht.end(); it++){
+        cout << *it;
+        if (x < size -1)
+            cout << endl << endl << "----------------------" << endl << endl;
+        x++;
+    }
+}
+
+void Selecao::ContratarFuncionario(vector<Convocatoria> &c, HTFuncionariosRecord ht, vector<EquipaTecnica> &et) {
+    Convocatoria conv = c.back();
+    cout << " Qual a funcao do funcionario a contratar?" << endl;
+    std::cout << " Funcoes disponiveis: " << endl << endl;
+    std::cout << "   1 - Selecionador Nacional" << endl;
+    std::cout << "   2 - Diretor" << endl;
+    std::cout << "   3 - Treinador Nacional" << endl;
+    std::cout << "   4 - Treinador Nacional de Guarda-Redes" << endl;
+    std::cout << "   5 - Preparador Fisico" << endl;
+    std::cout << "   6 - Medico Principal" << endl;
+    std::cout << "   7 - Departamento Medico" << endl;
+    std::cout << "   8 - Funcionario Tecnico" << endl << endl;
+    unsigned opt = 0;
+    do {
+        cout << endl << "Introduza uma opcao: ";
+        cin.clear();
+        std::cin >> opt;
+        if (opt < 1 || opt > 8 || cin.fail()) {
+            cin.clear();
+            cin.ignore();
+            cout << "Input invalido! Introduza um numero entre 1 e 8";
+        }
+    } while (opt < 1 || opt > 8 || cin.fail());
+
+    vector<EquipaTecnica> funcionariosacontratar;
+    system("cls"); logo();
+    string f;
+    int aux = 0, index = 0;
+    switch (opt) {
+        case 1:
+            f = "Selecionador Nacional";
+            break;
+        case 2:
+            f = "Diretor";
+            break;
+        case 3:
+            f = "Treinador Nacional";
+            break;
+        case 4:
+            f = "Treinador Nacional de Guarda-Redes";
+            break;
+        case 5:
+            f = "Preparador Fisico";
+            break;
+        case 6:
+            f = "Medico Principal";
+            break;
+        case 7:
+            f = "Departamento Medico";
+            break;
+        case 8:
+            f = "Funcionario Tecnico";
+            break;
+        default:
+            break;
+    }
+
+    cout << " Lista de Funcionarios disponiveis para esta funcao: " << endl << endl;
+    cout << " ";
+    for (auto x: ht) {
+        if (x.getFuncao() == f && find(equipatecnica.begin(), equipatecnica.end(), x) == equipatecnica.end()) {
+            cout << "[" << index + 1 << "]" << setfill(' ') << setw(18) << x.getNome() << "   ";
+            funcionariosacontratar.push_back(x);
+            index++;
+            aux++;
+        }
+        if (aux == 2) {
+            aux = -1;
+            cout << endl << " ";
+        }
+    }
+    if (index > 0) {
+        do {
+            cout << endl << "Introduza uma opcao: ";
+            cin.clear();
+            std::cin >> opt;
+            if (opt < 1 || opt > funcionariosacontratar.size()) {
+                cin.clear();
+                cin.ignore();
+                cout << "Input invalido! Introduza um numero entre 1 e " << funcionariosacontratar.size();
+            }
+        } while (opt < 1 || opt > funcionariosacontratar.size() || cin.fail());
+    }
+    else{
+        //cout << "Nao existem funcionarios conhecidos para esta funcao! A listagem corresponde a funcionarios desconhecidos." << endl << endl << " ";
+        aux = 0;
+        for (auto x: et) {
+            if (x.getFuncao() == f && !x.getConhecido()) {
+                cout << "[" << index + 1 << "]" << setfill(' ') << setw(18) << x.getNome() << "   ";
+                funcionariosacontratar.push_back(x);
+                index++;
+                aux++;
+            }
+            if (aux == 2) {
+                aux = -1;
+                cout << endl << " ";
+            }
+        }
+        if (index == 0) {
+            throw FuncionarioNaoExistente(f);
+        }
+        cout << endl << endl << " Nao existem funcionarios conhecidos para esta funcao! A listagem corresponde a funcionarios desconhecidos." << endl << endl << " ";
+        do {
+            cout << endl << endl << "Introduza uma opcao: ";
+            cin.clear();
+            std::cin >> opt;
+            if (opt < 1 || opt > funcionariosacontratar.size()) {
+                cin.clear();
+                cin.ignore();
+                cout << "Input invalido! Introduza um numero entre 1 e " << funcionariosacontratar.size();
+            }
+        } while (opt < 1 || opt > funcionariosacontratar.size() || cin.fail());
+
+        bool found = false;
+        for (auto x: conv.getEquipaTecnica()){
+            if (x == funcionariosacontratar.at(opt-1)) {
+                found = true;
+                break;
+            }
+        }
+        if (!found){
+            vector<EquipaTecnica> v = conv.getEquipaTecnica();
+            v.push_back(funcionariosacontratar.at(opt-1));
+            c.back().setEquipaTecnica(v);
+            EquipaTecnica newet;
+            vector<EquipaTecnica> v1;
+            for (auto x: et){
+                if (x == funcionariosacontratar.at(opt-1)) {
+                    x.setConhecido(true);
+                    newet = x;
+                } else v1.push_back(x);
+            }
+            v1.push_back(newet);
+            et = v1;
+            cout << endl <<  " Funcionario contratado com sucesso!" << endl << endl;
+        }
     }
 }

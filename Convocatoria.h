@@ -89,6 +89,10 @@ public:
 	 * @return string com a competicao da convocatoria
 	 */
 	string getCompeticao() const;
+	/**
+	 * @brief retorna o nome do selecionador
+	 * @return string com o nome do selecionador
+	 */
 	string getSelecionador() const;
 	/**
 	 * @brief retorna um vector da classe Jogo com os jogos da convocatoria
@@ -105,6 +109,10 @@ public:
 	 * @return vector da classe EquipaTecnica com os membros tecnicos da convocatoria
 	 */
 	Date getDataNascimentoSelecionador() const;
+	/**
+	 * @brief retorna um vetor com a equipa tecnica
+	 * @return vetor com a equipa tecnica
+	 */
 	vector<EquipaTecnica> getEquipaTecnica();
 	/**
 	 * @brief retorna um multimap que associa um futebolista à sua condicao fisica (lesionado ou nao)
@@ -153,7 +161,16 @@ public:
 	 * @param comp string como o nome da competicao da convocatoria
 	 */
 	void setCompeticao(string comp);
+	/**
+	 * @brief altera o nome do selecionador da convocatoria
+	 * @param s nome do selecionador
+	 */
 	void setSelecionador(string s);
+	/**
+	 * @brief altera a equipa tecnica
+	 * @param et vetor com a equipa tecnica
+	 */
+	void setEquipaTecnica(vector<EquipaTecnica> et);
 	/**
 	 * @brief altera os jogos da convocatoria
 	 * @param jogos vector da classe Jogo com os jogos da convocatoria

@@ -8,6 +8,9 @@
 #include "bst.h"
 
 using namespace std;
+
+class FuncionariosRecord;
+
 /**
  * classe relativa aos membros da selecao
  */
@@ -203,6 +206,7 @@ protected:
 	 * @brief salario de um membro da equipa tecnica
 	 */
 	unsigned int salario;
+	bool conhecido;
 public:
 	/**
 	 * @brief construtor vazio da classe EquipaTecnica
@@ -215,7 +219,7 @@ public:
      * @param f funcao do membro da equipa tecnica
      * @param s salario do membro da equipa tecnica
      */
-	EquipaTecnica(string n, string dn, string f, unsigned int s);
+	EquipaTecnica(string n, string dn, string f, unsigned int s, bool c);
 	/**
 	 *
 	 * @param out ostream com a informacao de um membro da equipa tecnica
@@ -235,7 +239,7 @@ public:
 	 * @return salario de um membro da equipa tecnica
 	 */
 	unsigned int getSalario() const;
-
+    bool getConhecido() const;
 	// metodos SET
 	/**
 	 * @brief altera a funcao de um membro da equipa tecnica
@@ -247,7 +251,7 @@ public:
 	 * @param s string com o salario de um membro da equipa tecnica
 	 */
 	void setSalario(unsigned int s);
-
+	void setConhecido(bool c);
 	//Outros metodos
 	/**
 	 * @brief le os membros tecnicos do ficheiro equipatecnica.txt e armazena-os num vector
@@ -274,6 +278,11 @@ public:
 	 * @param equipatecnica vector da classe EquipaTecnica com todos os membros tecnicos que ja estiveram presentes na selecao
 	 */
 	void EditarTecnico(vector<EquipaTecnica>& equipatecnica) const;
+    /**
+     * @brief classe que precisa de aceder aos métodos da classe da equipa técnica
+     */
+    friend class FuncionariosRecord;
+    bool operator == (const EquipaTecnica& et) const;
 };
 /**
  * @brief class exception para futebolistas ja existentes
@@ -296,7 +305,7 @@ public:
      * @param tg titulos ganhos
      * @param sel vetor com ids das convocatorias em que o selecionador está presente
      */
-    Selecionadores(string n, string dn, string f, unsigned int s, unsigned int tg, vector<unsigned int> sel);
+    Selecionadores(string n, string dn, string f, unsigned int s, bool con, unsigned int tg, vector<unsigned int> sel);
     /**
      * @brief construtor da classe selecionadores
      * @param n nome
@@ -358,6 +367,45 @@ public:
         datanascimento = dn;
     }
 };
+
+/**
+ * @brief classe que servirá para a hash table
+ */
+class FuncionariosRecord {
+    /**
+     * @brief objeto da classe da equipa técnica, visto que todos os funcionários fazem parte desta classe
+     */
+    EquipaTecnica* funcionario;
+
+public:
+    /**
+     * @brief construtor da classe
+     * @param func objeto da classe da equipa técnica (funcionário)
+     */
+    FuncionariosRecord(EquipaTecnica* func);
+    /**
+     * @brief retorna o nome de um elemento da classe
+     * @return
+     */
+    string getNome() const;
+    /**
+     * @brief retorna a data de nascimento de um elemento da classe
+     * @return
+     */
+    Date getDataNascimento() const;
+    /**
+     * @brief altera o nome de um elemento da classe
+     * @param nome string com o nome de um elemento da classe
+     */
+    void setNome(string nome);
+    /**
+     * @brief altera o data de nascimento de um elemento da classe
+     * @param datanascimento data de nascimento de um elemento da classe
+     */
+    void setDataNascimento(Date datanascimento);
+
+};
+
 
 /**
  * @brief class exception para membros tecnicos ja existentes

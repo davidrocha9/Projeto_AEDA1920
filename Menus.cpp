@@ -7,6 +7,8 @@
 #include "Equipamentos.h"
 #include <iomanip>
 #include <queue>
+#include <set>
+#include <unordered_set>
 
 using namespace std;
 
@@ -49,6 +51,7 @@ void mainMenu(Selecao& selecao) {
     vector<Jogo> jogos = selecao.getJogos();
     priority_queue<Fornecedores> fornecedores = selecao.getFornecedores();
     BST<Selecionadores> selecionadores = selecao.getSelecionadores();
+    HTFuncionariosRecord funcRec = selecao.generateRecords(equipatecnica);
     BSTItrIn<Selecionadores> it(selecionadores);
     Convocatoria c;
     string nometemp = "";
@@ -67,17 +70,18 @@ void mainMenu(Selecao& selecao) {
         cout << " 4 - Gerir Jogos" << endl;
         cout << " 5 - Estatisicas da Selecao" << endl;
         cout << " 6 - Venda de Equipamentos" << endl;
-        cout << " 7 - Pesquisa de Selecionadores" << setfill(' ') << setw(40) << "Numero de membros atualmente: " << membros.size() << endl;
+        cout << " 7 - Pesquisa de Selecionadores" << endl;
+        cout << " 8 - Contratar Funcionarios" << setfill(' ') << setw(40) << "Numero de membros atualmente: " << membros.size() << endl;
         unsigned int opt = 0;
         cout << endl;
         do {
             cout << "Introduza uma opcao: "; cin >> opt;
-            if (opt < 1 || opt > 7 || cin.fail()) {
+            if (opt < 1 || opt > 8 || cin.fail()) {
                 cin.clear();
-                cout << "Opcao invalida! Introduza um numero entre 1 e 7." << endl;
+                cout << "Opcao invalida! Introduza um numero entre 1 e 8." << endl;
                 cin.ignore(1000, '\n');
             }
-        } while (opt < 1 || opt > 7 || cin.fail());
+        } while (opt < 1 || opt > 8 || cin.fail());
         cin.ignore(1000, '\n');
 
         switch (opt) {
@@ -374,9 +378,9 @@ void mainMenu(Selecao& selecao) {
             case 7:
                 system("cls"); logo();
                 cout << " 1 - Mostrar Selecionadores em Ordem" << endl;
-                cout << " 2 - Mostrar Selecionadorees em Nivel" << endl;
-                cout << " 3 - Mostrar Selecionadorees em Pre-Ordem" << endl;
-                cout << " 4 - Mostrar Selecionadorees em Pos-Ordem" << endl;
+                cout << " 2 - Mostrar Selecionadores em Nivel" << endl;
+                cout << " 3 - Mostrar Selecionadores em Pre-Ordem" << endl;
+                cout << " 4 - Mostrar Selecionadores em Pos-Ordem" << endl;
                 cout << endl;
                 opt = 0;
                 do {
@@ -447,6 +451,45 @@ void mainMenu(Selecao& selecao) {
                         break;
                 }
                 break;
+            case 8:
+                system("cls"); logo();
+                cout << " 1 - Informacoes dos Funcionarios da Convocatoria Atual" << endl;
+                cout << " 2 - Informacoes de todos os Funcionarios conhecidos" << endl;
+                cout << " 3 - Contratar um Funcionario para a Convocatoria Atual" << endl;
+                cout << " 4 - Voltar Atras" << endl;
+                cout << endl;
+                opt = 0;
+                do {
+                    cout << "Introduza uma opcao: "; cin >> opt;
+                    if (opt < 1 || opt > 4 || cin.fail()) {
+                        cin.clear();
+                        cout << "Opcao invalida! Introduza um numero entre 1 e 4." << endl;
+                        cin.ignore(1000, '\n');
+                    }
+                } while (opt < 1 || opt > 4 || cin.fail());
+                system("cls"); logo();
+                switch (opt) {
+                    case 1:
+                        system("cls"); logo();
+                        selecao.InformacoesFuncionariosConvocatoria(convocatorias, funcRec);
+                        break;
+                    case 2:
+                        system("cls"); logo();
+                        selecao.InformacoesFuncionariosConhecidos(funcRec);
+                        break;
+                    case 3:
+                        system("cls"); logo();
+                        try {
+                            selecao.ContratarFuncionario(convocatorias, funcRec, equipatecnica);
+                        }
+                        catch (FuncionarioNaoExistente s) {
+                            cout << endl << " Nao existe nenhum funcionario que desempenhe esta funcao disponivel para ser contratado!";
+                        }
+                        selecao.ConvocatoriatoFile(convocatorias);
+                        selecao.EquipaTecnicatoFile(equipatecnica);
+                        break;
+                }
+
         }
         changeReturn(return_menu);
         if (return_menu == true)

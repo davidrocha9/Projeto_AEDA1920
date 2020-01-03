@@ -217,7 +217,7 @@ vector<Convocatoria> Convocatoria::ReadConvocatoria(vector<Jogo> jogo){
 				v2.clear();
 				v2 = divideStrings(line);
 				dnselecionador = v2.at(0);
-				for (size_t i = 1; i < v1.size(); i++) {
+				for (size_t i = 0; i < v1.size(); i++) {
 					for (EquipaTecnica x : et1.ReadEquipaTecnica()) {
 						if (v1.at(i) == x.getNome() && Date(v2.at(i)) == x.getDataNascimento())
 							etnaconv.push_back(x);
@@ -230,7 +230,7 @@ vector<Convocatoria> Convocatoria::ReadConvocatoria(vector<Jogo> jogo){
 			    Convocatoria c(id, nrjogos, custodiario, datai, dataf, competicao, jogos, jognaconv, etnaconv, condfis, datascheg, dataspart, selecionador, dnselecionador);
 				convocatoria.push_back(c);
 				index = 0;
-				jognaconv.clear(); etnaconv.clear(); condfis.clear(); datascheg.clear(); dataspart.clear();
+				jognaconv.clear(); etnaconv.clear(); condfis.clear(); datascheg.clear(); dataspart.clear(); jogos.clear();
 			}
 		}
 	}
@@ -245,7 +245,7 @@ void Convocatoria::InformacoesConvocatoria(vector<Convocatoria>& convocatoria) c
         cout << " [" << x + 1 << "]" << setfill(' ') << setw(18) << convocatoria.at(x).getCompeticao() << "   ";
         if (aux == 2) {
             aux = -1;
-            cout << endl << " ";
+            cout << endl;
         }
         aux++;
     }
@@ -670,4 +670,8 @@ Date Convocatoria::getDataNascimentoSelecionador() const{
 
 void Convocatoria::setSelecionador(string s) {
     selecionador = s;
+}
+
+void Convocatoria::setEquipaTecnica(vector<EquipaTecnica> et) {
+    equipatnaconvocatoria = et;
 }

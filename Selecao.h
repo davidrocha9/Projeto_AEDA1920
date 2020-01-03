@@ -6,6 +6,8 @@
 #include <map>
 #include <algorithm>
 #include <queue>
+#include <set>
+#include <unordered_set>
 
 #include "Jogadores.h"
 #include "Convocatoria.h"
@@ -13,6 +15,26 @@
 #include "bst.h"
 
 using namespace std;
+
+/**
+ * @brief struct da hash table com os funcionarios conhecidos
+ */
+struct FuncionariosRecordHash
+{
+    int operator() (const EquipaTecnica& cr) const
+    {
+        return 0    ;
+    }
+
+    bool operator() (const EquipaTecnica& cr1, const EquipaTecnica& cr2) const
+    {
+        return (cr1.getNome() == cr2.getNome() && cr1.getDataNascimento() == cr2.getDataNascimento());
+    }
+};
+
+typedef unordered_set<EquipaTecnica, FuncionariosRecordHash , FuncionariosRecordHash > HTFuncionariosRecord;
+
+
 /**
  * @brief classe relativa a selecao
  */
@@ -24,6 +46,7 @@ private:
   vector<Jogo> jogos; //vetor com os jogos
   priority_queue<Fornecedores> fornecedores; // fila de prioridade com os fornecedores
   BST<Selecionadores> selecionadores; //arvore binaria com os selecionadores
+  HTFuncionariosRecord funcRec;
 public:
   Selecao();
   ~Selecao();
@@ -78,7 +101,69 @@ public:
    * @return vector da classe Convocatoria com as convocatorias
    */
   vector<Convocatoria> getConvocatorias() const;
+  /**
+   * @brief retorna os fornecedores
+   * @return priority queue com os fornecedores
+   */
   priority_queue<Fornecedores> getFornecedores() const;
+  /**
+   * @brief retorna os selecionadores
+   * @return arvore binaria com os selecionadores
+   */
   BST<Selecionadores> getSelecionadores() const;
+  /**
+   * @brief da update à arvore binaria dos selecionadores
+   * @param selecionadores arvore binaria com os selecionadores
+   * @param c convocatoria
+   */
   void updateSelecionadores(BST<Selecionadores> &selecionadores, Convocatoria c);
+  /**
+   * @brief retorna a hash table com os funcionarios conhecidos
+   * @return hash table com os funcionarios conhecidos
+   */
+  HTFuncionariosRecord getFuncionariosRecord();
+  /**
+   * @brief funcao set para mudar os funcionarios conhecidos
+   * @param h hash table com os funcionarios conhecidos
+   */
+  void setFuncionariosRecord(HTFuncionariosRecord h);
+  /**
+   * @brief gera a hash table com os funcionarios conhecidos
+   * @param et vetor com todos os funcionarios
+   * @return hash table com os funcionarios conhecidos
+   */
+  HTFuncionariosRecord generateRecords(vector<EquipaTecnica> et);
+  /**
+   * @brief mostra as informaçoes dos funcionarios presentes na convocatoria mais recente
+   * @param c convocatoria
+   * @param ht hash table com os funcionarios conhecidos
+   */
+  void InformacoesFuncionariosConvocatoria(vector<Convocatoria> c, HTFuncionariosRecord ht);
+  /**
+   * mostra as informaçoes de todos os funcionarios conhecidos
+   * @param ht hash table com os funcionarios conhecidos
+   */
+  void InformacoesFuncionariosConhecidos(HTFuncionariosRecord ht);
+  /**
+   * @brief permite contratar um funcionario, que é adicionado à equipa tecnica da convocatoria mais recente
+   * @param c vetor com todas as convocatorias
+   * @param ht hash table com os funcionarios conhecidos
+   * @param et vetor da equipa tecnica
+   */
+  void ContratarFuncionario(vector<Convocatoria> &c, HTFuncionariosRecord ht, vector<EquipaTecnica> &et);
+};
+
+/**
+ * @brief classe exceçao para quando nao existe um funcionario que possa ser contratado
+ */
+class FuncionarioNaoExistente {
+public:
+    string f;
+    /**
+     * @brief construtor da exception
+     * @param f funcao do funcionario
+     */
+    FuncionarioNaoExistente(string f) {
+        this->f = f;
+    }
 };
