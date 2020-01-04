@@ -567,6 +567,7 @@ EquipaTecnica EquipaTecnica::AdicionarTecnico(vector<EquipaTecnica>& equipatecni
         default:
             break;
     }
+    system("cls"); logo();
     std::cout << "Salario: "; cin >> s;
     std::cout << endl;
     EquipaTecnica newet(n, dn, f, s, false);

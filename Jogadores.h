@@ -206,6 +206,9 @@ protected:
 	 * @brief salario de um membro da equipa tecnica
 	 */
 	unsigned int salario;
+	/**
+	 * @brief bool com valor true caso o funcionario seja conhecido, senão false
+	 */
 	bool conhecido;
 public:
 	/**
@@ -218,6 +221,7 @@ public:
      * @param dn data de nascimento do membro da equipa tecnica
      * @param f funcao do membro da equipa tecnica
      * @param s salario do membro da equipa tecnica
+     * @param c bool com o parametro conhecido
      */
 	EquipaTecnica(string n, string dn, string f, unsigned int s, bool c);
 	/**
@@ -239,6 +243,10 @@ public:
 	 * @return salario de um membro da equipa tecnica
 	 */
 	unsigned int getSalario() const;
+	/**
+	 * @brief retorna o parametro conhecido
+	 * @return true caso o funcionario seja conhecido, senão false
+	 */
     bool getConhecido() const;
 	// metodos SET
 	/**
@@ -251,6 +259,10 @@ public:
 	 * @param s string com o salario de um membro da equipa tecnica
 	 */
 	void setSalario(unsigned int s);
+	/**
+	 * @brief altera o parametro conhecido de um funcionario
+	 * @param c bool true caso seja conhecido, senão false
+	 */
 	void setConhecido(bool c);
 	//Outros metodos
 	/**
@@ -282,7 +294,17 @@ public:
      * @brief classe que precisa de aceder aos métodos da classe da equipa técnica
      */
     friend class FuncionariosRecord;
+    /**
+     * @brief operador == da classe Equipa tecnica
+     * @param et objeto da classe Equipa tecnica
+     * @return true caso os objetos sejam iguais, senão false
+     */
     bool operator == (const EquipaTecnica& et) const;
+    /**
+     * brief operador < da classe Equipa tecnica
+     * @param et objeto da classe Equipa tecnica
+     * @return true caso o objeto seja menor, senão false
+     */
     bool operator < (const EquipaTecnica &et) const;
 };
 /**
@@ -305,6 +327,7 @@ public:
      * @param s salário
      * @param tg titulos ganhos
      * @param sel vetor com ids das convocatorias em que o selecionador está presente
+     * @param con bool caso o funcionario seja conhecido ou nao
      */
     Selecionadores(string n, string dn, string f, unsigned int s, bool con, unsigned int tg, vector<unsigned int> sel);
     /**
@@ -354,9 +377,14 @@ public:
     friend ostream& operator<<(ostream& out, const Selecionadores& s);
 };
 
-
+/**
+ * @brief classe excecao para quando ja existe o jogador
+ */
 class JogadorJaExistente {
 public:
+    /**
+     * @brief nome e data de nascimento do jogador
+     */
     string nome, datanascimento;
     /**
      * @brief construtor da classe com exception
@@ -413,6 +441,9 @@ public:
  */
 class MembroTecnicoJaExistente {
 public:
+    /**
+     * @brief nome e data de nascimento do membro tecnico
+     */
     string nome, datanascimento;
     /**
      * @brief construtor da classe com exception

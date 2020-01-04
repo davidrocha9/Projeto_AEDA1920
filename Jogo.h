@@ -309,6 +309,9 @@ public:
  */
 class JogoJaExistente {
 public:
+    /**
+     * @brief data do jogo
+     */
     string data;
     /**
      * @brief construtor da exception

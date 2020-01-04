@@ -67,3 +67,4 @@ ostream& operator <<(ostream& out, const Date& date) {
 	out << setfill('0') << setw(2) << to_string(date.dia) << "/" << setfill('0') << setw(2) << to_string(date.mes) << "/" << setfill('0') << setw(4) << to_string(date.ano);
 	return out;
 }
+

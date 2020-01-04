@@ -51,3 +51,9 @@ void logo() {
 	cout << "--------------------------------------------- " << endl;
 	cout << endl;
 }
+
+string dateToString(Date date) {
+    string res;
+    res = to_string(date.getDia()) + "/" + to_string(date.getMes()) + "/" + to_string(date.getAno());
+    return res;
+}

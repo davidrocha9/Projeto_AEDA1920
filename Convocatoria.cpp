@@ -135,6 +135,10 @@ vector<Convocatoria> Convocatoria::ReadConvocatoria(vector<Jogo> jogo){
 			switch (index) {
 			case 0:
 				v1 = divideStrings(line);
+				while(v1.size() != 6){
+                    std::getline(convocatoriafile, line);
+                    v1 = divideStrings(line);
+				}
 				for (size_t x = 0; x < v1.size(); x++) {
 					switch (x) {
 					case 0:
@@ -165,6 +169,10 @@ vector<Convocatoria> Convocatoria::ReadConvocatoria(vector<Jogo> jogo){
 				break;
 			case 2:
 				v2 = divideStrings(line);
+				while(v1.size() != v2.size()){
+                    std::getline(convocatoriafile, line);
+                    v2 = divideStrings(line);
+				}
 				for (size_t x = 0; x < v1.size(); x++) {
 					for (Jogo i : jogo) {
 						if (v1.at(x) == i.getAdversario() && Date(v2.at(x)) == i.getData())
@@ -178,6 +186,10 @@ vector<Convocatoria> Convocatoria::ReadConvocatoria(vector<Jogo> jogo){
 				break;
 			case 4:
 				v2 = divideStrings(line);
+                while(v1.size() != v2.size()){
+                    std::getline(convocatoriafile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t i = 0; i < v1.size(); i++) {
 					for (Futebolista x : f1.ReadJogadores()) {
 						if (v1.at(i) == x.getNome() && Date(v2.at(i)) == x.getDataNascimento())
@@ -186,7 +198,12 @@ vector<Convocatoria> Convocatoria::ReadConvocatoria(vector<Jogo> jogo){
 				}
 				break;
 			case 5:
+			    v1.clear();
 				v1 = divideStrings(line);
+                while(v1.size() != v2.size()){
+                    std::getline(convocatoriafile, line);
+                    v1 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jognaconv.size(); x++) {
 					if (v1.at(x) == "1")
 						condfis.insert(pair<Futebolista, bool>(jognaconv.at(x), false));
@@ -196,14 +213,22 @@ vector<Convocatoria> Convocatoria::ReadConvocatoria(vector<Jogo> jogo){
 				break;
 			case 6:
 				v1.clear();
-				v1 = divideStrings(line);
+                v1 = divideStrings(line);
+                while(v1.size() != v2.size()){
+                    std::getline(convocatoriafile, line);
+                    v1 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jognaconv.size(); x++) {
 					datascheg.insert(pair<Futebolista, string>(jognaconv.at(x), v1.at(x)));
 				}
 				break;
 			case 7:
-				v1.clear();
-				v1 = divideStrings(line);
+                v1.clear();
+                v1 = divideStrings(line);
+                while(v1.size() != v2.size()){
+                    std::getline(convocatoriafile, line);
+                    v1 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jognaconv.size(); x++) {
 					dataspart.insert(pair<Futebolista, string>(jognaconv.at(x), v1.at(x)));
 				}
@@ -216,6 +241,10 @@ vector<Convocatoria> Convocatoria::ReadConvocatoria(vector<Jogo> jogo){
 			    selecionador = v1.at(0);
 				v2.clear();
 				v2 = divideStrings(line);
+                while(v1.size() != v2.size()){
+                    std::getline(convocatoriafile, line);
+                    v2 = divideStrings(line);
+                }
 				dnselecionador = v2.at(0);
 				for (size_t i = 0; i < v1.size(); i++) {
 					for (EquipaTecnica x : et1.ReadEquipaTecnica()) {
@@ -328,19 +357,13 @@ Convocatoria Convocatoria::AdicionarConvocatoria(vector<Convocatoria>& convocato
     do {
         cin.clear();
         cin.ignore(1000, '\n');
-        std::cout << " Numero de membro tecnicos (para alem do Selecionador): "; std::cin >> nret;
+        std::cout << " Numero de membro tecnicos: "; std::cin >> nret;
         if (nret > equipatecnica.size()) {
             cout << " Apenas existe(m) " << equipatecnica.size() << " membro(s) na base de dados! Tente novamente." << endl;
         }
     } while (nret > equipatecnica.size());
     cin.clear();
     cin.ignore(1000, '\n');
-    string selecionador;
-    std::cout << " Selecionador: "; std::getline(cin, selecionador);
-    system("cls"); logo();
-    cin.clear();
-    string dnsel;
-    std::cout << " Data de nascimento do selecionador: "; std::getline(cin, dnsel);
 
     cin.clear();
     system("cls"); logo();
@@ -463,6 +486,14 @@ Convocatoria Convocatoria::AdicionarConvocatoria(vector<Convocatoria>& convocato
             cin.ignore(1000, '\n');
         }
     } while (nret != 0 || cin.fail());
+    string selecionador;
+    string dnsel;
+    for (auto x: et){
+        if (x.getFuncao() == "Selecionador Nacional"){
+            selecionador = x.getNome();
+            dnsel = dateToString(x.getDataNascimento());
+        }
+    }
     Convocatoria c = Convocatoria(id, nrjogos, custo, datai, dataf, comp, jogos, jog, et, condicaof, datasch, dataspa, selecionador, dnsel);
     convocatoria.push_back(c);
     return c;

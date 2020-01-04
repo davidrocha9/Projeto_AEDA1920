@@ -13,4 +13,4 @@ Danilo Luis Helio Pereira | 15/10/2000 | Medio Ofensivo | Futebol Clube do Porto
 Andre Filipe Tavares Gomes | 08/09/1994 | Medio Ofensivo | Spording CP | 76 | 179 | 60000000
 Antonio Alberto Bastos Pimparel | 15/02/1988 | Guarda Redes | Wolverhampton Wanderers | 84 | 190 | 20000000
 Nelson Cabral Semedo | 26/02/1983 | Defesa Lateral | FC Porto | 85 | 1 | 5000000
-David Rocha | 09/05/2000 | Medio | porto | 60 | 177 | 10000
+David Rocha | 09/05/2000 | Medio | FC Porto | 60 | 177 | 10000

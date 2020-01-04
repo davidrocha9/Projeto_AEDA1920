@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Date.h"
 #include <string>
 #include <vector>
 using namespace std;
@@ -21,3 +21,4 @@ vector<string> divideStrings(string& s);
  * @brief mostra na consola a mensagem de boas vindas
  */
 void logo();
+string dateToString(Date date);

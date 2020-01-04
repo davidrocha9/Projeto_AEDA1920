@@ -17,6 +17,7 @@ Pickford | Smalling | Vardy | Sterling | eng1 | eng2 | eng3 | eng4 | eng5 | eng6
 1 | 0 | 0 | 0
 Cristiano Ronaldo dos Santos Aveiro
 05/02/1985
+::::::::::
 25/11/2019 | Franca | Portugal | Lisboa | Estadio da Luz
 Cristiano Ronaldo dos Santos Aveiro | Bernardo Mota Veiga de Carvalho e Silva
 05/02/1985 | 15/10/2000
@@ -36,7 +37,8 @@ De Gea | Diego Costa | espanhol | esp1 | esp2 | esp3 | esp4 | esp | esp6 | esp7 
 0 | 0
 
 
-23/11/2019 | Espanha | Espanha | Madrid | Bernabeu
+::::::::::
+23/11/2019 | Cazaquistao | Espanha | Madrid | Bernabeu
 Cristiano Ronaldo dos Santos Aveiro | Bernardo Mota Veiga de Carvalho e Silva | Bruno Miguel Borges Fernandes
 05/02/1985 | 15/10/2000 | 08/09/1994
 Cristiano Ronaldo dos Santos Aveiro | Bruno Miguel Borges Fernandes | Bernardo Mota Veiga de Carvalho e Silva

@@ -214,6 +214,10 @@ vector<Jogo> Jogo::ReadJogo() {
 			switch(index){
 			case 0:
 				info = divideStrings(line);
+                while(info.size() != 5){
+                    std::getline(jogofile, line);
+                    info = divideStrings(line);
+                }
 				for (size_t x = 0; x < info.size(); x++) {
 					switch (x) {
 					case 0:
@@ -239,6 +243,10 @@ vector<Jogo> Jogo::ReadJogo() {
 				break;
 			case 2:
 				v2 = divideStrings(line);
+                while(v1.size() != v2.size()){
+                    std::getline(jogofile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t i = 0; i < v1.size(); i++) {
 					for (Futebolista x : f1.ReadJogadores()) {
 						if (v1.at(i) == x.getNome() && Date(v2.at(i)) == x.getDataNascimento()) {
@@ -255,6 +263,10 @@ vector<Jogo> Jogo::ReadJogo() {
 			case 4:
 				v2.clear();
 				v2 = divideStrings(line);
+                while(v1.size() != v2.size()){
+                    std::getline(jogofile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t i = 0; i < v1.size(); i++) {
 					for (Futebolista x : jognaconv) {
 						if (v1.at(i) == x.getNome() && Date(v2.at(i)) == x.getDataNascimento()) {
@@ -273,70 +285,100 @@ vector<Jogo> Jogo::ReadJogo() {
 			case 7:
 				v2.clear();
 				v2 = divideStrings(line);
-				//assert(jognaconv.size() == v2.size());
+                while(v1.size() != v2.size()){
+                    std::getline(jogofile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jogpart.size(); x++)
 					gols.insert(pair<Futebolista, unsigned int>(jogpart.at(x), stoi(v2.at(x))));
 				break;
 			case 8:
 				v2.clear();
 				v2 = divideStrings(line);
-				//assert(jognaconv.size() == v2.size());
+                while(v1.size() != v2.size()){
+                    std::getline(jogofile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jogpart.size(); x++)
 					assists.insert(pair<Futebolista, unsigned int>(jogpart.at(x), stoi(v2.at(x))));
 				break;
 			case 9:
 				v2.clear();
 				v2 = divideStrings(line);
-				//assert(jognaconv.size() == v2.size());
+                while(v1.size() != v2.size()){
+                    std::getline(jogofile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jogpart.size(); x++)
 					pass.insert(pair<Futebolista, unsigned int>(jogpart.at(x), stoi(v2.at(x))));
 				break;
 			case 10:
 				v2.clear();
 				v2 = divideStrings(line);
-				//assert(jognaconv.size() == v2.size());
+                while(v1.size() != v2.size()){
+                    std::getline(jogofile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jogpart.size(); x++)
 					passcerto.insert(pair<Futebolista, unsigned int>(jogpart.at(x), stoi(v2.at(x))));
 				break;
 			case 11:
 				v2.clear();
 				v2 = divideStrings(line);
-				//assert(jognaconv.size() == v2.size());
+                while(v1.size() != v2.size()){
+                    std::getline(jogofile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jogpart.size(); x++)
 					disharms.insert(pair<Futebolista, unsigned int>(jogpart.at(x), stoi(v2.at(x))));
 				break;
 			case 12:
 				v2.clear();
 				v2 = divideStrings(line);
-				//assert(jognaconv.size() == v2.size());
+                while(v1.size() != v2.size()){
+                    std::getline(jogofile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jogpart.size(); x++)
 					fouls.insert(pair<Futebolista, unsigned int>(jogpart.at(x), stoi(v2.at(x))));
 				break;
 			case 13:
 				v2.clear();
 				v2 = divideStrings(line);
-				//assert(jognaconv.size() == v2.size());
+                while(v1.size() != v2.size()){
+                    std::getline(jogofile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jogpart.size(); x++)
 					kms.insert(pair<Futebolista, unsigned int>(jogpart.at(x), stoi(v2.at(x))));
 				break;
 			case 14:
 				v2.clear();
 				v2 = divideStrings(line);
-				//assert(jognaconv.size() == v2.size());
+                while(v1.size() != v2.size()){
+                    std::getline(jogofile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jogpart.size(); x++)
 					min.insert(pair<Futebolista, unsigned int>(jogpart.at(x), stoi(v2.at(x))));
 				break;
 			case 15:
 				v2.clear();
 				v2 = divideStrings(line);
-				//assert(jognaconv.size() == v2.size());
+                while(v1.size() != v2.size()){
+                    std::getline(jogofile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jogpart.size(); x++)
 					yellows.insert(pair<Futebolista, unsigned int>(jogpart.at(x), stoi(v2.at(x))));
 				break;
 			case 16:
 				v2.clear();
 				v2 = divideStrings(line);
-				//assert(jognaconv.size() == v2.size());
+                while(v1.size() != v2.size()){
+                    std::getline(jogofile, line);
+                    v2 = divideStrings(line);
+                }
 				for (size_t x = 0; x < jogpart.size(); x++)
 					reds.insert(pair<Futebolista, unsigned int>(jogpart.at(x), stoi(v2.at(x))));
 				break;

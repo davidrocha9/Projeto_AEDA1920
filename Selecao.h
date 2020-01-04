@@ -21,14 +21,24 @@ using namespace std;
  */
 struct FuncionariosRecordHash
 {
-    int operator() (const EquipaTecnica& cr) const
+    /**
+     * @brief hash function
+     * @param et membro da equipa tecnica
+     * @return index da hash function
+     */
+    int operator() (const EquipaTecnica& et) const
     {
-        return 0    ;
+        return 0;
     }
-
-    bool operator() (const EquipaTecnica& cr1, const EquipaTecnica& cr2) const
+    /**
+     * @brief operador da hash function
+     * @param et1 objeto da classe equipa tecnica
+     * @param et2 objeto da classe equipa tecnica
+     * @return true caso sejam iguais, senão false
+     */
+    bool operator() (const EquipaTecnica& et1, const EquipaTecnica& et2) const
     {
-        return (cr1.getNome() == cr2.getNome() && cr1.getDataNascimento() == cr2.getDataNascimento());
+        return (et1.getNome() == et2.getNome() && et1.getDataNascimento() == et2.getDataNascimento());
     }
 };
 
@@ -158,6 +168,9 @@ public:
  */
 class FuncionarioNaoExistente {
 public:
+    /**
+     * @brief funcao do funcionario
+     */
     string f;
     /**
      * @brief construtor da exception

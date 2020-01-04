@@ -7,9 +7,9 @@
 
 using namespace std;
 
-////////////////////
-// Membro Selecao //
-////////////////////
+//////////////////////
+/// Membro Selecao ///
+//////////////////////
 
 int BinarySearch(const vector<EquipaTecnica> &v, EquipaTecnica x) {
     int left = 0;
@@ -347,7 +347,7 @@ void Selecao::JogostoFile(vector<Jogo> jogos){
 			}
 		}
 		if (endofile != jogos.size() - 1)
-			jogofile << endl;
+			jogofile << endl << "::::::::::" << endl;
 		endofile++;
 	}
 	jogofile.close();

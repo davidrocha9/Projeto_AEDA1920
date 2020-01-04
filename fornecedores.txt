@@ -1,11 +1,17 @@
 Adidas
-4.83333
-21
-bola | Calcoes
-10 | 10
+4.61363
+22
+Camisolas | Calcoes | Meias | Chuteiras | Sapatilhas
+10 | 10 | 5 | 40 | 60
 ::::::::::
 Nike
 3.7
 100
-Calcoes
-15
+Calcoes | Meias | Caneleiras | Fato de treino
+15 | 5 | 15 | 40
+::::::::::
+Macron
+4.123
+77
+Calcoes | Meias | Chuteiras | Fato de treino
+15 | 5 | 60 | 40

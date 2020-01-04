@@ -44,6 +44,8 @@ public:
 	 * @param condicaofisica multimap que associa os futebolistas com a sua condicao fisica (se estao lesionados ou nao)
 	 * @param dataschegada multimap que associa os futebolistas com as respetivas datas de chegada
 	 * @param dataspartida multimap que associa os futebolistas com as respetivas datas de partida
+	 * @param selecionador nome do selecionador
+	 * @param dnselecionador data de nascimento do selecionador
 	 */
 	Convocatoria(unsigned int id, unsigned int nrjogos, unsigned int custo, string datai, string dataf, string competicao, vector<Jogo> jogos, vector<Futebolista> jogadoresnaconvocatoria, vector<EquipaTecnica> equipatnaconvocatoria, multimap<Futebolista, bool> condicaofisica, multimap<Futebolista, Date> dataschegada, multimap<Futebolista, Date> dataspartida, string selecionador, Date dnselecionador);
 	/**
@@ -235,6 +237,9 @@ public:
  */
 class ConvocatoriaJaExistente {
 public:
+    /**
+     * @brief id da convocatoria
+     */
     unsigned int id;
     /**
      * @brief construtor da exception

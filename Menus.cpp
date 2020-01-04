@@ -10,13 +10,6 @@
 #include <set>
 #include <unordered_set>
 
-struct JogadorFama{
-    string nome;
-    unsigned int golos;
-    unsigned int assists;
-    unsigned int jogos;
-};
-
 using namespace std;
 
 bool changeReturn(bool& return_menu) {
@@ -559,6 +552,7 @@ void mainMenu(Selecao& selecao) {
                         selecao.EquipaTecnicatoFile(equipatecnica);
                         break;
                 }
+                break;
             case 9:
                 system("cls");
                 logo();

@@ -112,6 +112,10 @@ priority_queue<Fornecedores> Fornecedores::ReadFornecedores() {
             temp = divideStrings(line);
             std::getline(fornecedoresfile, line);
             temp1 = divideStrings(line);
+            while(temp.size() != temp1.size()){
+                std::getline(fornecedoresfile, line);
+                temp1 = divideStrings(line);
+            }
             eq.clear();
             for (size_t x = 0; x < temp.size(); x++){
                 e.setTipo(temp.at(x));
@@ -130,6 +134,7 @@ priority_queue<Fornecedores> Fornecedores::ReadFornecedores() {
 void Fornecedores::InfoFornecedores(priority_queue<Fornecedores> fornecedores) {
     priority_queue<Fornecedores> aux = fornecedores;
     unsigned int x = 1;
+    cout << " Lista de Fornecedores Disponiveis:" << endl << endl << " ";
     while(!aux.empty()){
         if (x % 3 == 0)
             std::cout << endl << " ";

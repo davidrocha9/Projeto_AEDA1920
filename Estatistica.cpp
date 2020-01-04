@@ -93,9 +93,7 @@ void EstatisticaJogador(vector<Futebolista>& jogadores, vector<Jogo>& jogos, vec
                 break;
             }
             else {
-                cout << " Convocatorias: ";
-                for (int j = 0; j < ids_convo.size(); j++)
-                    cout << ids_convo.at(j);
+                cout << " Convocatorias: " << ids_convo.size();
                 cout << endl;
             }
 
@@ -473,7 +471,6 @@ void CustoIndvMes(vector<Futebolista>& jogadores, vector<Jogo>& jogos, vector<Co
     } while (opt < 1 && opt > jogadores.size());
     nome = jogadores.at(opt - 1);
     cout << endl;
-    nome = jogadores.at(stoi(line) - 1);
 
     while (checkano) {
         cout << " Ano que pretende consultar: ";
