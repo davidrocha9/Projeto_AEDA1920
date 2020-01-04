@@ -6,3 +6,6 @@ Bernardo Moreira | 09/05/1967 | Medico Principal | 1500 | 1
 Scolari | 01/01/1961 | Selecionador Nacional | 15000 | 1
 Joao Vieira Pinto | 19/08/1971 | Diretor | 2000 | 1
 Ricardo Barbosa | 27/03/1990 | Departamento Medico | 3000 | 0
+Americo Pais | 14/08/1960 | Funcionario Tecnico | 595 | 0
+Joao Meireles | 12/01/1985 | Preparador Fisico | 800 | 1
+Americo Pais | 01/04/1955 | Treinador Nacional de Guarda-Redes | 1000 | 0

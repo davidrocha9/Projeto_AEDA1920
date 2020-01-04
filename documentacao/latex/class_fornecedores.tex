@@ -1,0 +1,297 @@
+\hypertarget{class_fornecedores}{}\doxysection{Fornecedores Class Reference}
+\label{class_fornecedores}\index{Fornecedores@{Fornecedores}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_fornecedores_a9ddd5bfd3c2bbaf496ffd04442e6bc74}{Fornecedores}} ()
+\begin{DoxyCompactList}\small\item\em construtor vazio da classe \mbox{\hyperlink{class_fornecedores}{Fornecedores}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_fornecedores_ad37965ef1c1fbb4fb1103317da3c2686}{Fornecedores}} (string n, double r, unsigned int re, vector$<$ \mbox{\hyperlink{class_equipamentos}{Equipamentos}} $>$ eq)
+\begin{DoxyCompactList}\small\item\em construtor da classe \mbox{\hyperlink{class_fornecedores}{Fornecedores}} \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_fornecedores_a47218bcde4d020f840635a2cd60aae30}{get\+Nome}} () const
+\begin{DoxyCompactList}\small\item\em funcao get para retornar o nome \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_fornecedores_a1799323c7b67ac86de1b88cb01ac634d}{get\+Reputacao}} () const
+\begin{DoxyCompactList}\small\item\em funcao get para retornar a reputacao \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_fornecedores_af2b6a1d709e5b72a91004b225f6f67f4}{get\+Reviews}} () const
+\begin{DoxyCompactList}\small\item\em funcao get para retornar as reviews \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_equipamentos}{Equipamentos}} $>$ \mbox{\hyperlink{class_fornecedores_a509c1c7aea35277bbedf003a1dee4111}{get\+Equipamentos}} () const
+\begin{DoxyCompactList}\small\item\em funcao get para retornar equipamentos \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fornecedores_a4886565d24931db77d785d893e804b1e}{set\+Nome}} (string n)
+\begin{DoxyCompactList}\small\item\em funcao set para mudar o nome de um fornecedor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fornecedores_ace2fd205a47e1fb1ae137a5251d0fe36}{set\+Reputacao}} (double r)
+\begin{DoxyCompactList}\small\item\em funcao set para mudar a reputacao de um fornecedor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fornecedores_a9cba436d06aad378735d645d96981f9f}{set\+Reviews}} (unsigned int r)
+\begin{DoxyCompactList}\small\item\em funcao set para mudar o numero de reviews de um fornecedor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fornecedores_a8609b2f45b4d3b60415bdab7bcc581c4}{set\+Equipamentos}} (vector$<$ \mbox{\hyperlink{class_equipamentos}{Equipamentos}} $>$ eq)
+\begin{DoxyCompactList}\small\item\em funcao set para mudar o vetor de equipamentos de um fornecedor \end{DoxyCompactList}\item 
+priority\+\_\+queue$<$ \mbox{\hyperlink{class_fornecedores}{Fornecedores}} $>$ \mbox{\hyperlink{class_fornecedores_abd73c71a540ad60ed3b4496f07458d40}{Read\+Fornecedores}} ()
+\begin{DoxyCompactList}\small\item\em funcao para ler os fornecedores do ficheiro \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fornecedores_a6f2070777805bd97792cdf087dd2dd03}{Info\+Fornecedores}} (priority\+\_\+queue$<$ \mbox{\hyperlink{class_fornecedores}{Fornecedores}} $>$ fornecedores)
+\begin{DoxyCompactList}\small\item\em funcao para mostrar a informacao de um fornecedor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fornecedores_a43c55ad8d354cdabea885a40fa78df78}{Vender\+Equipamentos}} (priority\+\_\+queue$<$ \mbox{\hyperlink{class_fornecedores}{Fornecedores}} $>$ \&fornecedores)
+\begin{DoxyCompactList}\small\item\em funcao para vender um equipamento de um fornecedor à seleção \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_fornecedores_a0fdf69e568f0f985f916d03b498778a9}{operator$<$}} (const \mbox{\hyperlink{class_fornecedores}{Fornecedores}} \&f) const
+\begin{DoxyCompactList}\small\item\em operador $<$ para um objeto da classe \mbox{\hyperlink{class_fornecedores}{Fornecedores}} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_fornecedores_aaffd1ad23572c388714227d241b37f7e}{operator==}} (const \mbox{\hyperlink{class_fornecedores}{Fornecedores}} \&f) const
+\begin{DoxyCompactList}\small\item\em operador == para um objeto da classe \mbox{\hyperlink{class_fornecedores}{Fornecedores}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{class_fornecedores_a75337af14123eabdc57801818825fd1c}{operator$<$$<$}} (ostream \&out, const \mbox{\hyperlink{class_fornecedores}{Fornecedores}} \&f)
+\begin{DoxyCompactList}\small\item\em ostream para um objeto da classe \mbox{\hyperlink{class_fornecedores}{Fornecedores}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_fornecedores_a9ddd5bfd3c2bbaf496ffd04442e6bc74}\label{class_fornecedores_a9ddd5bfd3c2bbaf496ffd04442e6bc74}} 
+\index{Fornecedores@{Fornecedores}!Fornecedores@{Fornecedores}}
+\index{Fornecedores@{Fornecedores}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{Fornecedores()}{Fornecedores()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Fornecedores\+::\+Fornecedores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+construtor vazio da classe \mbox{\hyperlink{class_fornecedores}{Fornecedores}} 
+
+\mbox{\hyperlink{class_fornecedores}{Fornecedores}} ///. \mbox{\Hypertarget{class_fornecedores_ad37965ef1c1fbb4fb1103317da3c2686}\label{class_fornecedores_ad37965ef1c1fbb4fb1103317da3c2686}} 
+\index{Fornecedores@{Fornecedores}!Fornecedores@{Fornecedores}}
+\index{Fornecedores@{Fornecedores}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{Fornecedores()}{Fornecedores()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Fornecedores\+::\+Fornecedores (\begin{DoxyParamCaption}\item[{string}]{n,  }\item[{double}]{r,  }\item[{unsigned int}]{re,  }\item[{vector$<$ \mbox{\hyperlink{class_equipamentos}{Equipamentos}} $>$}]{eq }\end{DoxyParamCaption})}
+
+
+
+construtor da classe \mbox{\hyperlink{class_fornecedores}{Fornecedores}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & nome do fornecedor \\
+\hline
+{\em r} & reputação do fornecedor \\
+\hline
+{\em re} & numero de reviews do fornecedor \\
+\hline
+{\em eq} & vetor de equipamentos do fornecedor \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_fornecedores_a509c1c7aea35277bbedf003a1dee4111}\label{class_fornecedores_a509c1c7aea35277bbedf003a1dee4111}} 
+\index{Fornecedores@{Fornecedores}!getEquipamentos@{getEquipamentos}}
+\index{getEquipamentos@{getEquipamentos}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{getEquipamentos()}{getEquipamentos()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_equipamentos}{Equipamentos}} $>$ Fornecedores\+::get\+Equipamentos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+funcao get para retornar equipamentos 
+
+\begin{DoxyReturn}{Returns}
+equipamentos do fornecedor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fornecedores_a47218bcde4d020f840635a2cd60aae30}\label{class_fornecedores_a47218bcde4d020f840635a2cd60aae30}} 
+\index{Fornecedores@{Fornecedores}!getNome@{getNome}}
+\index{getNome@{getNome}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{getNome()}{getNome()}}
+{\footnotesize\ttfamily string Fornecedores\+::get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+funcao get para retornar o nome 
+
+\begin{DoxyReturn}{Returns}
+nome do fornecedor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fornecedores_a1799323c7b67ac86de1b88cb01ac634d}\label{class_fornecedores_a1799323c7b67ac86de1b88cb01ac634d}} 
+\index{Fornecedores@{Fornecedores}!getReputacao@{getReputacao}}
+\index{getReputacao@{getReputacao}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{getReputacao()}{getReputacao()}}
+{\footnotesize\ttfamily double Fornecedores\+::get\+Reputacao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+funcao get para retornar a reputacao 
+
+\begin{DoxyReturn}{Returns}
+reputacao do fornecedor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fornecedores_af2b6a1d709e5b72a91004b225f6f67f4}\label{class_fornecedores_af2b6a1d709e5b72a91004b225f6f67f4}} 
+\index{Fornecedores@{Fornecedores}!getReviews@{getReviews}}
+\index{getReviews@{getReviews}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{getReviews()}{getReviews()}}
+{\footnotesize\ttfamily unsigned int Fornecedores\+::get\+Reviews (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+funcao get para retornar as reviews 
+
+\begin{DoxyReturn}{Returns}
+reviews do fornecedor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fornecedores_a6f2070777805bd97792cdf087dd2dd03}\label{class_fornecedores_a6f2070777805bd97792cdf087dd2dd03}} 
+\index{Fornecedores@{Fornecedores}!InfoFornecedores@{InfoFornecedores}}
+\index{InfoFornecedores@{InfoFornecedores}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{InfoFornecedores()}{InfoFornecedores()}}
+{\footnotesize\ttfamily void Fornecedores\+::\+Info\+Fornecedores (\begin{DoxyParamCaption}\item[{priority\+\_\+queue$<$ \mbox{\hyperlink{class_fornecedores}{Fornecedores}} $>$}]{fornecedores }\end{DoxyParamCaption})}
+
+
+
+funcao para mostrar a informacao de um fornecedor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fornecedores} & priority queue com todos os fornecedores \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_fornecedores_a0fdf69e568f0f985f916d03b498778a9}\label{class_fornecedores_a0fdf69e568f0f985f916d03b498778a9}} 
+\index{Fornecedores@{Fornecedores}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Fornecedores\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_fornecedores}{Fornecedores}} \&}]{f }\end{DoxyParamCaption}) const}
+
+
+
+operador $<$ para um objeto da classe \mbox{\hyperlink{class_fornecedores}{Fornecedores}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & fornecedor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true caso seja menor, senão falso 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fornecedores_aaffd1ad23572c388714227d241b37f7e}\label{class_fornecedores_aaffd1ad23572c388714227d241b37f7e}} 
+\index{Fornecedores@{Fornecedores}!operator==@{operator==}}
+\index{operator==@{operator==}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Fornecedores\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_fornecedores}{Fornecedores}} \&}]{f }\end{DoxyParamCaption}) const}
+
+
+
+operador == para um objeto da classe \mbox{\hyperlink{class_fornecedores}{Fornecedores}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & fornecedor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true caso seja igual, senão falso 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fornecedores_abd73c71a540ad60ed3b4496f07458d40}\label{class_fornecedores_abd73c71a540ad60ed3b4496f07458d40}} 
+\index{Fornecedores@{Fornecedores}!ReadFornecedores@{ReadFornecedores}}
+\index{ReadFornecedores@{ReadFornecedores}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{ReadFornecedores()}{ReadFornecedores()}}
+{\footnotesize\ttfamily priority\+\_\+queue$<$ \mbox{\hyperlink{class_fornecedores}{Fornecedores}} $>$ Fornecedores\+::\+Read\+Fornecedores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funcao para ler os fornecedores do ficheiro 
+
+\begin{DoxyReturn}{Returns}
+priority queue com todos os fornecedores 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fornecedores_a8609b2f45b4d3b60415bdab7bcc581c4}\label{class_fornecedores_a8609b2f45b4d3b60415bdab7bcc581c4}} 
+\index{Fornecedores@{Fornecedores}!setEquipamentos@{setEquipamentos}}
+\index{setEquipamentos@{setEquipamentos}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{setEquipamentos()}{setEquipamentos()}}
+{\footnotesize\ttfamily void Fornecedores\+::set\+Equipamentos (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_equipamentos}{Equipamentos}} $>$}]{eq }\end{DoxyParamCaption})}
+
+
+
+funcao set para mudar o vetor de equipamentos de um fornecedor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eq} & vetor de equipamentos \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_fornecedores_a4886565d24931db77d785d893e804b1e}\label{class_fornecedores_a4886565d24931db77d785d893e804b1e}} 
+\index{Fornecedores@{Fornecedores}!setNome@{setNome}}
+\index{setNome@{setNome}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{setNome()}{setNome()}}
+{\footnotesize\ttfamily void Fornecedores\+::set\+Nome (\begin{DoxyParamCaption}\item[{string}]{n }\end{DoxyParamCaption})}
+
+
+
+funcao set para mudar o nome de um fornecedor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & nome \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_fornecedores_ace2fd205a47e1fb1ae137a5251d0fe36}\label{class_fornecedores_ace2fd205a47e1fb1ae137a5251d0fe36}} 
+\index{Fornecedores@{Fornecedores}!setReputacao@{setReputacao}}
+\index{setReputacao@{setReputacao}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{setReputacao()}{setReputacao()}}
+{\footnotesize\ttfamily void Fornecedores\+::set\+Reputacao (\begin{DoxyParamCaption}\item[{double}]{r }\end{DoxyParamCaption})}
+
+
+
+funcao set para mudar a reputacao de um fornecedor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & reputacao \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_fornecedores_a9cba436d06aad378735d645d96981f9f}\label{class_fornecedores_a9cba436d06aad378735d645d96981f9f}} 
+\index{Fornecedores@{Fornecedores}!setReviews@{setReviews}}
+\index{setReviews@{setReviews}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{setReviews()}{setReviews()}}
+{\footnotesize\ttfamily void Fornecedores\+::set\+Reviews (\begin{DoxyParamCaption}\item[{unsigned int}]{r }\end{DoxyParamCaption})}
+
+
+
+funcao set para mudar o numero de reviews de um fornecedor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & numero de reviews \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_fornecedores_a43c55ad8d354cdabea885a40fa78df78}\label{class_fornecedores_a43c55ad8d354cdabea885a40fa78df78}} 
+\index{Fornecedores@{Fornecedores}!VenderEquipamentos@{VenderEquipamentos}}
+\index{VenderEquipamentos@{VenderEquipamentos}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{VenderEquipamentos()}{VenderEquipamentos()}}
+{\footnotesize\ttfamily void Fornecedores\+::\+Vender\+Equipamentos (\begin{DoxyParamCaption}\item[{priority\+\_\+queue$<$ \mbox{\hyperlink{class_fornecedores}{Fornecedores}} $>$ \&}]{fornecedores }\end{DoxyParamCaption})}
+
+
+
+funcao para vender um equipamento de um fornecedor à seleção 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fornecedores} & priority queue com todos os fornecedores \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_fornecedores_a75337af14123eabdc57801818825fd1c}\label{class_fornecedores_a75337af14123eabdc57801818825fd1c}} 
+\index{Fornecedores@{Fornecedores}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Fornecedores@{Fornecedores}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{out,  }\item[{const \mbox{\hyperlink{class_fornecedores}{Fornecedores}} \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+ostream para um objeto da classe \mbox{\hyperlink{class_fornecedores}{Fornecedores}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & fornecedor \\
+\hline
+{\em out} & ostream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream com informações do operador 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/josed/\+One\+Drive/\+Ambiente de Trabalho/\+Projeto\+\_\+\+A\+E\+D\+A1920/Equipamentos.\+h\item 
+C\+:/\+Users/josed/\+One\+Drive/\+Ambiente de Trabalho/\+Projeto\+\_\+\+A\+E\+D\+A1920/Equipamentos.\+cpp\end{DoxyCompactItemize}

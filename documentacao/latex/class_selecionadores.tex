@@ -1,0 +1,219 @@
+\hypertarget{class_selecionadores}{}\doxysection{Selecionadores Class Reference}
+\label{class_selecionadores}\index{Selecionadores@{Selecionadores}}
+
+
+class exception para futebolistas ja existentes  
+
+
+
+
+{\ttfamily \#include $<$Jogadores.\+h$>$}
+
+Inheritance diagram for Selecionadores\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_selecionadores}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_selecionadores_a2336cfedf792e8e4c4217273b1f98078}\label{class_selecionadores_a2336cfedf792e8e4c4217273b1f98078}} 
+\mbox{\hyperlink{class_selecionadores_a2336cfedf792e8e4c4217273b1f98078}{Selecionadores}} ()
+\begin{DoxyCompactList}\small\item\em construtor vazio da classe selecionadores \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_selecionadores_a9cb255b564879d9984ecf4ff5183b52d}{Selecionadores}} (string n, string dn, string f, unsigned int s, bool con, unsigned int tg, vector$<$ unsigned int $>$ sel)
+\begin{DoxyCompactList}\small\item\em construto da classe selecionadores \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_selecionadores_a618b1760f89a7dffb8f27b514ab9d3c2}{Selecionadores}} (string n, unsigned int tg)
+\begin{DoxyCompactList}\small\item\em construtor da classe selecionadores \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_selecionadores_a42ddd7d1062d768b3e383df638b445b0}{get\+Titulos\+Ganhos}} () const
+\begin{DoxyCompactList}\small\item\em funcao get para retornar o numero de titulos ganhos \end{DoxyCompactList}\item 
+vector$<$ unsigned int $>$ \mbox{\hyperlink{class_selecionadores_ad50f668e49e193caa83e033906d28341}{get\+Selecoes}} () const
+\begin{DoxyCompactList}\small\item\em funcao get para retornar o vetor das convocatorias \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_selecionadores_ad2a97c81f2d59ce723d8e20f3ad21d04}{set\+Titulos\+Ganhos}} (unsigned int t)
+\begin{DoxyCompactList}\small\item\em funcao set para mudar o numero de titulos ganhos \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_selecionadores_a5fb278882a9616638cc036e45c2c2f4f}{set\+Selecoes}} (vector$<$ unsigned int $>$ sel)
+\begin{DoxyCompactList}\small\item\em funcao set para mudar o vetor das convocatorias \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_b_s_t}{B\+ST}}$<$ \mbox{\hyperlink{class_selecionadores}{Selecionadores}} $>$ \mbox{\hyperlink{class_selecionadores_ac6de8a093dad9d646610260d6492c3e9}{Read\+Selecionadores}} (\mbox{\hyperlink{class_b_s_t}{B\+ST}}$<$ \mbox{\hyperlink{class_selecionadores}{Selecionadores}} $>$ \&selecionadores)
+\begin{DoxyCompactList}\small\item\em funcao para ler o ficheiro dos selecionadores \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_selecionadores_acdd73904acbceabab03d4f25e3f56eee}{operator$<$}} (const \mbox{\hyperlink{class_selecionadores}{Selecionadores}} \&s) const
+\begin{DoxyCompactList}\small\item\em operador $<$ para a classe \mbox{\hyperlink{class_selecionadores}{Selecionadores}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{class_selecionadores_ac22b425ff75f10c1a75a32b679093ba9}{operator$<$$<$}} (ostream \&out, const \mbox{\hyperlink{class_selecionadores}{Selecionadores}} \&s)
+\begin{DoxyCompactList}\small\item\em ostream para mostrar a informação de um selecionador \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+class exception para futebolistas ja existentes 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_selecionadores_a9cb255b564879d9984ecf4ff5183b52d}\label{class_selecionadores_a9cb255b564879d9984ecf4ff5183b52d}} 
+\index{Selecionadores@{Selecionadores}!Selecionadores@{Selecionadores}}
+\index{Selecionadores@{Selecionadores}!Selecionadores@{Selecionadores}}
+\doxysubsubsection{\texorpdfstring{Selecionadores()}{Selecionadores()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Selecionadores\+::\+Selecionadores (\begin{DoxyParamCaption}\item[{string}]{n,  }\item[{string}]{dn,  }\item[{string}]{f,  }\item[{unsigned int}]{s,  }\item[{bool}]{con,  }\item[{unsigned int}]{tg,  }\item[{vector$<$ unsigned int $>$}]{sel }\end{DoxyParamCaption})}
+
+
+
+construto da classe selecionadores 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & nome \\
+\hline
+{\em dn} & data de nascimento \\
+\hline
+{\em f} & função \\
+\hline
+{\em s} & salário \\
+\hline
+{\em tg} & titulos ganhos \\
+\hline
+{\em sel} & vetor com ids das convocatorias em que o selecionador está presente \\
+\hline
+{\em con} & bool caso o funcionario seja conhecido ou nao \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_selecionadores_a618b1760f89a7dffb8f27b514ab9d3c2}\label{class_selecionadores_a618b1760f89a7dffb8f27b514ab9d3c2}} 
+\index{Selecionadores@{Selecionadores}!Selecionadores@{Selecionadores}}
+\index{Selecionadores@{Selecionadores}!Selecionadores@{Selecionadores}}
+\doxysubsubsection{\texorpdfstring{Selecionadores()}{Selecionadores()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Selecionadores\+::\+Selecionadores (\begin{DoxyParamCaption}\item[{string}]{n,  }\item[{unsigned int}]{tg }\end{DoxyParamCaption})}
+
+
+
+construtor da classe selecionadores 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & nome \\
+\hline
+{\em tg} & titulos ganhos \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_selecionadores_ad50f668e49e193caa83e033906d28341}\label{class_selecionadores_ad50f668e49e193caa83e033906d28341}} 
+\index{Selecionadores@{Selecionadores}!getSelecoes@{getSelecoes}}
+\index{getSelecoes@{getSelecoes}!Selecionadores@{Selecionadores}}
+\doxysubsubsection{\texorpdfstring{getSelecoes()}{getSelecoes()}}
+{\footnotesize\ttfamily vector$<$ unsigned int $>$ Selecionadores\+::get\+Selecoes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+funcao get para retornar o vetor das convocatorias 
+
+\begin{DoxyReturn}{Returns}
+vetor com as convocatorias em que o selecionador esteve presente 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_selecionadores_a42ddd7d1062d768b3e383df638b445b0}\label{class_selecionadores_a42ddd7d1062d768b3e383df638b445b0}} 
+\index{Selecionadores@{Selecionadores}!getTitulosGanhos@{getTitulosGanhos}}
+\index{getTitulosGanhos@{getTitulosGanhos}!Selecionadores@{Selecionadores}}
+\doxysubsubsection{\texorpdfstring{getTitulosGanhos()}{getTitulosGanhos()}}
+{\footnotesize\ttfamily unsigned int Selecionadores\+::get\+Titulos\+Ganhos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+funcao get para retornar o numero de titulos ganhos 
+
+\begin{DoxyReturn}{Returns}
+numero de titulos ganhos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_selecionadores_acdd73904acbceabab03d4f25e3f56eee}\label{class_selecionadores_acdd73904acbceabab03d4f25e3f56eee}} 
+\index{Selecionadores@{Selecionadores}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Selecionadores@{Selecionadores}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Selecionadores\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_selecionadores}{Selecionadores}} \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+operador $<$ para a classe \mbox{\hyperlink{class_selecionadores}{Selecionadores}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & objeto da classe \mbox{\hyperlink{class_selecionadores}{Selecionadores}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true caso seja menor, senão false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_selecionadores_ac6de8a093dad9d646610260d6492c3e9}\label{class_selecionadores_ac6de8a093dad9d646610260d6492c3e9}} 
+\index{Selecionadores@{Selecionadores}!ReadSelecionadores@{ReadSelecionadores}}
+\index{ReadSelecionadores@{ReadSelecionadores}!Selecionadores@{Selecionadores}}
+\doxysubsubsection{\texorpdfstring{ReadSelecionadores()}{ReadSelecionadores()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_b_s_t}{B\+ST}}$<$ \mbox{\hyperlink{class_selecionadores}{Selecionadores}} $>$ Selecionadores\+::\+Read\+Selecionadores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_b_s_t}{B\+ST}}$<$ \mbox{\hyperlink{class_selecionadores}{Selecionadores}} $>$ \&}]{selecionadores }\end{DoxyParamCaption})}
+
+
+
+funcao para ler o ficheiro dos selecionadores 
+
+
+\begin{DoxyParams}{Parameters}
+{\em selecionadores} & arvore binaria com os selecionadores \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+arvore binaria com os selecionadores 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_selecionadores_a5fb278882a9616638cc036e45c2c2f4f}\label{class_selecionadores_a5fb278882a9616638cc036e45c2c2f4f}} 
+\index{Selecionadores@{Selecionadores}!setSelecoes@{setSelecoes}}
+\index{setSelecoes@{setSelecoes}!Selecionadores@{Selecionadores}}
+\doxysubsubsection{\texorpdfstring{setSelecoes()}{setSelecoes()}}
+{\footnotesize\ttfamily void Selecionadores\+::set\+Selecoes (\begin{DoxyParamCaption}\item[{vector$<$ unsigned int $>$}]{sel }\end{DoxyParamCaption})}
+
+
+
+funcao set para mudar o vetor das convocatorias 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sel} & convocatorias em que o selecionador esteve presente \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_selecionadores_ad2a97c81f2d59ce723d8e20f3ad21d04}\label{class_selecionadores_ad2a97c81f2d59ce723d8e20f3ad21d04}} 
+\index{Selecionadores@{Selecionadores}!setTitulosGanhos@{setTitulosGanhos}}
+\index{setTitulosGanhos@{setTitulosGanhos}!Selecionadores@{Selecionadores}}
+\doxysubsubsection{\texorpdfstring{setTitulosGanhos()}{setTitulosGanhos()}}
+{\footnotesize\ttfamily void Selecionadores\+::set\+Titulos\+Ganhos (\begin{DoxyParamCaption}\item[{unsigned int}]{t }\end{DoxyParamCaption})}
+
+
+
+funcao set para mudar o numero de titulos ganhos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & numero de titulos ganhos \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_selecionadores_ac22b425ff75f10c1a75a32b679093ba9}\label{class_selecionadores_ac22b425ff75f10c1a75a32b679093ba9}} 
+\index{Selecionadores@{Selecionadores}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Selecionadores@{Selecionadores}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{out,  }\item[{const \mbox{\hyperlink{class_selecionadores}{Selecionadores}} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+ostream para mostrar a informação de um selecionador 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & ostream \\
+\hline
+{\em s} & objeto da classe Selecionador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream com a informação de um selecionador 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/josed/\+One\+Drive/\+Ambiente de Trabalho/\+Projeto\+\_\+\+A\+E\+D\+A1920/Jogadores.\+h\item 
+C\+:/\+Users/josed/\+One\+Drive/\+Ambiente de Trabalho/\+Projeto\+\_\+\+A\+E\+D\+A1920/Jogadores.\+cpp\end{DoxyCompactItemize}

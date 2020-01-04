@@ -1,0 +1,270 @@
+\hypertarget{class_date}{}\doxysection{Date Class Reference}
+\label{class_date}\index{Date@{Date}}
+
+
+classe relativa a data  
+
+
+
+
+{\ttfamily \#include $<$Date.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_date_a4e59ed4ba66eec61c27460c5d09fa1bd}\label{class_date_a4e59ed4ba66eec61c27460c5d09fa1bd}} 
+\mbox{\hyperlink{class_date_a4e59ed4ba66eec61c27460c5d09fa1bd}{Date}} ()
+\begin{DoxyCompactList}\small\item\em construtor vazio da classe \mbox{\hyperlink{class_date}{Date}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_date_a5532efafed41fd5f8e013a61313200dc}{Date}} (string date)
+\begin{DoxyCompactList}\small\item\em separa a string com a data e armazena o dia, mes e ano \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_date_ae0f1f3db515c009b0a9f77869edc7599}{Date}} (unsigned int dia, unsigned int mes, unsigned int ano)
+\item 
+unsigned int \mbox{\hyperlink{class_date_a802fa2eb578cecc395ea3e0718219cfe}{get\+Dia}} () const
+\begin{DoxyCompactList}\small\item\em retorna um unsigned int com o dia da data \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_date_a668206cf7a0187b7559a16322c2d06c1}{get\+Mes}} () const
+\begin{DoxyCompactList}\small\item\em retorna um unsigned int com o mes da data \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_date_a4510bf3263d2a3e0d1d69e914ad9c270}{get\+Ano}} () const
+\begin{DoxyCompactList}\small\item\em retorna um unsigned int com o ano da data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_date_adf5d38d87cdce46ea09a33c4dbece6e0}{set\+Dia}} (unsigned int dia)
+\begin{DoxyCompactList}\small\item\em altera o dia de uma data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_date_adc753b1d1877f3ba2ee304274361f437}{set\+Mes}} (unsigned int mes)
+\begin{DoxyCompactList}\small\item\em altera o mes de uma data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_date_a4856797e39a84b6526726d2371c32fb5}{set\+Ano}} (unsigned int ano)
+\begin{DoxyCompactList}\small\item\em altera o ano de uma data \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_a42bf31e1ff4d0cfcf71849876e670a1b}{operator$<$}} (const \mbox{\hyperlink{class_date}{Date}} \&d) const
+\begin{DoxyCompactList}\small\item\em operador que compara se uma data é inferior a outra \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_a07bc9ce9aec7e46cc14c6983bad65b7f}{operator$>$}} (const \mbox{\hyperlink{class_date}{Date}} \&d) const
+\begin{DoxyCompactList}\small\item\em operador que compara se uma data é superior a outra \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_a16b90fa191e5d3080aa558fb29c676d2}{operator==}} (const \mbox{\hyperlink{class_date}{Date}} \&d) const
+\begin{DoxyCompactList}\small\item\em operador que compara se uma data é igual a outra \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_ade4dedf7ff5a7159bdaf1876ed0125f0}{operator!=}} (const \mbox{\hyperlink{class_date}{Date}} \&d) const
+\begin{DoxyCompactList}\small\item\em operador que compara se uma data é diferente de outra \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{class_date_a5c29d00ecf33e6d232a410f1f3d6eb70}{operator$<$$<$}} (ostream \&out, const \mbox{\hyperlink{class_date}{Date}} \&date)
+\begin{DoxyCompactList}\small\item\em mostra uma data no formata D\+D/\+M\+M/\+A\+A\+AA \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+classe relativa a data 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_date_a5532efafed41fd5f8e013a61313200dc}\label{class_date_a5532efafed41fd5f8e013a61313200dc}} 
+\index{Date@{Date}!Date@{Date}}
+\index{Date@{Date}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{Date()}{Date()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Date\+::\+Date (\begin{DoxyParamCaption}\item[{string}]{date }\end{DoxyParamCaption})}
+
+
+
+separa a string com a data e armazena o dia, mes e ano 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & string com uma data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_date_ae0f1f3db515c009b0a9f77869edc7599}\label{class_date_ae0f1f3db515c009b0a9f77869edc7599}} 
+\index{Date@{Date}!Date@{Date}}
+\index{Date@{Date}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{Date()}{Date()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Date\+::\+Date (\begin{DoxyParamCaption}\item[{unsigned int}]{dia,  }\item[{unsigned int}]{mes,  }\item[{unsigned int}]{ano }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dia} & unsigned int com dia \\
+\hline
+{\em mes} & unsigned int com mes \\
+\hline
+{\em ano} & unsigned int com ano \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_date_a4510bf3263d2a3e0d1d69e914ad9c270}\label{class_date_a4510bf3263d2a3e0d1d69e914ad9c270}} 
+\index{Date@{Date}!getAno@{getAno}}
+\index{getAno@{getAno}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getAno()}{getAno()}}
+{\footnotesize\ttfamily unsigned int Date\+::get\+Ano (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+retorna um unsigned int com o ano da data 
+
+\begin{DoxyReturn}{Returns}
+unsigned int com o ano da data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_a802fa2eb578cecc395ea3e0718219cfe}\label{class_date_a802fa2eb578cecc395ea3e0718219cfe}} 
+\index{Date@{Date}!getDia@{getDia}}
+\index{getDia@{getDia}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getDia()}{getDia()}}
+{\footnotesize\ttfamily unsigned int Date\+::get\+Dia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+retorna um unsigned int com o dia da data 
+
+\begin{DoxyReturn}{Returns}
+unsigned int com o dia da data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_a668206cf7a0187b7559a16322c2d06c1}\label{class_date_a668206cf7a0187b7559a16322c2d06c1}} 
+\index{Date@{Date}!getMes@{getMes}}
+\index{getMes@{getMes}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getMes()}{getMes()}}
+{\footnotesize\ttfamily unsigned int Date\+::get\+Mes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+retorna um unsigned int com o mes da data 
+
+\begin{DoxyReturn}{Returns}
+unsigned int com o mes da data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_ade4dedf7ff5a7159bdaf1876ed0125f0}\label{class_date_ade4dedf7ff5a7159bdaf1876ed0125f0}} 
+\index{Date@{Date}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Date\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{d }\end{DoxyParamCaption}) const}
+
+
+
+operador que compara se uma data é diferente de outra 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & objeto da classe \mbox{\hyperlink{class_date}{Date}} com a data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool resultante da comparacao entre duas datas 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_a42bf31e1ff4d0cfcf71849876e670a1b}\label{class_date_a42bf31e1ff4d0cfcf71849876e670a1b}} 
+\index{Date@{Date}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Date\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{d }\end{DoxyParamCaption}) const}
+
+
+
+operador que compara se uma data é inferior a outra 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & objeto da classe \mbox{\hyperlink{class_date}{Date}} com a data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool resultante da comparacao entre duas datas 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_a16b90fa191e5d3080aa558fb29c676d2}\label{class_date_a16b90fa191e5d3080aa558fb29c676d2}} 
+\index{Date@{Date}!operator==@{operator==}}
+\index{operator==@{operator==}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Date\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{d }\end{DoxyParamCaption}) const}
+
+
+
+operador que compara se uma data é igual a outra 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & objeto da classe \mbox{\hyperlink{class_date}{Date}} com a data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool resultante da comparacao entre duas datas 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_a07bc9ce9aec7e46cc14c6983bad65b7f}\label{class_date_a07bc9ce9aec7e46cc14c6983bad65b7f}} 
+\index{Date@{Date}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool Date\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{d }\end{DoxyParamCaption}) const}
+
+
+
+operador que compara se uma data é superior a outra 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & objeto da classe \mbox{\hyperlink{class_date}{Date}} com a data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool resultante da comparacao entre duas datas 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_a4856797e39a84b6526726d2371c32fb5}\label{class_date_a4856797e39a84b6526726d2371c32fb5}} 
+\index{Date@{Date}!setAno@{setAno}}
+\index{setAno@{setAno}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{setAno()}{setAno()}}
+{\footnotesize\ttfamily void Date\+::set\+Ano (\begin{DoxyParamCaption}\item[{unsigned int}]{ano }\end{DoxyParamCaption})}
+
+
+
+altera o ano de uma data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ano} & unsigned int com o ano de uma data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_date_adf5d38d87cdce46ea09a33c4dbece6e0}\label{class_date_adf5d38d87cdce46ea09a33c4dbece6e0}} 
+\index{Date@{Date}!setDia@{setDia}}
+\index{setDia@{setDia}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{setDia()}{setDia()}}
+{\footnotesize\ttfamily void Date\+::set\+Dia (\begin{DoxyParamCaption}\item[{unsigned int}]{dia }\end{DoxyParamCaption})}
+
+
+
+altera o dia de uma data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dia} & unsigned int com dia da data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_date_adc753b1d1877f3ba2ee304274361f437}\label{class_date_adc753b1d1877f3ba2ee304274361f437}} 
+\index{Date@{Date}!setMes@{setMes}}
+\index{setMes@{setMes}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{setMes()}{setMes()}}
+{\footnotesize\ttfamily void Date\+::set\+Mes (\begin{DoxyParamCaption}\item[{unsigned int}]{mes }\end{DoxyParamCaption})}
+
+
+
+altera o mes de uma data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mes} & unsigned int com o mes de uma data \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_date_a5c29d00ecf33e6d232a410f1f3d6eb70}\label{class_date_a5c29d00ecf33e6d232a410f1f3d6eb70}} 
+\index{Date@{Date}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{out,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+mostra uma data no formata D\+D/\+M\+M/\+A\+A\+AA 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & ostream vazia \\
+\hline
+{\em date} & objeto da classe \mbox{\hyperlink{class_date}{Date}} com a data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream com a data no formato D\+D/\+M\+M/\+A\+A\+AA 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/josed/\+One\+Drive/\+Ambiente de Trabalho/\+Projeto\+\_\+\+A\+E\+D\+A1920/Date.\+h\item 
+C\+:/\+Users/josed/\+One\+Drive/\+Ambiente de Trabalho/\+Projeto\+\_\+\+A\+E\+D\+A1920/Date.\+cpp\end{DoxyCompactItemize}

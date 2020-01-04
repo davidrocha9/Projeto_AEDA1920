@@ -1,0 +1,67 @@
+\hypertarget{struct_funcionarios_record_hash}{}\doxysection{Funcionarios\+Record\+Hash Struct Reference}
+\label{struct_funcionarios_record_hash}\index{FuncionariosRecordHash@{FuncionariosRecordHash}}
+
+
+struct da hash table com os funcionarios conhecidos  
+
+
+
+
+{\ttfamily \#include $<$Selecao.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_funcionarios_record_hash_a604549d967b831ebe316112c94deb65a}{operator()}} (const \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} \&et) const
+\begin{DoxyCompactList}\small\item\em hash function \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_funcionarios_record_hash_ae8ac458c8eb973f760c83a16491a0e73}{operator()}} (const \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} \&et1, const \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} \&et2) const
+\begin{DoxyCompactList}\small\item\em operador da hash function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct da hash table com os funcionarios conhecidos 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_funcionarios_record_hash_a604549d967b831ebe316112c94deb65a}\label{struct_funcionarios_record_hash_a604549d967b831ebe316112c94deb65a}} 
+\index{FuncionariosRecordHash@{FuncionariosRecordHash}!operator()@{operator()}}
+\index{operator()@{operator()}!FuncionariosRecordHash@{FuncionariosRecordHash}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Funcionarios\+Record\+Hash\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} \&}]{et }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+hash function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em et} & membro da equipa tecnica \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index da hash function 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_funcionarios_record_hash_ae8ac458c8eb973f760c83a16491a0e73}\label{struct_funcionarios_record_hash_ae8ac458c8eb973f760c83a16491a0e73}} 
+\index{FuncionariosRecordHash@{FuncionariosRecordHash}!operator()@{operator()}}
+\index{operator()@{operator()}!FuncionariosRecordHash@{FuncionariosRecordHash}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Funcionarios\+Record\+Hash\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} \&}]{et1,  }\item[{const \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} \&}]{et2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operador da hash function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em et1} & objeto da classe equipa tecnica \\
+\hline
+{\em et2} & objeto da classe equipa tecnica \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true caso sejam iguais, senão false 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/josed/\+One\+Drive/\+Ambiente de Trabalho/\+Projeto\+\_\+\+A\+E\+D\+A1920/Selecao.\+h\end{DoxyCompactItemize}

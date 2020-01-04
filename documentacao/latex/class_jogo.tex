@@ -1,0 +1,885 @@
+\hypertarget{class_jogo}{}\doxysection{Jogo Class Reference}
+\label{class_jogo}\index{Jogo@{Jogo}}
+
+
+classe relativa ao jogo  
+
+
+
+
+{\ttfamily \#include $<$Jogo.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_jogo_a53ed1b51b74c5a111e60aa4fd36d6f94}{Jogo}} (\mbox{\hyperlink{class_date}{Date}} data, string pais, string adversario, string cidade, string estadio, vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ jogadores\+\_\+conv, vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ jogadores\+\_\+part, vector$<$ string $>$ equipa\+\_\+arbitragem, vector$<$ string $>$ equipa\+\_\+adversaria, multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ golos, multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ assists, multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ passes, multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ passes\+\_\+acertados, multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ desarmes, multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ faltas, multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, double $>$ km\+\_\+percorridos, multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ minutos\+\_\+jogados, multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ amarelos, multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ vermelhos, vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ lesao)
+\begin{DoxyCompactList}\small\item\em Construtor da classe jogo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_jogo_ad0ec06f8f6368c4c730bafd02fbd5267}\label{class_jogo_ad0ec06f8f6368c4c730bafd02fbd5267}} 
+virtual \mbox{\hyperlink{class_jogo_ad0ec06f8f6368c4c730bafd02fbd5267}{$\sim$\+Jogo}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da classe jogo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_jogo_af8cf674a8b3e044355c52aad3b4786b1}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Funcao get que retorna a data. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_jogo_a0c61558224b8066bef8465c2e12d011c}{get\+Adversario}} () const
+\begin{DoxyCompactList}\small\item\em Funcao get que retorna o adversario. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_jogo_a3eed63ddfc12b2eadf8134761fd17758}{get\+Pais}} () const
+\begin{DoxyCompactList}\small\item\em Funcao get que retorna o pais. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_jogo_af31d5cfc53f1c46f59a39e877266b5c5}{get\+Cidade}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a cidade. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_jogo_a3a45da300c7bb86d05c52fdca38ad381}{get\+Estadio}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o estadio. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ \mbox{\hyperlink{class_jogo_a2e79376447feb6aa8f4b204b3e1730d6}{get\+Jogadores\+Convocados}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os jogadores portugueses convocados. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ \mbox{\hyperlink{class_jogo_aa01bec03c421c175b272cef7890c6d98}{get\+Jogadores\+Participantes}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os jogadores portugueses participantes. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \mbox{\hyperlink{class_jogo_a187aa36570a0f8446b98405e628ec293}{get\+Equipa\+Arbitragem}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a equipa de arbitragem. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \mbox{\hyperlink{class_jogo_a1d2010cdeade0b9af84ebf0f3935f6ca}{get\+Equipa\+Adversaria}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna o 11 inicial da selecao adversaria. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ \mbox{\hyperlink{class_jogo_a99eeb4726c49d2195cb62c92ee5dc7a4}{get\+Lesao}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os jogadores portugues lesionados. \end{DoxyCompactList}\item 
+multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ \mbox{\hyperlink{class_jogo_ac0f2cd94e3b2d2e3968e0fff7242be53}{get\+Golos}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os golos marcados pelos jogadores portugueses individualmente. \end{DoxyCompactList}\item 
+multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ \mbox{\hyperlink{class_jogo_a26a458cfcad514eed76dc8d234cb8cee}{get\+Assists}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna as assistencias feitas pelos jogadores portugueses individualmente. \end{DoxyCompactList}\item 
+multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ \mbox{\hyperlink{class_jogo_ac969811738ae5454d2af2b7ae4019ce5}{get\+Passes}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os passes feitos pelos jogadores portugueses individualmente. \end{DoxyCompactList}\item 
+multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ \mbox{\hyperlink{class_jogo_a0948aa4b0b2ca7c84cb3d3f86e4d9f9f}{get\+Passes\+Acertados}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os passes acertados pelos jogadores portugueses individualmente. \end{DoxyCompactList}\item 
+multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ \mbox{\hyperlink{class_jogo_ab01141465777297849c9b0e7a32da564}{get\+Desarmes}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os desarmes feitos pelos jogadores portugueses individualmente. \end{DoxyCompactList}\item 
+multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ \mbox{\hyperlink{class_jogo_a5ff144a14bb42dc88aef03b4d8b3301f}{get\+Faltas}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna as faltas feitas pelos jogadores portugueses individualmente. \end{DoxyCompactList}\item 
+multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, double $>$ \mbox{\hyperlink{class_jogo_a0843e3cd49a386170b760f2b87c2a922}{get\+Km\+Percorridos}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os quilometros feitos pelos jogadores portugueses individualmente. \end{DoxyCompactList}\item 
+multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ \mbox{\hyperlink{class_jogo_aa2437bb686004cf0f75f20abdac325c4}{get\+Minutos\+Jogados}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os minutos em campo que cada jogador jogou. \end{DoxyCompactList}\item 
+multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ \mbox{\hyperlink{class_jogo_af6e49b5106c57be1fdd8d4715346b1a3}{get\+Amarelos}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os amarelos que os jogadores portugueses levaram individualmente. \end{DoxyCompactList}\item 
+multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ \mbox{\hyperlink{class_jogo_a401a4ae41ed8785ed9a39a81dd6ec4f7}{get\+Vermelhos}} () const
+\begin{DoxyCompactList}\small\item\em Funcao que retorna os vermelhos que os jogadores portugueses levaram individualmente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_a8c8d924932473c49efdd05bc10c1198f}{set\+Data}} (\mbox{\hyperlink{class_date}{Date}} data)
+\begin{DoxyCompactList}\small\item\em Funcao que altera a data do jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_aa2b9fc4bf976758452b2476c81f8fbd7}{set\+Adversario}} (string adversario)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o adversario do jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_a44a93fe08c7fca9d3f41b5fcd2852c13}{set\+Pais}} (string pais)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o pais onde se realiza o jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_a578087a339e7416d9c22fe23f460d249}{set\+Cidade}} (string cidade)
+\begin{DoxyCompactList}\small\item\em Funcao que altera a cidade onde se realiza o jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_a7b4c5eabee516ba0aea81d6c0b1ce70d}{set\+Estadio}} (string estadio)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o estadio onde se realiza o jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_ab2d0ca5c6e287d452808677149745301}{set\+Jogadores\+Convocados}} (vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ jogadores\+\_\+convocados)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o vetor dos jogadores convocados do jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_aa39212a9188521ced0fb53dd058a61c0}{set\+Jogadores\+Participantes}} (vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ jogadores\+\_\+participantes)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o vetor dos jogadores participantes do jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_a0c199ca371cbb64c9ec18671c523c285}{set\+Equipa\+Arbitragem}} (vector$<$ string $>$ equipa\+\_\+arbitragem)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o vetor da equipa de arbitragem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_a9ad09b83342a9a15f74c9eb6b2602c8b}{set\+Equipa\+Adversaria}} (vector$<$ string $>$ equipa\+\_\+adversaria)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o vetor do 11 inicial adversario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_ac5cbb8edad65057d82155b26c2bfa695}{set\+Lesao}} (vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ lesao)
+\begin{DoxyCompactList}\small\item\em Funcao que altera o vetor dos jogadores que se lesionaram durante o jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_ae9e0e0e0a411e406be62a6c6cf5b0a86}{set\+Golos}} (multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ golos)
+\begin{DoxyCompactList}\small\item\em Funcao que altera os golos marcados no jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_a72960a125184687086b608169d4d9f17}{set\+Assists}} (multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ assists)
+\begin{DoxyCompactList}\small\item\em Funcao que altera as assistencias feitas no jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_aa6e2db6ba9d9ce5f66ade96b78afe4a5}{set\+Passes}} (multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ passes)
+\begin{DoxyCompactList}\small\item\em Funcao que altera os passes feitos no jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_ac639d608357142fccff14c9511968356}{set\+Passes\+Acertados}} (multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ passes\+\_\+acertados)
+\begin{DoxyCompactList}\small\item\em Funcao que altera os passes acertados no jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_ae3e9148da2be3d281114e54ba0cbc731}{set\+Desarmes}} (multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ desarmes)
+\begin{DoxyCompactList}\small\item\em Funcao que altera os desarmes feitos no jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_aaa278684f37c21527b5a88d0b7a476c0}{set\+Faltas}} (multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ faltas)
+\begin{DoxyCompactList}\small\item\em Funcao que altera as faltas feitas no jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_ac4f62e287c63b3f4cb08c6c6ed76f5e6}{set\+Km\+Percorridos}} (multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, double $>$ km\+\_\+percorridos)
+\begin{DoxyCompactList}\small\item\em Funcao que altera os quilometros percorridos no jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_a5bf3852d0628323cc79eac1149cda7b8}{set\+Minutos\+Jogados}} (multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ minutos\+\_\+jogados)
+\begin{DoxyCompactList}\small\item\em Funcao que altera os minutos em campo durante o jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_a0ed93ef848423858697c8c5d1729f4ee}{set\+Amarelos}} (multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ amarelos)
+\begin{DoxyCompactList}\small\item\em Funcao que altera os cartoes amarelos no jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_a930a10b016adbe9359aca53568a9e530}{set\+Vermelhos}} (multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ vermelhos)
+\begin{DoxyCompactList}\small\item\em Funcao que altera os cartoes vermelhos no jogo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_jogo_a5e415dda3e540f9eedb9323571319eb6}{operator==}} (\mbox{\hyperlink{class_jogo}{Jogo}} \&jogo) const
+\begin{DoxyCompactList}\small\item\em Compara dois objetos da classe \mbox{\hyperlink{class_jogo}{Jogo}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_jogo_a0b5c44d29883f2bed4b1dc451be45bb8}{operator!=}} (\mbox{\hyperlink{class_jogo}{Jogo}} \&jogo) const
+\begin{DoxyCompactList}\small\item\em Compara dois objetos da classe \mbox{\hyperlink{class_jogo}{Jogo}}. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ \mbox{\hyperlink{class_jogo_a10a40a8d49dd70d32eaaed0855a93cf4}{Read\+Jogo}} ()
+\begin{DoxyCompactList}\small\item\em Funcao que permite ler o ficheiro do jogo (Jogo.\+txt) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_a499f5a82a412c6ef5b6b87eb52333a0a}{add\+Jogo}} (vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ \&jogos, vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ \&jogadores)
+\begin{DoxyCompactList}\small\item\em Funcao que adiciona um jogo ao ficheiro do jogo (Jogo.\+txt) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_jogo}{Jogo}} \mbox{\hyperlink{class_jogo_a85583dd42cc64e86d14ca8f7aa77eebc}{remove\+Jogo}} (vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ \&jogos)
+\begin{DoxyCompactList}\small\item\em Funcao que remove um jogo do ficheiro do jogo (Jogo.\+txt) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_a2a7f04c9153973d49d5c43a27d38fb3d}{info\+Jogo}} (vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ \&jogos)
+\begin{DoxyCompactList}\small\item\em Funcao que mostra a informação total (com estatisticas) ou parcial (sem estatisticas) sobre um jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_jogo_af16a461285e16325560eeee860f292e1}{edit\+Jogo}} (vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ \&jogos, vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ \&jogadores)
+\begin{DoxyCompactList}\small\item\em Funcao que permite editar a informacao de um jogo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{class_jogo_ac16173acfc56de8059b747caf33cb4a9}{operator$<$$<$}} (ostream \&out, \mbox{\hyperlink{class_jogo}{Jogo}} \&j)
+\begin{DoxyCompactList}\small\item\em Mostra a informação de um jogo (j) sem estatisticas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+classe relativa ao jogo 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_jogo_a53ed1b51b74c5a111e60aa4fd36d6f94}\label{class_jogo_a53ed1b51b74c5a111e60aa4fd36d6f94}} 
+\index{Jogo@{Jogo}!Jogo@{Jogo}}
+\index{Jogo@{Jogo}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{Jogo()}{Jogo()}}
+{\footnotesize\ttfamily Jogo\+::\+Jogo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}}}]{data,  }\item[{string}]{pais,  }\item[{string}]{adversario,  }\item[{string}]{cidade,  }\item[{string}]{estadio,  }\item[{vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$}]{jogadores\+\_\+conv,  }\item[{vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$}]{jogadores\+\_\+part,  }\item[{vector$<$ string $>$}]{equipa\+\_\+arbitragem,  }\item[{vector$<$ string $>$}]{equipa\+\_\+adversaria,  }\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{golos,  }\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{assists,  }\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{passes,  }\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{passes\+\_\+acertados,  }\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{desarmes,  }\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{faltas,  }\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, double $>$}]{km\+\_\+percorridos,  }\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{minutos\+\_\+jogados,  }\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{amarelos,  }\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{vermelhos,  }\item[{vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$}]{lesao }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Objeto da classe \mbox{\hyperlink{class_date}{Date}} que define a data do jogo \\
+\hline
+{\em pais} & String com o pais onde se realizou o jogo \\
+\hline
+{\em adversario} & String com o adversario contra quem Portugal jogou \\
+\hline
+{\em cidade} & String com a cidade onde se realiza o jogo \\
+\hline
+{\em estadio} & String com o estadio onde se vai jogar \\
+\hline
+{\em jogadores\+\_\+conv} & Vetor com os jogadores portugueses convocados do jogo \\
+\hline
+{\em jogadores\+\_\+part} & Vetor com os jogadores portugueses participantes do jogo \\
+\hline
+{\em equipa\+\_\+arbitragem} & Vetor com a equipa de arbitragem do jogo \\
+\hline
+{\em equipa\+\_\+adversaria} & Vetor com o 11 inicial adversario \\
+\hline
+{\em golos} & Define um multimap associando os jogadores portugueses aos golos no jogo \\
+\hline
+{\em assists} & Define um multimap associando os jogadores portugueses as assistencias no jogo \\
+\hline
+{\em passes} & Define um multimap associando os jogadores portugueses aos passes no jogo \\
+\hline
+{\em passes\+\_\+acertados} & Define um multimap associando os jogadores portugueses aos passes acertados no jogo \\
+\hline
+{\em desarmes} & Define um multimap associando os jogadores portugueses aos desarmes no jogo \\
+\hline
+{\em faltas} & Define um multimap associando os jogadores portugueses as faltas no jogo \\
+\hline
+{\em km\+\_\+percorridos} & Define um multimap associando os jogadores portugueses aos quilometros percorridos no jogo \\
+\hline
+{\em minutos\+\_\+jogados} & Define um multimap associando os jogadores portugueses aos minutos em campo durante o jogo \\
+\hline
+{\em amarelos} & Define um multimap associando os jogadores portugueses aos amarelos no jogo \\
+\hline
+{\em vermelhos} & Define um multimap associando os jogadores portugueses aos vermelhos no jogo \\
+\hline
+{\em lesao} & Vetor com os jogadores que se lesionaram no jogo \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_jogo_a499f5a82a412c6ef5b6b87eb52333a0a}\label{class_jogo_a499f5a82a412c6ef5b6b87eb52333a0a}} 
+\index{Jogo@{Jogo}!addJogo@{addJogo}}
+\index{addJogo@{addJogo}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{addJogo()}{addJogo()}}
+{\footnotesize\ttfamily void Jogo\+::add\+Jogo (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ \&}]{jogos,  }\item[{vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ \&}]{jogadores }\end{DoxyParamCaption})}
+
+
+
+Funcao que adiciona um jogo ao ficheiro do jogo (Jogo.\+txt) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jogos} & Vetor da classe \mbox{\hyperlink{class_jogo}{Jogo}} (jogos) ao qual vai ser adicionado o novo jogo criado \\
+\hline
+{\em jogadores} & Vetor da classe \mbox{\hyperlink{class_futebolista}{Futebolista}} que contem os jogadores disponíveis (jogadores.\+txt) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_af16a461285e16325560eeee860f292e1}\label{class_jogo_af16a461285e16325560eeee860f292e1}} 
+\index{Jogo@{Jogo}!editJogo@{editJogo}}
+\index{editJogo@{editJogo}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{editJogo()}{editJogo()}}
+{\footnotesize\ttfamily void Jogo\+::edit\+Jogo (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ \&}]{jogos,  }\item[{vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ \&}]{jogadores }\end{DoxyParamCaption})}
+
+
+
+Funcao que permite editar a informacao de um jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jogos} & Vetor da classe \mbox{\hyperlink{class_jogo}{Jogo}} que contem o jogo a ser editado \\
+\hline
+{\em jogadores} & Vetor da classe \mbox{\hyperlink{class_futebolista}{Futebolista}} que contém os jogadores disponiveis (jogadores.\+txt) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_a0c61558224b8066bef8465c2e12d011c}\label{class_jogo_a0c61558224b8066bef8465c2e12d011c}} 
+\index{Jogo@{Jogo}!getAdversario@{getAdversario}}
+\index{getAdversario@{getAdversario}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getAdversario()}{getAdversario()}}
+{\footnotesize\ttfamily string Jogo\+::get\+Adversario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao get que retorna o adversario. 
+
+\begin{DoxyReturn}{Returns}
+Retorna uma string referente ao adversario que Portugal defrontou 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_af6e49b5106c57be1fdd8d4715346b1a3}\label{class_jogo_af6e49b5106c57be1fdd8d4715346b1a3}} 
+\index{Jogo@{Jogo}!getAmarelos@{getAmarelos}}
+\index{getAmarelos@{getAmarelos}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getAmarelos()}{getAmarelos()}}
+{\footnotesize\ttfamily multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ Jogo\+::get\+Amarelos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna os amarelos que os jogadores portugueses levaram individualmente. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um multimap que associa os jogadores portugueses aos amarelos que cada um levou no jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a26a458cfcad514eed76dc8d234cb8cee}\label{class_jogo_a26a458cfcad514eed76dc8d234cb8cee}} 
+\index{Jogo@{Jogo}!getAssists@{getAssists}}
+\index{getAssists@{getAssists}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getAssists()}{getAssists()}}
+{\footnotesize\ttfamily multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ Jogo\+::get\+Assists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna as assistencias feitas pelos jogadores portugueses individualmente. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um multimap que associa os jogadores portugueses as assistencias que cada um fez no jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_af31d5cfc53f1c46f59a39e877266b5c5}\label{class_jogo_af31d5cfc53f1c46f59a39e877266b5c5}} 
+\index{Jogo@{Jogo}!getCidade@{getCidade}}
+\index{getCidade@{getCidade}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getCidade()}{getCidade()}}
+{\footnotesize\ttfamily string Jogo\+::get\+Cidade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna a cidade. 
+
+\begin{DoxyReturn}{Returns}
+Retorna uma string referente a cidade onde se realizou o jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_af8cf674a8b3e044355c52aad3b4786b1}\label{class_jogo_af8cf674a8b3e044355c52aad3b4786b1}} 
+\index{Jogo@{Jogo}!getData@{getData}}
+\index{getData@{getData}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} Jogo\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao get que retorna a data. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um objeto da classe \mbox{\hyperlink{class_date}{Date}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_ab01141465777297849c9b0e7a32da564}\label{class_jogo_ab01141465777297849c9b0e7a32da564}} 
+\index{Jogo@{Jogo}!getDesarmes@{getDesarmes}}
+\index{getDesarmes@{getDesarmes}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getDesarmes()}{getDesarmes()}}
+{\footnotesize\ttfamily multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ Jogo\+::get\+Desarmes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna os desarmes feitos pelos jogadores portugueses individualmente. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um multimap que associa os jogadores portugueses aos desarmes que cada um fez no jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a1d2010cdeade0b9af84ebf0f3935f6ca}\label{class_jogo_a1d2010cdeade0b9af84ebf0f3935f6ca}} 
+\index{Jogo@{Jogo}!getEquipaAdversaria@{getEquipaAdversaria}}
+\index{getEquipaAdversaria@{getEquipaAdversaria}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getEquipaAdversaria()}{getEquipaAdversaria()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Jogo\+::get\+Equipa\+Adversaria (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna o 11 inicial da selecao adversaria. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um vetor de strings com o 11 inicial adversario do jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a187aa36570a0f8446b98405e628ec293}\label{class_jogo_a187aa36570a0f8446b98405e628ec293}} 
+\index{Jogo@{Jogo}!getEquipaArbitragem@{getEquipaArbitragem}}
+\index{getEquipaArbitragem@{getEquipaArbitragem}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getEquipaArbitragem()}{getEquipaArbitragem()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Jogo\+::get\+Equipa\+Arbitragem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna a equipa de arbitragem. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um vetor de strings com a equipa de arbitragem do jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a3a45da300c7bb86d05c52fdca38ad381}\label{class_jogo_a3a45da300c7bb86d05c52fdca38ad381}} 
+\index{Jogo@{Jogo}!getEstadio@{getEstadio}}
+\index{getEstadio@{getEstadio}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getEstadio()}{getEstadio()}}
+{\footnotesize\ttfamily string Jogo\+::get\+Estadio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna o estadio. 
+
+\begin{DoxyReturn}{Returns}
+Retorna uma string referente ao estadio onde se realizou o jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a5ff144a14bb42dc88aef03b4d8b3301f}\label{class_jogo_a5ff144a14bb42dc88aef03b4d8b3301f}} 
+\index{Jogo@{Jogo}!getFaltas@{getFaltas}}
+\index{getFaltas@{getFaltas}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getFaltas()}{getFaltas()}}
+{\footnotesize\ttfamily multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ Jogo\+::get\+Faltas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna as faltas feitas pelos jogadores portugueses individualmente. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um multimap que associa os jogadores portugueses as faltas que cada um fez no jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_ac0f2cd94e3b2d2e3968e0fff7242be53}\label{class_jogo_ac0f2cd94e3b2d2e3968e0fff7242be53}} 
+\index{Jogo@{Jogo}!getGolos@{getGolos}}
+\index{getGolos@{getGolos}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getGolos()}{getGolos()}}
+{\footnotesize\ttfamily multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ Jogo\+::get\+Golos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna os golos marcados pelos jogadores portugueses individualmente. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um multimap que associa os jogadores portugueses aos golos que cada um marcou no jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a2e79376447feb6aa8f4b204b3e1730d6}\label{class_jogo_a2e79376447feb6aa8f4b204b3e1730d6}} 
+\index{Jogo@{Jogo}!getJogadoresConvocados@{getJogadoresConvocados}}
+\index{getJogadoresConvocados@{getJogadoresConvocados}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getJogadoresConvocados()}{getJogadoresConvocados()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ Jogo\+::get\+Jogadores\+Convocados (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna os jogadores portugueses convocados. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um vetor da classe \mbox{\hyperlink{class_futebolista}{Futebolista}} com os jogadores portugueses convocados para o jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_aa01bec03c421c175b272cef7890c6d98}\label{class_jogo_aa01bec03c421c175b272cef7890c6d98}} 
+\index{Jogo@{Jogo}!getJogadoresParticipantes@{getJogadoresParticipantes}}
+\index{getJogadoresParticipantes@{getJogadoresParticipantes}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getJogadoresParticipantes()}{getJogadoresParticipantes()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ Jogo\+::get\+Jogadores\+Participantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna os jogadores portugueses participantes. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um vetor da classe \mbox{\hyperlink{class_futebolista}{Futebolista}} com os jogadores portugueses participantes no jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a0843e3cd49a386170b760f2b87c2a922}\label{class_jogo_a0843e3cd49a386170b760f2b87c2a922}} 
+\index{Jogo@{Jogo}!getKmPercorridos@{getKmPercorridos}}
+\index{getKmPercorridos@{getKmPercorridos}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getKmPercorridos()}{getKmPercorridos()}}
+{\footnotesize\ttfamily multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, double $>$ Jogo\+::get\+Km\+Percorridos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna os quilometros feitos pelos jogadores portugueses individualmente. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um multimap que associa os jogadores portugueses aos quilometros que cada um fez no jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a99eeb4726c49d2195cb62c92ee5dc7a4}\label{class_jogo_a99eeb4726c49d2195cb62c92ee5dc7a4}} 
+\index{Jogo@{Jogo}!getLesao@{getLesao}}
+\index{getLesao@{getLesao}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getLesao()}{getLesao()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ Jogo\+::get\+Lesao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna os jogadores portugues lesionados. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um vetor da classe \mbox{\hyperlink{class_futebolista}{Futebolista}} com os jogadores portugueses lesionados durante o jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_aa2437bb686004cf0f75f20abdac325c4}\label{class_jogo_aa2437bb686004cf0f75f20abdac325c4}} 
+\index{Jogo@{Jogo}!getMinutosJogados@{getMinutosJogados}}
+\index{getMinutosJogados@{getMinutosJogados}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getMinutosJogados()}{getMinutosJogados()}}
+{\footnotesize\ttfamily multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ Jogo\+::get\+Minutos\+Jogados (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna os minutos em campo que cada jogador jogou. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um multimap que associa os jogadores portugueses aos minutos que cada um esteve no jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a3eed63ddfc12b2eadf8134761fd17758}\label{class_jogo_a3eed63ddfc12b2eadf8134761fd17758}} 
+\index{Jogo@{Jogo}!getPais@{getPais}}
+\index{getPais@{getPais}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getPais()}{getPais()}}
+{\footnotesize\ttfamily string Jogo\+::get\+Pais (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao get que retorna o pais. 
+
+\begin{DoxyReturn}{Returns}
+Retorna uma string referente ao pais onde se realizou o jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_ac969811738ae5454d2af2b7ae4019ce5}\label{class_jogo_ac969811738ae5454d2af2b7ae4019ce5}} 
+\index{Jogo@{Jogo}!getPasses@{getPasses}}
+\index{getPasses@{getPasses}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getPasses()}{getPasses()}}
+{\footnotesize\ttfamily multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ Jogo\+::get\+Passes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna os passes feitos pelos jogadores portugueses individualmente. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um multimap que associa os jogadores portugueses aos passes que cada um fez no jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a0948aa4b0b2ca7c84cb3d3f86e4d9f9f}\label{class_jogo_a0948aa4b0b2ca7c84cb3d3f86e4d9f9f}} 
+\index{Jogo@{Jogo}!getPassesAcertados@{getPassesAcertados}}
+\index{getPassesAcertados@{getPassesAcertados}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getPassesAcertados()}{getPassesAcertados()}}
+{\footnotesize\ttfamily multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ Jogo\+::get\+Passes\+Acertados (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna os passes acertados pelos jogadores portugueses individualmente. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um multimap que associa os jogadores portugueses aos passes acertados que cada um fez no jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a401a4ae41ed8785ed9a39a81dd6ec4f7}\label{class_jogo_a401a4ae41ed8785ed9a39a81dd6ec4f7}} 
+\index{Jogo@{Jogo}!getVermelhos@{getVermelhos}}
+\index{getVermelhos@{getVermelhos}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{getVermelhos()}{getVermelhos()}}
+{\footnotesize\ttfamily multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$ Jogo\+::get\+Vermelhos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funcao que retorna os vermelhos que os jogadores portugueses levaram individualmente. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um multimap que associa os jogadores portugueses aos vermelhos que cada um levou no jogo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a2a7f04c9153973d49d5c43a27d38fb3d}\label{class_jogo_a2a7f04c9153973d49d5c43a27d38fb3d}} 
+\index{Jogo@{Jogo}!infoJogo@{infoJogo}}
+\index{infoJogo@{infoJogo}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{infoJogo()}{infoJogo()}}
+{\footnotesize\ttfamily void Jogo\+::info\+Jogo (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ \&}]{jogos }\end{DoxyParamCaption})}
+
+
+
+Funcao que mostra a informação total (com estatisticas) ou parcial (sem estatisticas) sobre um jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jogos} & Vetor da classe \mbox{\hyperlink{class_jogo}{Jogo}} que contém os jogos do ficheiro do jogo (Jogo.\+txt) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_a0b5c44d29883f2bed4b1dc451be45bb8}\label{class_jogo_a0b5c44d29883f2bed4b1dc451be45bb8}} 
+\index{Jogo@{Jogo}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Jogo\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_jogo}{Jogo}} \&}]{jogo }\end{DoxyParamCaption}) const}
+
+
+
+Compara dois objetos da classe \mbox{\hyperlink{class_jogo}{Jogo}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jogo} & Objeto da classe \mbox{\hyperlink{class_jogo}{Jogo}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returna true ou false dependendo se os dois jogos são diferentes ou não 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a5e415dda3e540f9eedb9323571319eb6}\label{class_jogo_a5e415dda3e540f9eedb9323571319eb6}} 
+\index{Jogo@{Jogo}!operator==@{operator==}}
+\index{operator==@{operator==}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Jogo\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_jogo}{Jogo}} \&}]{jogo }\end{DoxyParamCaption}) const}
+
+
+
+Compara dois objetos da classe \mbox{\hyperlink{class_jogo}{Jogo}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jogo} & Objeto da classe \mbox{\hyperlink{class_jogo}{Jogo}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returna true ou false dependendo se os dois jogos são iguais ou não 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a10a40a8d49dd70d32eaaed0855a93cf4}\label{class_jogo_a10a40a8d49dd70d32eaaed0855a93cf4}} 
+\index{Jogo@{Jogo}!ReadJogo@{ReadJogo}}
+\index{ReadJogo@{ReadJogo}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{ReadJogo()}{ReadJogo()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ Jogo\+::\+Read\+Jogo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funcao que permite ler o ficheiro do jogo (Jogo.\+txt) 
+
+\begin{DoxyReturn}{Returns}
+Retorna um vetor da classe \mbox{\hyperlink{class_jogo}{Jogo}} (jogos), sendo que dá push back a um construtor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_a85583dd42cc64e86d14ca8f7aa77eebc}\label{class_jogo_a85583dd42cc64e86d14ca8f7aa77eebc}} 
+\index{Jogo@{Jogo}!removeJogo@{removeJogo}}
+\index{removeJogo@{removeJogo}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{removeJogo()}{removeJogo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_jogo}{Jogo}} Jogo\+::remove\+Jogo (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ \&}]{jogos }\end{DoxyParamCaption})}
+
+
+
+Funcao que remove um jogo do ficheiro do jogo (Jogo.\+txt) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jogos} & Vetor da classe \mbox{\hyperlink{class_jogo}{Jogo}} ao qual será removido um jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna um objeto da classe \mbox{\hyperlink{class_jogo}{Jogo}} que foi removido do ficheiro do jogo (Jogo.\+txt) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_jogo_aa2b9fc4bf976758452b2476c81f8fbd7}\label{class_jogo_aa2b9fc4bf976758452b2476c81f8fbd7}} 
+\index{Jogo@{Jogo}!setAdversario@{setAdversario}}
+\index{setAdversario@{setAdversario}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setAdversario()}{setAdversario()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Adversario (\begin{DoxyParamCaption}\item[{string}]{adversario }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera o adversario do jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adversario} & String que representa o novo adversario do jogo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_a0ed93ef848423858697c8c5d1729f4ee}\label{class_jogo_a0ed93ef848423858697c8c5d1729f4ee}} 
+\index{Jogo@{Jogo}!setAmarelos@{setAmarelos}}
+\index{setAmarelos@{setAmarelos}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setAmarelos()}{setAmarelos()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Amarelos (\begin{DoxyParamCaption}\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{amarelos }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera os cartoes amarelos no jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amarelos} & Multimap atualizado que associa os jogadores aos cartoes amarelos que cada um levou \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_a72960a125184687086b608169d4d9f17}\label{class_jogo_a72960a125184687086b608169d4d9f17}} 
+\index{Jogo@{Jogo}!setAssists@{setAssists}}
+\index{setAssists@{setAssists}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setAssists()}{setAssists()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Assists (\begin{DoxyParamCaption}\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{assists }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera as assistencias feitas no jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em assists} & Multimap atualizado que associa os jogadores as assistencias feitas por cada um \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_a578087a339e7416d9c22fe23f460d249}\label{class_jogo_a578087a339e7416d9c22fe23f460d249}} 
+\index{Jogo@{Jogo}!setCidade@{setCidade}}
+\index{setCidade@{setCidade}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setCidade()}{setCidade()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Cidade (\begin{DoxyParamCaption}\item[{string}]{cidade }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera a cidade onde se realiza o jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cidade} & String que representa a nova cidade do jogo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_a8c8d924932473c49efdd05bc10c1198f}\label{class_jogo_a8c8d924932473c49efdd05bc10c1198f}} 
+\index{Jogo@{Jogo}!setData@{setData}}
+\index{setData@{setData}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera a data do jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Objeto da classe \mbox{\hyperlink{class_date}{Date}} que representa a nova data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_ae3e9148da2be3d281114e54ba0cbc731}\label{class_jogo_ae3e9148da2be3d281114e54ba0cbc731}} 
+\index{Jogo@{Jogo}!setDesarmes@{setDesarmes}}
+\index{setDesarmes@{setDesarmes}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setDesarmes()}{setDesarmes()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Desarmes (\begin{DoxyParamCaption}\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{desarmes }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera os desarmes feitos no jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desarmes} & Multimap atualizado que associa os jogadores aos desarmes feitos por cada um \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_a9ad09b83342a9a15f74c9eb6b2602c8b}\label{class_jogo_a9ad09b83342a9a15f74c9eb6b2602c8b}} 
+\index{Jogo@{Jogo}!setEquipaAdversaria@{setEquipaAdversaria}}
+\index{setEquipaAdversaria@{setEquipaAdversaria}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setEquipaAdversaria()}{setEquipaAdversaria()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Equipa\+Adversaria (\begin{DoxyParamCaption}\item[{vector$<$ string $>$}]{equipa\+\_\+adversaria }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera o vetor do 11 inicial adversario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em equipa\+\_\+adversaria} & Vetor que representa o 11 inicial adversario atualizado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_a0c199ca371cbb64c9ec18671c523c285}\label{class_jogo_a0c199ca371cbb64c9ec18671c523c285}} 
+\index{Jogo@{Jogo}!setEquipaArbitragem@{setEquipaArbitragem}}
+\index{setEquipaArbitragem@{setEquipaArbitragem}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setEquipaArbitragem()}{setEquipaArbitragem()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Equipa\+Arbitragem (\begin{DoxyParamCaption}\item[{vector$<$ string $>$}]{equipa\+\_\+arbitragem }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera o vetor da equipa de arbitragem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em equipa\+\_\+arbitragem} & Vetor que representa a equipa de arbitragem atualizada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_a7b4c5eabee516ba0aea81d6c0b1ce70d}\label{class_jogo_a7b4c5eabee516ba0aea81d6c0b1ce70d}} 
+\index{Jogo@{Jogo}!setEstadio@{setEstadio}}
+\index{setEstadio@{setEstadio}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setEstadio()}{setEstadio()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Estadio (\begin{DoxyParamCaption}\item[{string}]{estadio }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera o estadio onde se realiza o jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em estadio} & String que representa o novo estadio do jogo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_aaa278684f37c21527b5a88d0b7a476c0}\label{class_jogo_aaa278684f37c21527b5a88d0b7a476c0}} 
+\index{Jogo@{Jogo}!setFaltas@{setFaltas}}
+\index{setFaltas@{setFaltas}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setFaltas()}{setFaltas()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Faltas (\begin{DoxyParamCaption}\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{faltas }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera as faltas feitas no jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em faltas} & Multimap atualizado que associa os jogadores as faltas feitas por cada um \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_ae9e0e0e0a411e406be62a6c6cf5b0a86}\label{class_jogo_ae9e0e0e0a411e406be62a6c6cf5b0a86}} 
+\index{Jogo@{Jogo}!setGolos@{setGolos}}
+\index{setGolos@{setGolos}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setGolos()}{setGolos()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Golos (\begin{DoxyParamCaption}\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{golos }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera os golos marcados no jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em golos} & Multimap atualizado que associa os jogadores aos golos que cada um marcou \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_ab2d0ca5c6e287d452808677149745301}\label{class_jogo_ab2d0ca5c6e287d452808677149745301}} 
+\index{Jogo@{Jogo}!setJogadoresConvocados@{setJogadoresConvocados}}
+\index{setJogadoresConvocados@{setJogadoresConvocados}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setJogadoresConvocados()}{setJogadoresConvocados()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Jogadores\+Convocados (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$}]{jogadores\+\_\+convocados }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera o vetor dos jogadores convocados do jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jogadores\+\_\+convocados} & Vetor que representa os jogadores convocados atualizados \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_aa39212a9188521ced0fb53dd058a61c0}\label{class_jogo_aa39212a9188521ced0fb53dd058a61c0}} 
+\index{Jogo@{Jogo}!setJogadoresParticipantes@{setJogadoresParticipantes}}
+\index{setJogadoresParticipantes@{setJogadoresParticipantes}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setJogadoresParticipantes()}{setJogadoresParticipantes()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Jogadores\+Participantes (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$}]{jogadores\+\_\+participantes }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera o vetor dos jogadores participantes do jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jogadores\+\_\+participantes} & Vetor que representa os jogadores participantes atualizados \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_ac4f62e287c63b3f4cb08c6c6ed76f5e6}\label{class_jogo_ac4f62e287c63b3f4cb08c6c6ed76f5e6}} 
+\index{Jogo@{Jogo}!setKmPercorridos@{setKmPercorridos}}
+\index{setKmPercorridos@{setKmPercorridos}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setKmPercorridos()}{setKmPercorridos()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Km\+Percorridos (\begin{DoxyParamCaption}\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, double $>$}]{km\+\_\+percorridos }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera os quilometros percorridos no jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em km\+\_\+percorridos} & Multimap atualizado que associa os jogadores aos quilometros percorridos por cada um \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_ac5cbb8edad65057d82155b26c2bfa695}\label{class_jogo_ac5cbb8edad65057d82155b26c2bfa695}} 
+\index{Jogo@{Jogo}!setLesao@{setLesao}}
+\index{setLesao@{setLesao}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setLesao()}{setLesao()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Lesao (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$}]{lesao }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera o vetor dos jogadores que se lesionaram durante o jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lesao} & Vetor que representa os jogadores lesionados durante o jogo atualizado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_a5bf3852d0628323cc79eac1149cda7b8}\label{class_jogo_a5bf3852d0628323cc79eac1149cda7b8}} 
+\index{Jogo@{Jogo}!setMinutosJogados@{setMinutosJogados}}
+\index{setMinutosJogados@{setMinutosJogados}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setMinutosJogados()}{setMinutosJogados()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Minutos\+Jogados (\begin{DoxyParamCaption}\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{minutos\+\_\+jogados }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera os minutos em campo durante o jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em minutos\+\_\+jogados} & Multimap atualizado que associa os jogadores aos minutos em campo de cada um \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_a44a93fe08c7fca9d3f41b5fcd2852c13}\label{class_jogo_a44a93fe08c7fca9d3f41b5fcd2852c13}} 
+\index{Jogo@{Jogo}!setPais@{setPais}}
+\index{setPais@{setPais}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setPais()}{setPais()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Pais (\begin{DoxyParamCaption}\item[{string}]{pais }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera o pais onde se realiza o jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pais} & String que representa o novo pais do jogo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_aa6e2db6ba9d9ce5f66ade96b78afe4a5}\label{class_jogo_aa6e2db6ba9d9ce5f66ade96b78afe4a5}} 
+\index{Jogo@{Jogo}!setPasses@{setPasses}}
+\index{setPasses@{setPasses}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setPasses()}{setPasses()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Passes (\begin{DoxyParamCaption}\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{passes }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera os passes feitos no jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em passes} & Multimap atualizado que associa os jogadores aos passes feitos por cada um \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_ac639d608357142fccff14c9511968356}\label{class_jogo_ac639d608357142fccff14c9511968356}} 
+\index{Jogo@{Jogo}!setPassesAcertados@{setPassesAcertados}}
+\index{setPassesAcertados@{setPassesAcertados}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setPassesAcertados()}{setPassesAcertados()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Passes\+Acertados (\begin{DoxyParamCaption}\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{passes\+\_\+acertados }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera os passes acertados no jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em passes\+\_\+acertados} & Multimap atualizado que associa os jogadores aos passes acertados por cada um \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_jogo_a930a10b016adbe9359aca53568a9e530}\label{class_jogo_a930a10b016adbe9359aca53568a9e530}} 
+\index{Jogo@{Jogo}!setVermelhos@{setVermelhos}}
+\index{setVermelhos@{setVermelhos}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{setVermelhos()}{setVermelhos()}}
+{\footnotesize\ttfamily void Jogo\+::set\+Vermelhos (\begin{DoxyParamCaption}\item[{multimap$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}}, unsigned int $>$}]{vermelhos }\end{DoxyParamCaption})}
+
+
+
+Funcao que altera os cartoes vermelhos no jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vermelhos} & Multimap atualizado que associa os jogadores aos cartoes vermelhos que cada um levou \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_jogo_ac16173acfc56de8059b747caf33cb4a9}\label{class_jogo_ac16173acfc56de8059b747caf33cb4a9}} 
+\index{Jogo@{Jogo}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Jogo@{Jogo}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{out,  }\item[{\mbox{\hyperlink{class_jogo}{Jogo}} \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Mostra a informação de um jogo (j) sem estatisticas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Ostream vazia \\
+\hline
+{\em j} & Objeto da classe \mbox{\hyperlink{class_jogo}{Jogo}} que será apresentado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ostream com a informação do jogo (sem estatisticas) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/josed/\+One\+Drive/\+Ambiente de Trabalho/\+Projeto\+\_\+\+A\+E\+D\+A1920/Jogo.\+h\item 
+C\+:/\+Users/josed/\+One\+Drive/\+Ambiente de Trabalho/\+Projeto\+\_\+\+A\+E\+D\+A1920/Jogo.\+cpp\end{DoxyCompactItemize}

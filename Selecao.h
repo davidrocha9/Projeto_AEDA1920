@@ -8,6 +8,7 @@
 #include <queue>
 #include <set>
 #include <unordered_set>
+#include <cmath>
 
 #include "Jogadores.h"
 #include "Convocatoria.h"
@@ -28,7 +29,8 @@ struct FuncionariosRecordHash
      */
     int operator() (const EquipaTecnica& et) const
     {
-        return 0;
+        int table_size = 101;
+        return (et.getSalario()*(int)pow(2,6)) % table_size;
     }
     /**
      * @brief operador da hash function

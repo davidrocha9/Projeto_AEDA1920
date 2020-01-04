@@ -1,0 +1,342 @@
+\hypertarget{class_selecao}{}\doxysection{Selecao Class Reference}
+\label{class_selecao}\index{Selecao@{Selecao}}
+
+
+classe relativa a selecao  
+
+
+
+
+{\ttfamily \#include $<$Selecao.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_selecao_a2252b17d3c1691b603cbc3353c0373ea}{Jogadores\+To\+File}} (vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ vf)
+\begin{DoxyCompactList}\small\item\em da update ao ficheiro jogadores.\+txt, que contem os futebolistas \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_selecao_ac0b42f446a73d8f943db6e727ad67d35}{Equipa\+Tecnicato\+File}} (vector$<$ \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} $>$ et)
+\begin{DoxyCompactList}\small\item\em da update ao ficheiro equipatecnica.\+txt, que contem os membros tecnicos \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_selecao_a1d8c5dc0f581fda481f0f888e04bc7f5}{Convocatoriato\+File}} (vector$<$ \mbox{\hyperlink{class_convocatoria}{Convocatoria}} $>$ conv)
+\begin{DoxyCompactList}\small\item\em da update ao ficheiro convocatoria.\+txt, que contem os membros tecnicos \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_selecao_a9b50b295be6ede6e32f12ff35822d2d8}{Jogosto\+File}} (vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ jogos)
+\begin{DoxyCompactList}\small\item\em da update ao ficheiro Jogo.\+txt, que contem os jogos \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_selecao_a7d4eda283e07b2da308e1d2bdf0e28ab}{Fornecedoresto\+File}} (priority\+\_\+queue$<$ \mbox{\hyperlink{class_fornecedores}{Fornecedores}} $>$ fornecedores)
+\begin{DoxyCompactList}\small\item\em da update ao ficheiro fornecedores.\+txt, que contem os fornecedores \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_selecao_a9c17b0f9877fce4cf3e34da88ed24a08}{Selecionadoresto\+File}} (\mbox{\hyperlink{class_b_s_t}{B\+ST}}$<$ \mbox{\hyperlink{class_selecionadores}{Selecionadores}} $>$ selecionadores)
+\begin{DoxyCompactList}\small\item\em da update ao ficheiro selecionadores.\+txt, que contem os selecionadores \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ \mbox{\hyperlink{class_selecao_a2b46cf5577733f195bda0be5dfba2d84}{get\+Jogadores}} () const
+\begin{DoxyCompactList}\small\item\em retorna um vector da classe \mbox{\hyperlink{class_futebolista}{Futebolista}} com os futebolistas \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} $>$ \mbox{\hyperlink{class_selecao_ab752ed9c1e4ad34b50e914734be59c3b}{get\+Equipa\+Tecnica}} () const
+\begin{DoxyCompactList}\small\item\em retorna um vector da classe \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} com os membros tecnicos \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ \mbox{\hyperlink{class_selecao_a85d6339fe0de2a0ee10a7bad0567fd22}{get\+Jogos}} () const
+\begin{DoxyCompactList}\small\item\em retorna um vector da classe \mbox{\hyperlink{class_jogo}{Jogo}} com os jogos \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_convocatoria}{Convocatoria}} $>$ \mbox{\hyperlink{class_selecao_a1dc8e4fa6a862129b75bdfcf7fdab256}{get\+Convocatorias}} () const
+\begin{DoxyCompactList}\small\item\em retorna um vector da classe \mbox{\hyperlink{class_convocatoria}{Convocatoria}} com as convocatorias \end{DoxyCompactList}\item 
+priority\+\_\+queue$<$ \mbox{\hyperlink{class_fornecedores}{Fornecedores}} $>$ \mbox{\hyperlink{class_selecao_aba46553d85eaf951aa629d6681c50806}{get\+Fornecedores}} () const
+\begin{DoxyCompactList}\small\item\em retorna os fornecedores \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_b_s_t}{B\+ST}}$<$ \mbox{\hyperlink{class_selecionadores}{Selecionadores}} $>$ \mbox{\hyperlink{class_selecao_a8f66af90aac3a2d95bc94b903713657e}{get\+Selecionadores}} () const
+\begin{DoxyCompactList}\small\item\em retorna os selecionadores \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_selecao_ad5e3ce1b168c84671976a4365c118e74}{update\+Selecionadores}} (\mbox{\hyperlink{class_b_s_t}{B\+ST}}$<$ \mbox{\hyperlink{class_selecionadores}{Selecionadores}} $>$ \&selecionadores, \mbox{\hyperlink{class_convocatoria}{Convocatoria}} c)
+\begin{DoxyCompactList}\small\item\em da update à arvore binaria dos selecionadores \end{DoxyCompactList}\item 
+H\+T\+Funcionarios\+Record \mbox{\hyperlink{class_selecao_a00b7a05e1c815d015602aa2ede82b9ca}{get\+Funcionarios\+Record}} ()
+\begin{DoxyCompactList}\small\item\em retorna a hash table com os funcionarios conhecidos \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_selecao_a2e27e5ee98126f9451315e4e067eed5c}{set\+Funcionarios\+Record}} (H\+T\+Funcionarios\+Record h)
+\begin{DoxyCompactList}\small\item\em funcao set para mudar os funcionarios conhecidos \end{DoxyCompactList}\item 
+H\+T\+Funcionarios\+Record \mbox{\hyperlink{class_selecao_af2a9ce0d710fa806fe2bd67667e14c7f}{generate\+Records}} (vector$<$ \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} $>$ et)
+\begin{DoxyCompactList}\small\item\em gera a hash table com os funcionarios conhecidos \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_selecao_afd7b83b717e37d0418899461e2280d02}{Informacoes\+Funcionarios\+Convocatoria}} (vector$<$ \mbox{\hyperlink{class_convocatoria}{Convocatoria}} $>$ c, H\+T\+Funcionarios\+Record ht)
+\begin{DoxyCompactList}\small\item\em mostra as informaçoes dos funcionarios presentes na convocatoria mais recente \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_selecao_a57114b06a5039f0677d3fa475079da1e}{Informacoes\+Funcionarios\+Conhecidos}} (H\+T\+Funcionarios\+Record ht)
+\item 
+void \mbox{\hyperlink{class_selecao_a6a181cb0fecd1d1564ffb42dd196ec12}{Contratar\+Funcionario}} (vector$<$ \mbox{\hyperlink{class_convocatoria}{Convocatoria}} $>$ \&c, H\+T\+Funcionarios\+Record ht, vector$<$ \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} $>$ \&et)
+\begin{DoxyCompactList}\small\item\em permite contratar um funcionario, que é adicionado à equipa tecnica da convocatoria mais recente \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+classe relativa a selecao 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_selecao_a6a181cb0fecd1d1564ffb42dd196ec12}\label{class_selecao_a6a181cb0fecd1d1564ffb42dd196ec12}} 
+\index{Selecao@{Selecao}!ContratarFuncionario@{ContratarFuncionario}}
+\index{ContratarFuncionario@{ContratarFuncionario}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{ContratarFuncionario()}{ContratarFuncionario()}}
+{\footnotesize\ttfamily void Selecao\+::\+Contratar\+Funcionario (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_convocatoria}{Convocatoria}} $>$ \&}]{c,  }\item[{H\+T\+Funcionarios\+Record}]{ht,  }\item[{vector$<$ \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} $>$ \&}]{et }\end{DoxyParamCaption})}
+
+
+
+permite contratar um funcionario, que é adicionado à equipa tecnica da convocatoria mais recente 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & vetor com todas as convocatorias \\
+\hline
+{\em ht} & hash table com os funcionarios conhecidos \\
+\hline
+{\em et} & vetor da equipa tecnica \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_selecao_a1d8c5dc0f581fda481f0f888e04bc7f5}\label{class_selecao_a1d8c5dc0f581fda481f0f888e04bc7f5}} 
+\index{Selecao@{Selecao}!ConvocatoriatoFile@{ConvocatoriatoFile}}
+\index{ConvocatoriatoFile@{ConvocatoriatoFile}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{ConvocatoriatoFile()}{ConvocatoriatoFile()}}
+{\footnotesize\ttfamily void Selecao\+::\+Convocatoriato\+File (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_convocatoria}{Convocatoria}} $>$}]{conv }\end{DoxyParamCaption})}
+
+
+
+da update ao ficheiro convocatoria.\+txt, que contem os membros tecnicos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conv} & vector da classe \mbox{\hyperlink{class_convocatoria}{Convocatoria}} com as convocatorias \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_selecao_ac0b42f446a73d8f943db6e727ad67d35}\label{class_selecao_ac0b42f446a73d8f943db6e727ad67d35}} 
+\index{Selecao@{Selecao}!EquipaTecnicatoFile@{EquipaTecnicatoFile}}
+\index{EquipaTecnicatoFile@{EquipaTecnicatoFile}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{EquipaTecnicatoFile()}{EquipaTecnicatoFile()}}
+{\footnotesize\ttfamily void Selecao\+::\+Equipa\+Tecnicato\+File (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} $>$}]{et }\end{DoxyParamCaption})}
+
+
+
+da update ao ficheiro equipatecnica.\+txt, que contem os membros tecnicos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em et} & vector da classe \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} com os membros tecnicos \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_selecao_a7d4eda283e07b2da308e1d2bdf0e28ab}\label{class_selecao_a7d4eda283e07b2da308e1d2bdf0e28ab}} 
+\index{Selecao@{Selecao}!FornecedorestoFile@{FornecedorestoFile}}
+\index{FornecedorestoFile@{FornecedorestoFile}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{FornecedorestoFile()}{FornecedorestoFile()}}
+{\footnotesize\ttfamily void Selecao\+::\+Fornecedoresto\+File (\begin{DoxyParamCaption}\item[{priority\+\_\+queue$<$ \mbox{\hyperlink{class_fornecedores}{Fornecedores}} $>$}]{fornecedores }\end{DoxyParamCaption})}
+
+
+
+da update ao ficheiro fornecedores.\+txt, que contem os fornecedores 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fornecedores} & vetor da classe \mbox{\hyperlink{class_fornecedores}{Fornecedores}} com os fornecedores \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_selecao_af2a9ce0d710fa806fe2bd67667e14c7f}\label{class_selecao_af2a9ce0d710fa806fe2bd67667e14c7f}} 
+\index{Selecao@{Selecao}!generateRecords@{generateRecords}}
+\index{generateRecords@{generateRecords}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{generateRecords()}{generateRecords()}}
+{\footnotesize\ttfamily H\+T\+Funcionarios\+Record Selecao\+::generate\+Records (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} $>$}]{et }\end{DoxyParamCaption})}
+
+
+
+gera a hash table com os funcionarios conhecidos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em et} & vetor com todos os funcionarios \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hash table com os funcionarios conhecidos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_selecao_a1dc8e4fa6a862129b75bdfcf7fdab256}\label{class_selecao_a1dc8e4fa6a862129b75bdfcf7fdab256}} 
+\index{Selecao@{Selecao}!getConvocatorias@{getConvocatorias}}
+\index{getConvocatorias@{getConvocatorias}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{getConvocatorias()}{getConvocatorias()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_convocatoria}{Convocatoria}} $>$ Selecao\+::get\+Convocatorias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+retorna um vector da classe \mbox{\hyperlink{class_convocatoria}{Convocatoria}} com as convocatorias 
+
+\begin{DoxyReturn}{Returns}
+vector da classe \mbox{\hyperlink{class_convocatoria}{Convocatoria}} com as convocatorias 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_selecao_ab752ed9c1e4ad34b50e914734be59c3b}\label{class_selecao_ab752ed9c1e4ad34b50e914734be59c3b}} 
+\index{Selecao@{Selecao}!getEquipaTecnica@{getEquipaTecnica}}
+\index{getEquipaTecnica@{getEquipaTecnica}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{getEquipaTecnica()}{getEquipaTecnica()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} $>$ Selecao\+::get\+Equipa\+Tecnica (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+retorna um vector da classe \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} com os membros tecnicos 
+
+\begin{DoxyReturn}{Returns}
+vector da classe \mbox{\hyperlink{class_equipa_tecnica}{Equipa\+Tecnica}} com os membros tecnicos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_selecao_aba46553d85eaf951aa629d6681c50806}\label{class_selecao_aba46553d85eaf951aa629d6681c50806}} 
+\index{Selecao@{Selecao}!getFornecedores@{getFornecedores}}
+\index{getFornecedores@{getFornecedores}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{getFornecedores()}{getFornecedores()}}
+{\footnotesize\ttfamily priority\+\_\+queue$<$ \mbox{\hyperlink{class_fornecedores}{Fornecedores}} $>$ Selecao\+::get\+Fornecedores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+retorna os fornecedores 
+
+\begin{DoxyReturn}{Returns}
+priority queue com os fornecedores 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_selecao_a00b7a05e1c815d015602aa2ede82b9ca}\label{class_selecao_a00b7a05e1c815d015602aa2ede82b9ca}} 
+\index{Selecao@{Selecao}!getFuncionariosRecord@{getFuncionariosRecord}}
+\index{getFuncionariosRecord@{getFuncionariosRecord}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{getFuncionariosRecord()}{getFuncionariosRecord()}}
+{\footnotesize\ttfamily H\+T\+Funcionarios\+Record Selecao\+::get\+Funcionarios\+Record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+retorna a hash table com os funcionarios conhecidos 
+
+\begin{DoxyReturn}{Returns}
+hash table com os funcionarios conhecidos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_selecao_a2b46cf5577733f195bda0be5dfba2d84}\label{class_selecao_a2b46cf5577733f195bda0be5dfba2d84}} 
+\index{Selecao@{Selecao}!getJogadores@{getJogadores}}
+\index{getJogadores@{getJogadores}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{getJogadores()}{getJogadores()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$ Selecao\+::get\+Jogadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+retorna um vector da classe \mbox{\hyperlink{class_futebolista}{Futebolista}} com os futebolistas 
+
+\begin{DoxyReturn}{Returns}
+vector da classe \mbox{\hyperlink{class_futebolista}{Futebolista}} com os futebolistas 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_selecao_a85d6339fe0de2a0ee10a7bad0567fd22}\label{class_selecao_a85d6339fe0de2a0ee10a7bad0567fd22}} 
+\index{Selecao@{Selecao}!getJogos@{getJogos}}
+\index{getJogos@{getJogos}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{getJogos()}{getJogos()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$ Selecao\+::get\+Jogos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+retorna um vector da classe \mbox{\hyperlink{class_jogo}{Jogo}} com os jogos 
+
+\begin{DoxyReturn}{Returns}
+vector da classe \mbox{\hyperlink{class_jogo}{Jogo}} com os jogos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_selecao_a8f66af90aac3a2d95bc94b903713657e}\label{class_selecao_a8f66af90aac3a2d95bc94b903713657e}} 
+\index{Selecao@{Selecao}!getSelecionadores@{getSelecionadores}}
+\index{getSelecionadores@{getSelecionadores}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{getSelecionadores()}{getSelecionadores()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_b_s_t}{B\+ST}}$<$ \mbox{\hyperlink{class_selecionadores}{Selecionadores}} $>$ Selecao\+::get\+Selecionadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+retorna os selecionadores 
+
+\begin{DoxyReturn}{Returns}
+arvore binaria com os selecionadores 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_selecao_a57114b06a5039f0677d3fa475079da1e}\label{class_selecao_a57114b06a5039f0677d3fa475079da1e}} 
+\index{Selecao@{Selecao}!InformacoesFuncionariosConhecidos@{InformacoesFuncionariosConhecidos}}
+\index{InformacoesFuncionariosConhecidos@{InformacoesFuncionariosConhecidos}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{InformacoesFuncionariosConhecidos()}{InformacoesFuncionariosConhecidos()}}
+{\footnotesize\ttfamily void Selecao\+::\+Informacoes\+Funcionarios\+Conhecidos (\begin{DoxyParamCaption}\item[{H\+T\+Funcionarios\+Record}]{ht }\end{DoxyParamCaption})}
+
+mostra as informaçoes de todos os funcionarios conhecidos 
+\begin{DoxyParams}{Parameters}
+{\em ht} & hash table com os funcionarios conhecidos \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_selecao_afd7b83b717e37d0418899461e2280d02}\label{class_selecao_afd7b83b717e37d0418899461e2280d02}} 
+\index{Selecao@{Selecao}!InformacoesFuncionariosConvocatoria@{InformacoesFuncionariosConvocatoria}}
+\index{InformacoesFuncionariosConvocatoria@{InformacoesFuncionariosConvocatoria}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{InformacoesFuncionariosConvocatoria()}{InformacoesFuncionariosConvocatoria()}}
+{\footnotesize\ttfamily void Selecao\+::\+Informacoes\+Funcionarios\+Convocatoria (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_convocatoria}{Convocatoria}} $>$}]{c,  }\item[{H\+T\+Funcionarios\+Record}]{ht }\end{DoxyParamCaption})}
+
+
+
+mostra as informaçoes dos funcionarios presentes na convocatoria mais recente 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & convocatoria \\
+\hline
+{\em ht} & hash table com os funcionarios conhecidos \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_selecao_a2252b17d3c1691b603cbc3353c0373ea}\label{class_selecao_a2252b17d3c1691b603cbc3353c0373ea}} 
+\index{Selecao@{Selecao}!JogadoresToFile@{JogadoresToFile}}
+\index{JogadoresToFile@{JogadoresToFile}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{JogadoresToFile()}{JogadoresToFile()}}
+{\footnotesize\ttfamily void Selecao\+::\+Jogadores\+To\+File (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_futebolista}{Futebolista}} $>$}]{vf }\end{DoxyParamCaption})}
+
+
+
+da update ao ficheiro jogadores.\+txt, que contem os futebolistas 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vf} & vector da classe \mbox{\hyperlink{class_futebolista}{Futebolista}} com os futebolistas \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_selecao_a9b50b295be6ede6e32f12ff35822d2d8}\label{class_selecao_a9b50b295be6ede6e32f12ff35822d2d8}} 
+\index{Selecao@{Selecao}!JogostoFile@{JogostoFile}}
+\index{JogostoFile@{JogostoFile}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{JogostoFile()}{JogostoFile()}}
+{\footnotesize\ttfamily void Selecao\+::\+Jogosto\+File (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_jogo}{Jogo}} $>$}]{jogos }\end{DoxyParamCaption})}
+
+
+
+da update ao ficheiro Jogo.\+txt, que contem os jogos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jogos} & vector da classe \mbox{\hyperlink{class_jogo}{Jogo}} com os jogos \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_selecao_a9c17b0f9877fce4cf3e34da88ed24a08}\label{class_selecao_a9c17b0f9877fce4cf3e34da88ed24a08}} 
+\index{Selecao@{Selecao}!SelecionadorestoFile@{SelecionadorestoFile}}
+\index{SelecionadorestoFile@{SelecionadorestoFile}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{SelecionadorestoFile()}{SelecionadorestoFile()}}
+{\footnotesize\ttfamily void Selecao\+::\+Selecionadoresto\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_b_s_t}{B\+ST}}$<$ \mbox{\hyperlink{class_selecionadores}{Selecionadores}} $>$}]{selecionadores }\end{DoxyParamCaption})}
+
+
+
+da update ao ficheiro selecionadores.\+txt, que contem os selecionadores 
+
+
+\begin{DoxyParams}{Parameters}
+{\em selecionadores} & vetor da classe \mbox{\hyperlink{class_selecionadores}{Selecionadores}} com os selecionadores \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_selecao_a2e27e5ee98126f9451315e4e067eed5c}\label{class_selecao_a2e27e5ee98126f9451315e4e067eed5c}} 
+\index{Selecao@{Selecao}!setFuncionariosRecord@{setFuncionariosRecord}}
+\index{setFuncionariosRecord@{setFuncionariosRecord}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{setFuncionariosRecord()}{setFuncionariosRecord()}}
+{\footnotesize\ttfamily void Selecao\+::set\+Funcionarios\+Record (\begin{DoxyParamCaption}\item[{H\+T\+Funcionarios\+Record}]{h }\end{DoxyParamCaption})}
+
+
+
+funcao set para mudar os funcionarios conhecidos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & hash table com os funcionarios conhecidos \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_selecao_ad5e3ce1b168c84671976a4365c118e74}\label{class_selecao_ad5e3ce1b168c84671976a4365c118e74}} 
+\index{Selecao@{Selecao}!updateSelecionadores@{updateSelecionadores}}
+\index{updateSelecionadores@{updateSelecionadores}!Selecao@{Selecao}}
+\doxysubsubsection{\texorpdfstring{updateSelecionadores()}{updateSelecionadores()}}
+{\footnotesize\ttfamily void Selecao\+::update\+Selecionadores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_b_s_t}{B\+ST}}$<$ \mbox{\hyperlink{class_selecionadores}{Selecionadores}} $>$ \&}]{selecionadores,  }\item[{\mbox{\hyperlink{class_convocatoria}{Convocatoria}}}]{c }\end{DoxyParamCaption})}
+
+
+
+da update à arvore binaria dos selecionadores 
+
+
+\begin{DoxyParams}{Parameters}
+{\em selecionadores} & arvore binaria com os selecionadores \\
+\hline
+{\em c} & convocatoria \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/josed/\+One\+Drive/\+Ambiente de Trabalho/\+Projeto\+\_\+\+A\+E\+D\+A1920/Selecao.\+h\item 
+C\+:/\+Users/josed/\+One\+Drive/\+Ambiente de Trabalho/\+Projeto\+\_\+\+A\+E\+D\+A1920/Selecao.\+cpp\end{DoxyCompactItemize}
